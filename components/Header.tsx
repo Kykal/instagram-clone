@@ -3,7 +3,7 @@
 
 
 //React
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 
 //MATERIAL DESIGN
@@ -69,34 +69,42 @@ const SearchBar = () => {
 		setValue('');
 	};
 
+	const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+	};
+
 
 	return(
-		<div
-			className='group rounded-md bg-neutral-100 grow flex items-center h-full gap-1'
+		<form
+			className='group rounded-md bg-neutral-100 grow flex items-center h-full flex-row-reverse'
+			onSubmit={submitHandler}
 		>
+			{value.length !== 0 && (
+				<button
+					className='flex items-center justify-center h-full aspect-square'
+					type='button'
+				onClick={cleanValueHandler}
+				>
+					<IoMdCloseCircle
+						className='text-neutral-400 text-md'
+					/>
+				</button>
+			)}
+			<input
+				type="text"
+				className='peer w-full h-full grow bg-transparent outline-none px-2'
+
+				value={value}
+				onChange={valueHandler}
+			/>
 			<div
-				className='flex items-center justify-center h-full aspect-square'
+				className='flex peer-focus:hidden items-center justify-center h-full aspect-square'
 			>
 				<BsSearch
 					className='text-neutral-400 text-md'
 				/>
 			</div>
-			<input
-				type="text"
-				className='w-full h-full grow bg-transparent outline-none'
-
-				value={value}
-				onChange={valueHandler}
-			/>
-			<button
-				className='flex items-center justify-center h-full aspect-square'
-			>
-				<IoMdCloseCircle
-					className='text-neutral-400 text-lg'
-					onClick={cleanValueHandler}
-				/>
-			</button>
-		</div>
+		</form>
 	);
 }
 
