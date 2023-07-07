@@ -2,3 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	ul#main-navigation {
+		@apply flex flex-col gap-2 grow;
+	}
+
+	li.list-item {
+		@apply h-11
+			data-[active=true]:font-bold;
+	}
+
+	li.list-item a, button {
+		@apply h-full w-full
+			flex items-center gap-2
+			px-2.5 py-3.5
+			hover:bg-neutral-100
+			rounded-md
+			text-start;
+	}
+
+	li.list-item svg {
+		@apply text-xl;
+	}
+
+
+	menu.popper {
+		@apply absolute
+			bg-white
+			rounded-md
+			shadow-lg
+			p-2
+			min-w-min;
+	}
+}
