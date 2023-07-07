@@ -39,10 +39,10 @@ const MoreOptions = (): JSX.Element => {
 	//Main component render
 	return (
 		<div
-			className='relative'
+			className='relative h-11'
 		>
 			<button
-				className='relative w-full flex items-center gap-2 px-2 py-1.5 hover:bg-neutral-100 rounded-md h-11'
+				className='hidden relative w-full xl:flex items-center gap-2 px-2 py-1.5 hover:bg-neutral-100 rounded-md h-11'
 				onClick={toggle}
 			>
 				<CgMenu
@@ -51,6 +51,14 @@ const MoreOptions = (): JSX.Element => {
 				<span>
 					More
 				</span>
+			</button>
+			<button
+				className='flex items-center justify-center hover:bg-neutral-100 p-1 rounded-md w-full h-full'
+				onClick={toggle}
+			>
+				<CgMenu
+					className='text-xl'
+				/>
 			</button>
 			{ isOpen && (
 				<Menu

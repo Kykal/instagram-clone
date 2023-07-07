@@ -28,13 +28,16 @@ import {
 } from 'react-icons/go';
 
 
+//Typings
+type MainNavigation = {
+	setItem: (item: string) => void;
+}
+
 //Main component content
-const MainNavigation = (): JSX.Element => {	
+const MainNavigation = (props: MainNavigation): JSX.Element => {	
 	//Main component render
 	return (
-		<ul
-			id='main-navigation'
-		>
+		<ul>
 			<ListItemAnchor
 				href='/'
 				icon={<GoHome />}
@@ -45,6 +48,7 @@ const MainNavigation = (): JSX.Element => {
 			<ListItem
 				icon={<HiSearch />}
 				disableActiveIcon
+				onClick={() => props.setItem('search')}
 			>
 				Search
 			</ListItem>

@@ -29,11 +29,12 @@ const ListItemAnchor = (props: ListItemAnchor): JSX.Element => {
 	//Main component render
 	return (
 		<li
-			className='list-item'
+			className=''
 			data-active={isActive}
 		>
 			<Link
 				href={props.href}
+				className='tablet'
 			>
 				{props.disableActiveIcon ? props.icon : _dynamicIcon}
 				<span
@@ -41,6 +42,12 @@ const ListItemAnchor = (props: ListItemAnchor): JSX.Element => {
 				>
 					{props.children}
 				</span>
+			</Link>
+			<Link
+				href={props.href}
+				className='mobile'
+			>
+				{props.disableActiveIcon ? props.icon : _dynamicIcon}
 			</Link>
 		</li>
 	);

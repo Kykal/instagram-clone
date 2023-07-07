@@ -2,9 +2,9 @@
 export type ListItem = {
 	children: any;
 	icon?: JSX.Element;
-	rightIcon?: JSX.Element;
 	dynamicIcon?: boolean;
 	disableActiveIcon?: boolean;
+	onClick?: () => void;
 }
 
 
@@ -14,15 +14,22 @@ const ListItem = (props: ListItem): JSX.Element => {
 	return (
 		<li
 			className='list-item'
+			onClick={props.onClick}
 		>
-			<button>
+			<button
+				className='tablet'
+			>
 				{props.icon}
 				<span
 					className='grow'
 				>
 					{props.children}
 				</span>
-				{props.rightIcon}
+			</button>
+			<button
+				className='mobile'
+			>
+				{props.icon}
 			</button>
 		</li>
 	);
