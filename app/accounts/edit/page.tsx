@@ -1,11 +1,11 @@
 //Main component content
 const Page = (): JSX.Element => {
-  //Main component render
-  return (
-    <>
-      Home
-    </>
-  );
+	//Main component render
+	return (
+		<>
+			Settings
+		</>
+	);
 };
 
 
