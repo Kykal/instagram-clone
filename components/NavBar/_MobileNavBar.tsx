@@ -69,7 +69,7 @@ const MobileNavBar = (): JSX.Element => {
 	return(
 		<>
 			<nav
-				className='flex gap-2 absolute bottom-0 left-0 right-0 sm:hidden h-12 w-full border-t border-neutral-200 p-1'
+				className='flex gap-2 absolute bottom-0 left-0 right-0 sm:hidden h-12 w-full border-t border-neutral-200 p-1 bg-white'
 			>
 				<ul
 					className='h-10 w-full flex justify-evenly items-center'
@@ -82,6 +82,7 @@ const MobileNavBar = (): JSX.Element => {
 							<ActionIconAnchor
 								href={item.href}
 								activeIcon={item.activeIcon}
+								className='h-full'
 							>
 								{item.children}
 							</ActionIconAnchor>

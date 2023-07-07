@@ -29,7 +29,6 @@ const ListItemAnchor = (props: ListItemAnchor): JSX.Element => {
 	//Main component render
 	return (
 		<li
-			className=''
 			data-active={isActive}
 		>
 			<Link

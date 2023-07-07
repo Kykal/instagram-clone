@@ -9,6 +9,7 @@ export type ActionIconAnchor = {
 	href: string;
 	activeIcon?: JSX.Element;
 	disableActiveIcon?: boolean;
+	className?: string;
 }
 
 
@@ -20,6 +21,9 @@ const ActionIconAnchor = (props: ActionIconAnchor): JSX.Element => {
 
 	const isActive = pathname === props.href;
 
+	const _className = props.className
+		? `${props.className} aspect-square  p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md`
+		: 'aspect-square  p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md';
 
 	const dynamicIcon = isActive ? props.activeIcon : props.children;
 
@@ -28,7 +32,7 @@ const ActionIconAnchor = (props: ActionIconAnchor): JSX.Element => {
 	return (
 		<Link
 			href={props.href}
-			className='aspect-square h-full p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md'
+			className={_className}
 		>
 			{props.disableActiveIcon ? props.children : dynamicIcon}
 		</Link>
