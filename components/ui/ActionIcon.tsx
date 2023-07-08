@@ -4,6 +4,7 @@ export type ActionIcon = {
 	activeIcon?: JSX.Element;
 	disableActiveIcon?: boolean;
 	className?: string;
+	isActive?: string;
 	onClick: () => void;
 }
 
@@ -17,6 +18,9 @@ const ActionIcon = (props: ActionIcon): JSX.Element => {
 		? `${props.className} aspect-square  p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md`
 		: 'aspect-square  p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md';
 
+
+	const _dynamicIcon = props.isActive ? props.activeIcon : props.children;
+
 	//Main component render
 	return (
 		<button
@@ -24,7 +28,7 @@ const ActionIcon = (props: ActionIcon): JSX.Element => {
 			onClick={onClick}
 			{...componentProps}
 		>
-			{props.children}
+			{_dynamicIcon}
 		</button>
 	);
 };

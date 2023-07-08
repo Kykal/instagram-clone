@@ -20,6 +20,8 @@ import {
 	BsChatHeartFill,
 	BsPlusSquare,
 	BsPlusSquareFill,
+	BsHeart,
+	BsHeartFill,
 } from 'react-icons/bs';
 import {
 	BiMoviePlay,
@@ -37,10 +39,6 @@ import {
 import {
 	BsSearch,
 } from 'react-icons/bs';
-
-
-//Components
-import SearchInput from "../SearchInput";
 
 
 //Typings
@@ -90,6 +88,16 @@ const LogoAnchor = () => {
 
 
 const NavList = (props: TabletNavBar) => {
+
+	//Handlers
+	const searchActiveItemHandler = () => {
+		props.setItem('search');
+	};
+
+	const notificationsActiveItemHandler = () => {
+		props.setItem('notifications');
+	};
+
 	return(
 		<ul
 			className='flex flex-col gap-2 grow'
@@ -106,7 +114,7 @@ const NavList = (props: TabletNavBar) => {
 			<li>
 				<ActionIcon
 					className={`w-full border ${props.activeItem === 'search' ? 'border-neutral-200' : 'border-transparent'}`}
-					onClick={() => props.setItem('search')}
+					onClick={searchActiveItemHandler}
 				>
 					<BsSearch className='text-2xl' />
 				</ActionIcon>
@@ -128,6 +136,24 @@ const NavList = (props: TabletNavBar) => {
 				>
 					<BiMoviePlay className='text-2xl' />
 				</ActionIconAnchor>
+			</li>
+			<li>
+				<ActionIconAnchor
+					href='/direct/inbox'
+					activeIcon={<BsChatHeartFill className='text-2xl' />}
+					className='w-full'
+				>
+					<BsChatHeart className='text-2xl' />
+				</ActionIconAnchor>
+			</li>
+			<li>
+				<ActionIcon
+					className={`w-full border ${props.activeItem === 'notifications' ? 'border-neutral-200' : 'border-transparent'}`}
+					onClick={notificationsActiveItemHandler}
+					activeIcon={<BsHeartFill className='text-2xl' />}
+				>
+					<BsHeart className='text-2xl' />
+				</ActionIcon>
 			</li>
 		</ul>
 	);
