@@ -1,10 +1,10 @@
 //NextJS
 'use client';
-
+import { usePathname } from "next/navigation";
 
 
 //React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 //Components
@@ -19,9 +19,16 @@ const NavBar = (): JSX.Element => {
 
 	//React
 	const [ activeItem, setActiveItem ] = useState<string>('');
+	const pathname = usePathname();
+
+	//When pathname updates, reset active navbar item
+	useEffect( () => {
+		setActiveItem('');
+	}, [pathname] );
 
 
 	//Handlers
+	//Active navbar item toggler
 	const setItemHandler = (item: string) => {
 		if( activeItem === item ){
 			setActiveItem('');
