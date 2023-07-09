@@ -8,7 +8,7 @@ const SearchActiveItemSect = (): JSX.Element => {
 	//Main component render
 	return(
 		<section
-			className='absolute left-20 flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
+			className='hidden absolute left-20 sm:flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
 		>
 			<header
 				className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200'

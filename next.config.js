@@ -12,14 +12,14 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'this-person-does-not-exist.com',
 				port: '',
-				pathname: '/img/**.jpg',
+				pathname: '/img/avatar-gen**.jpg',
 			},
 			{
 				protocol: 'https',
-				hostname: 'pixabay.com',
+				hostname: 'images.unsplash.com',
 				port: '',
-				pathname: '/get/**.jpg',
-			},
+				pathname: '/photo-**',
+			}
 		],
 	},
 }
