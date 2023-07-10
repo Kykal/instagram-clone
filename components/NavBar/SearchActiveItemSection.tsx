@@ -8,7 +8,7 @@ import SearchResult from "./SearchResult";
 
 
 //Main component content
-const SearchActiveItemSect = (): JSX.Element => {
+const SearchActiveItemSection = (): JSX.Element => {
 	//Main component render
 	return(
 		<section
@@ -50,7 +50,7 @@ const SearchActiveItemSect = (): JSX.Element => {
 };
 
 
-export default SearchActiveItemSect; //Export main component
+export default SearchActiveItemSection; //Export main component
 
 
 
