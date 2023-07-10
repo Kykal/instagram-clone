@@ -76,7 +76,7 @@ const SearchHistory = () => {
 				{[...Array(5)].map( (_, index) => (
 					<div
 						key={`search-skeleton-${index}`}
-						className='px-6 py-2 hover:bg-neutral-100 flex items-center h-16 gap-2'
+						className='px-6 py-2 flex items-center h-16 gap-2'
 					>
 						<div
 							className='bg-neutral-200 h-full aspect-square animate-pulse rounded-full'
