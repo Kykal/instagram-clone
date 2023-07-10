@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import MobileNavBar from "./_MobileNavBar";
 import TabletNavBar from "./_TabletNavBar";
 import DesktopNavBar from "./_DesktopNavBar";
-import SearchActiveItemSect from "./SearchActiveItemSect";
+import SearchActiveItemSect from "./SearchActiveItemSection";
 import NotificationsActiveItemSection from "./NotificationsActiveItemSection";
 
 
