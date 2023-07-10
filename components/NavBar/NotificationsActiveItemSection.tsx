@@ -1,14 +1,14 @@
+//MATERIAL DESIGN
+//Components
+import Divider from "../ui/Divider";
+
+
 //Components
 import NotificationAnchor from "./_NotificationAnchor";
 
 
 //Typings
-import {
-	NotificationPeople,
-	NotificationRelatedPost,
-} from '@/typings/Notification';
 import type { NotificationAnchor as NotificationAnchorType } from "./_NotificationAnchor";
-import Divider from "../ui/Divider";
 
 
 //Main component content
