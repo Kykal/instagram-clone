@@ -68,6 +68,8 @@ const SearchInput = (props: SearchInput) => {
 
 				value={value}
 				onChange={valueHandler}
+
+				placeholder='Search'
 			/>
 			<div
 				className='flex peer-focus:hidden items-center justify-center h-full aspect-square'

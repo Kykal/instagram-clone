@@ -8,6 +8,18 @@ const nextConfig = {
 				port: '',
 				pathname: '/u/**',
 			},
+			{
+				protocol: 'https',
+				hostname: 'this-person-does-not-exist.com',
+				port: '',
+				pathname: '/img/avatar-gen**.jpg',
+			},
+			{
+				protocol: 'https',
+				hostname: 'images.unsplash.com',
+				port: '',
+				pathname: '/photo-**',
+			}
 		],
 	},
 }
