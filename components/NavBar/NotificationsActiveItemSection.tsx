@@ -19,7 +19,7 @@ const NotificationsActiveItemSection = (): JSX.Element => {
 			people: [
 				{
 					imgUrl: 'https://this-person-does-not-exist.com/img/avatar-gen118b84e42249c49a4104976acfd0a2dd.jpg',
-					username: 'somePerson',
+					username: 'Aurora',
 				},
 			],
 			relatedPost: {
@@ -32,11 +32,11 @@ const NotificationsActiveItemSection = (): JSX.Element => {
 			people: [
 				{
 					imgUrl: 'https://this-person-does-not-exist.com/img/avatar-genf3b3d45f59e4f4e75bf81846c049b6a3.jpg',
-					username: 'somePerson',
+					username: 'Sonia',
 				},
 				{
 					imgUrl: 'https://this-person-does-not-exist.com/img/avatar-gen04a42bc6bc647ccd2a4bcb4665abac35.jpg',
-					username: 'anotherPerson',
+					username: 'Dámaso',
 				},
 			],
 			relatedPost: {
