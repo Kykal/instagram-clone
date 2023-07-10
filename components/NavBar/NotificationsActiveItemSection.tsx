@@ -8,6 +8,7 @@ import {
 	NotificationRelatedPost,
 } from '@/typings/Notification';
 import type { NotificationAnchor as NotificationAnchorType } from "./_NotificationAnchor";
+import Divider from "../ui/Divider";
 
 
 //Main component content
@@ -62,19 +63,22 @@ const NotificationsActiveItemSection = (): JSX.Element => {
 				</h1>
 			</header>
 			<main
-				className='flex flex-col'
+				className='flex flex-col gap-4'
 			>
 				<span
-					className='px-6 text-md font-semibold pb-4'
+					className='px-6 text-md font-semibold'
 				>
 					Today
 				</span>
-				{notifications.map( (notification, index) => (
-					<NotificationAnchor
-						key={`notification-${notification.type}-${index}`}
-						{...notification}
-					/>
-				) )}
+				<div>
+					{notifications.map( (notification, index) => (
+						<NotificationAnchor
+							key={`notification-${notification.type}-${index}`}
+							{...notification}
+						/>
+					) )}
+				</div>
+				<Divider />
 			</main>
 		</section>
 	);
