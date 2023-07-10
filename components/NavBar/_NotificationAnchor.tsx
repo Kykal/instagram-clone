@@ -12,6 +12,9 @@ export type NotificationAnchor = {
 	type: 'liked' | 'mention';
 	people: NotificationPeople[];
 	relatedPost: NotificationRelatedPost;
+	timestamp: string;
+	comment?: JSX.Element;
+	totalPeople?: number;
 }
 type LeftMedia = {
 	people: NotificationPeople[];
@@ -19,6 +22,9 @@ type LeftMedia = {
 type Content = {
 	type: 'liked' | 'mention';
 	people: NotificationPeople[];
+	timestamp: string;
+	totalPeople?: number;
+	comment?: JSX.Element;
 }
 type RightMedia = {
 	relatedPost: NotificationRelatedPost;
@@ -45,11 +51,16 @@ const NotificationAnchor = (props: NotificationAnchor): JSX.Element => {
 					<LikedContent
 						type={props.type}
 						people={props.people}
+						timestamp={props.timestamp}
+						totalPeople={props.totalPeople}
+						comment={props.comment}
 					/>
 				) : (
 					<MentionContent
 						type={props.type}
 						people={props.people}
+						timestamp={props.timestamp}
+						comment={props.comment}
 					/>
 				)}
 				<RightMedia
@@ -120,7 +131,7 @@ const LikedContent = (props: Content) => {
 			className='grow flex h-full items-start text-sm w-[219px]'
 		>
 			<p>
-				<PersonProfileAnchor person={props.people[0]} />, <PersonProfileAnchor person={props.people[1]} /> liked your comment: Wow, amazing picture! <span className='text-neutral-400' >17 h</span>
+				<PersonProfileAnchor person={props.people[0]} />, <PersonProfileAnchor person={props.people[1]} /> {props.totalPeople && <>and {props.totalPeople} others</>} liked your comment: {props.comment} <span className='text-neutral-400' >{props.timestamp}</span>
 			</p>
 		</div>
 	);
@@ -133,7 +144,7 @@ const MentionContent = (props: Content) => {
 			className='grow flex h-full items-start text-sm w-[219px]'
 		>
 			<p>
-				<PersonProfileAnchor person={props.people[0]} /> mentioned you in a comment: <Link href={`/kykal`} className='text-blue-400' >@kykal</Link> <span className='text-neutral-400' >5 h</span>
+				<PersonProfileAnchor person={props.people[0]} /> mentioned you in a comment: {props.comment} <span className='text-neutral-400' >{props.timestamp}</span>
 			</p>
 		</div>
 	);
