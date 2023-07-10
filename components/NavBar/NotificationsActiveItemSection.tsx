@@ -24,7 +24,7 @@ const NotificationsActiveItemSection = (): JSX.Element => {
 			],
 			relatedPost: {
 				postId: 'KudBmn4ZAC8',
-				imgUrl: 'https://pixabay.com/get/g88211c23a7b5172f7c06ef10d4cd9555bc205fd8fe5d476c37c7b781679edb5a052433fe4068d19d9e918cfcac62cfdc_1280.jpg',
+				imgUrl: 'https://images.unsplash.com/photo-1688362378019-15b0312dfce2',
 			},
 		},
 		{
@@ -41,7 +41,7 @@ const NotificationsActiveItemSection = (): JSX.Element => {
 			],
 			relatedPost: {
 				postId: 'KudBmn4ZAC8',
-				imgUrl: 'https://pixabay.com/get/g88211c23a7b5172f7c06ef10d4cd9555bc205fd8fe5d476c37c7b781679edb5a052433fe4068d19d9e918cfcac62cfdc_1280.jpg',
+				imgUrl: 'https://images.unsplash.com/photo-1688109511228-68b3dba9b6d8',
 			},
 		},
 	];
