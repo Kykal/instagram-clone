@@ -12,14 +12,14 @@ export type ActionIcon = {
 //Main component content
 const ActionIcon = (props: ActionIcon): JSX.Element => {
 
-	const { className: className, onClick, activeIcon, disableActiveIcon, children, ...componentProps } = props;
+	const { className: className, onClick, activeIcon, disableActiveIcon, children, isActive, ...componentProps } = props;
 
 	const _className = className
 		? `${props.className} aspect-square  p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md`
 		: 'aspect-square  p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md';
 
 
-	const _dynamicIcon = props.isActive ? props.activeIcon : children;
+	const _dynamicIcon = isActive ? props.activeIcon : children;
 
 	//Main component render
 	return (
