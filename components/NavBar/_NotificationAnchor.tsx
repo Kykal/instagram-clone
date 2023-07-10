@@ -175,13 +175,14 @@ const RightMedia = (props: RightMedia) => {
 		>
 			<Link
 				href={href}
-				className='overflow-hidden h-[50px] w-full flex items-center justify-center object-cover'
+				className='overflow-hidden h-[50px] w-[50px] flex items-center justify-center object-cover'
 			>
 				<Image
 					src={props.relatedPost.imgUrl}
 					alt='Post'
 					width={size}
 					height={size}
+					className='object-cover aspect-square'
 				/>
 			</Link>
 		</div>
