@@ -1,3 +1,7 @@
+//React
+import { useState, useEffect } from 'react';
+
+
 //MATERIAL DESIGN
 //Components
 import Divider from "../ui/Divider";
@@ -13,6 +17,46 @@ import type { NotificationAnchor as NotificationAnchorType } from "./_Notificati
 
 //Main component content
 const NotificationsActiveItemSection = (): JSX.Element => {
+	//Main component render
+	return(
+		<section
+			className='absolute left-20 flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
+		>
+			<header
+				className='px-6 pt-6 pb-4 flex flex-col gap-4'
+			>
+				<h1
+					className='font-bold text-2xl'
+				>
+					Notifications
+				</h1>
+			</header>
+			<main
+				className='flex flex-col gap-4'
+			>
+				<span
+					className='px-6 text-md font-semibold'
+				>
+					Today
+				</span>
+				<NotificationsHistory />
+				<Divider />
+			</main>
+		</section>
+	);
+};
+
+
+export default NotificationsActiveItemSection; //Export main component
+
+
+
+
+const NotificationsHistory = () => {
+
+	//React
+	const [ display, setDisplay ] = useState<boolean>(false);
+
 
 	const notifications: NotificationAnchorType[] = [
 		{
@@ -48,41 +92,55 @@ const NotificationsActiveItemSection = (): JSX.Element => {
 	];
 
 
-	//Main component render
-	return(
-		<section
-			className='absolute left-20 flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
-		>
-			<header
-				className='px-6 pt-6 pb-4 flex flex-col gap-4'
-			>
-				<h1
-					className='font-bold text-2xl'
-				>
-					Notifications
-				</h1>
-			</header>
-			<main
-				className='flex flex-col gap-4'
-			>
-				<span
-					className='px-6 text-md font-semibold'
-				>
-					Today
-				</span>
-				<div>
-					{notifications.map( (notification, index) => (
-						<NotificationAnchor
-							key={`notification-${notification.type}-${index}`}
-							{...notification}
+
+	useEffect( () => {
+		const unsub = setTimeout( () => {
+			setDisplay(true);
+		}, 500 );
+
+
+		return () => clearTimeout(unsub);
+	} );
+
+	//If it's "loading", show skeletons
+	if( !display ){
+		return(
+			<>
+				{[...Array(5)].map( (_, index) => (
+					<div
+						key={`search-skeleton-${index}`}
+						className='px-6 py-2 flex items-center h-16 gap-2'
+					>
+						<div
+							className='bg-neutral-200 h-full aspect-square animate-pulse rounded-full'
 						/>
-					) )}
-				</div>
-				<Divider />
-			</main>
-		</section>
+						<div
+							className='grow flex flex-col gap-2'
+						>
+							<div
+								className='bg-neutral-200 h-5 w-full animate-pulse rounded-full'
+							/>
+							<div
+								className='bg-neutral-200 h-5 w-full animate-pulse rounded-full'
+							/>
+						</div>
+						<div
+							className='bg-neutral-200 h-[50px] aspect-square animate-pulse'
+						/>
+					</div>
+				) )}
+			</>
+		);
+	}
+
+	return(
+		<div>
+			{notifications.map( (notification, index) => (
+				<NotificationAnchor
+					key={`notification-${notification.type}-${index}`}
+					{...notification}
+				/>
+			) )}
+		</div>
 	);
-};
-
-
-export default NotificationsActiveItemSection; //Export main component
+}
