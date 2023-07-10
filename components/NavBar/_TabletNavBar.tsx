@@ -151,6 +151,7 @@ const NavList = (props: TabletNavBar) => {
 					className={`w-full border ${props.activeItem === 'notifications' ? 'border-neutral-200' : 'border-transparent'}`}
 					onClick={notificationsActiveItemHandler}
 					activeIcon={<BsHeartFill className='text-2xl' />}
+					isActive={props.activeItem === 'notifications'}
 				>
 					<BsHeart className='text-2xl' />
 				</ActionIcon>
