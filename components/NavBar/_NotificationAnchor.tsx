@@ -16,6 +16,13 @@ export type NotificationAnchor = {
 type LeftMedia = {
 	people: NotificationPeople[];
 }
+type Content = {
+	type: 'liked' | 'mention';
+	people: NotificationPeople[];
+}
+type RightMedia = {
+	relatedPost: NotificationRelatedPost;
+}
 
 
 //Main component content
@@ -30,6 +37,20 @@ const NotificationAnchor = (props: NotificationAnchor): JSX.Element => {
 			>
 				<LeftMedia
 					people={props.people}
+				/>
+				{props.type === 'liked' ? (
+					<LikedContent
+						type={props.type}
+						people={props.people}
+					/>
+				) : (
+					<MentionContent
+						type={props.type}
+						people={props.people}
+					/>
+				)}
+				<RightMedia
+					relatedPost={props.relatedPost}
 				/>
 			</div>
 		</div>
@@ -85,6 +106,84 @@ const LeftMedia = (props: LeftMedia) => {
 				height={size/1.5}
 				className='absolute bottom-0.5 right-0.5 rounded-full border-2 border-white'
 			/>
+		</div>
+	);
+}
+
+
+const LikedContent = (props: Content) => {
+
+	if( props.people.length === 1 ){
+		return(
+			<>
+
+			</>
+		);
+	}
+
+	return(
+		<div
+			className='grow flex h-full items-start text-sm'
+		>
+			<p>
+				<Link
+					href={`/${props.people[0].username}`}
+					className='font-semibold'
+				>
+					{props.people[0].username}
+				</Link>
+			</p>
+		</div>
+	);
+}
+
+const MentionContent = (props: Content) => {
+
+	if( props.people.length === 1 ){
+		return(
+			<>
+
+			</>
+		);
+	}
+
+	return(
+		<div
+			className='grow flex h-full items-start text-sm'
+		>
+			<p>
+				<Link
+					href={`/${props.people[0].username}`}
+					className='font-semibold'
+				>
+					{props.people[0].username}
+				</Link>
+			</p>
+		</div>
+	);
+}
+
+
+const RightMedia = (props: RightMedia) => {
+
+	const href = `/p/${props.relatedPost.postId}`;
+	const size = 100;
+
+	return(
+		<div
+			className='w-[50px] h-full'
+		>
+			<Link
+				href={href}
+				className='overflow-hidden h-[50px] w-full flex items-center justify-center object-cover'
+			>
+				<Image
+					src={props.relatedPost.imgUrl}
+					alt='Post'
+					width={size}
+					height={size}
+				/>
+			</Link>
 		</div>
 	);
 }
