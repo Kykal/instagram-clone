@@ -23,6 +23,9 @@ type Content = {
 type RightMedia = {
 	relatedPost: NotificationRelatedPost;
 }
+type PersonProfileAnchor = {
+	person: NotificationPeople;
+}
 
 
 //Main component content
@@ -112,52 +115,25 @@ const LeftMedia = (props: LeftMedia) => {
 
 
 const LikedContent = (props: Content) => {
-
-	if( props.people.length === 1 ){
-		return(
-			<>
-
-			</>
-		);
-	}
-
 	return(
 		<div
-			className='grow flex h-full items-start text-sm'
+			className='grow flex h-full items-start text-sm w-[219px]'
 		>
 			<p>
-				<Link
-					href={`/${props.people[0].username}`}
-					className='font-semibold'
-				>
-					{props.people[0].username}
-				</Link>
+				<PersonProfileAnchor person={props.people[0]} />, <PersonProfileAnchor person={props.people[1]} /> liked your comment: Wow, amazing picture! <span className='text-neutral-400' >17 h</span>
 			</p>
 		</div>
 	);
 }
 
+
 const MentionContent = (props: Content) => {
-
-	if( props.people.length === 1 ){
-		return(
-			<>
-
-			</>
-		);
-	}
-
 	return(
 		<div
-			className='grow flex h-full items-start text-sm'
+			className='grow flex h-full items-start text-sm w-[219px]'
 		>
 			<p>
-				<Link
-					href={`/${props.people[0].username}`}
-					className='font-semibold'
-				>
-					{props.people[0].username}
-				</Link>
+				<PersonProfileAnchor person={props.people[0]} /> mentioned you in a comment: <Link href={`/kykal`} className='text-blue-400' >@kykal</Link> <span className='text-neutral-400' >5 h</span>
 			</p>
 		</div>
 	);
@@ -186,5 +162,18 @@ const RightMedia = (props: RightMedia) => {
 				/>
 			</Link>
 		</div>
+	);
+}
+
+
+
+const PersonProfileAnchor = (props: PersonProfileAnchor) => {
+	
+	const href = `/${props.person.username}`;
+	
+	return(
+		<Link className='font-medium' href={href} >
+			{props.person.username}
+		</Link>
 	);
 }
