@@ -12,7 +12,17 @@ type Tooltip = HTMLAttributes<HTMLDivElement> & {
 //Main component content
 const Tooltip = (props: Tooltip): JSX.Element => {
 
-	const baseTooltipClassName = 'z-10 absolute mx-auto w-auto min-w-max p-2 bg-white shadow rounded-md text-sm top-1 transition-all duration-100 left-16 scale-0 peer-hover:scale-100 origin-left';
+	const zIndex = 'z-10';
+	const position = 'absolute left-16 top-1'
+	const width = 'w-auto min-w-max';
+	const padding = 'p-2';
+	const margin = 'mx-auto';
+	const border = 'rounded-md shadow';
+	const animation = 'transition-all duration-100 scale-0 peer-hover:scale-100 origin-left';
+	const background = 'bg-white';
+	const text = 'text-sm';
+
+	const baseTooltipClassName = `${zIndex} ${position} ${width} ${padding} ${margin} ${border} ${animation} ${background} ${text}`;
 
 
 	const { className, label, children, ...propsAttributes } = props;
