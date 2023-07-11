@@ -4,8 +4,6 @@
 
 //Main component content
 const NavBar = (): JSX.Element => {
-
-
 	//Main component render
 	return (
 		<>
