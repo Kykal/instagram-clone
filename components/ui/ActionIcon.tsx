@@ -1,5 +1,9 @@
+//React
+import { HTMLAttributes } from "react";
+
+
 //Typings
-export type ActionIcon = {
+export type ActionIcon = HTMLAttributes<HTMLButtonElement> & {
 	children: JSX.Element;
 	activeIcon?: JSX.Element;
 	disableActiveIcon?: boolean;
