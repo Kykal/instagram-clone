@@ -4,7 +4,7 @@
 
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from './UI/ActionIconAnchor';
+import ActionIconAnchor from '@/components/UI/ActionIconAnchor';
 //Icons
 import {
 	BsHeart,
@@ -16,7 +16,7 @@ import {
 
 
 //Components
-import SearchInput from "./SearchInput";
+import SearchInput from '@/components/SearchInput';
 
 
 //Main component content
@@ -27,7 +27,7 @@ const Header = (): JSX.Element => {
 			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200 h-14 flex items-center gap-2 p-2'
 		>
 			<HomeActionIcon />
-			<SearchInput className='h-full' />
+			<SearchInput />
 			<NotificationsActionIcon />
 		</header>
 	);
@@ -45,7 +45,7 @@ const HomeActionIcon = () => {
 			disableActiveIcon
 			className='h-full'
 		>
-			<RiPolaroid2Line className='text-xl' />
+			<RiPolaroid2Line className='text-2xl' />
 		</ActionIconAnchor>
 	);
 }

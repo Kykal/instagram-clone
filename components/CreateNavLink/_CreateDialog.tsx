@@ -1,23 +1,18 @@
 //React
-import { useState } from "react";
 import { createPortal } from "react-dom";
 
 
 //MATERIAL DESIGN
 //Components
-import ActionIcon from "../UI/ActionIcon";
-import Divider from "../UI/Divider";
+import ActionIcon	from "../UI/ActionIcon";
+import Divider		from "../UI/Divider";
 //Icons
-import {
-	BsPlusSquare,
-	BsPlusSquareFill,
-} from 'react-icons/bs';
-import {
-	LiaPhotoVideoSolid,
-} from 'react-icons/lia';
 import {
 	MdClose,
 } from 'react-icons/md';
+import {
+	LiaPhotoVideoSolid,
+} from 'react-icons/lia';
 
 
 //Components
@@ -25,40 +20,21 @@ import Dialog from 'native-react-dialog';
 
 
 //Typings
-type CreateActionIconDialog = {
-	
+type CreateDialog = {
+	open: boolean;
+	onClose: () => void;
 }
 
 
 //Main component content
-const CreateActionIconDialog = () => {
-
-	//React
-	const [ isOpen, setIsOpen ] = useState<boolean>(false);
-
-	//Handlers
-	const openHandler = () => {
-		setIsOpen(true);
-	};
-
-	const closeHandler = () => {
-		setIsOpen(false);
-	};
-
-	return(
+const CreateDialog = ({ open, onClose }: CreateDialog): JSX.Element => {
+	//Main component render
+	return (
 		<>
-			<ActionIcon
-				className={`w-full border border-transparent`}
-				activeIcon={<BsPlusSquareFill className='text-2xl' />}
-				isActive={isOpen}
-				onClick={openHandler}
-			>
-				<BsPlusSquare className='text-2xl' />
-			</ActionIcon>
 			{typeof window !== "undefined" && createPortal(
 				<Dialog
-					open={isOpen}
-					onClose={closeHandler}
+					open={open}
+					onClose={onClose}
 					className='rounded-md p-0 container max-w-2xl w-auto'
 					aria-label='Create dialog'
 					aria-description='Upload multimedia to post'
@@ -75,7 +51,7 @@ const CreateActionIconDialog = () => {
 							Create new post
 						</h1>
 						<ActionIcon
-							onClick={closeHandler}
+							onClick={onClose}
 							className='absolute right-4 top-2'
 							title='Close create dialog'
 							aria-label='Close create dialog button'
@@ -123,7 +99,7 @@ const CreateActionIconDialog = () => {
 			)}
 		</>
 	);
-}
+};
 
 
-export default CreateActionIconDialog; //Export main component
+export default CreateDialog; //Export main component

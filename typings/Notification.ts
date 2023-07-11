@@ -1,9 +1,9 @@
-export type NotificationPeople = {
+export type People = {
 	username: string;
 	imgUrl: string;
 }
 
-export type NotificationRelatedPost = {
+export type Post = {
 	imgUrl: string;
 	postId: string;
 }

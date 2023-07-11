@@ -1,52 +1,34 @@
 //NextJS
-import { usePathname } from 'next/navigation';
 import Link from "next/link";
 
 
-//Typings
-export type ListItemAnchor = {
-	children: any;
-	icon?: JSX.Element;
-	activeIcon?: JSX.Element;
-	href: string;
-	dynamicIcon?: boolean;
+//React
+import { HTMLAttributes } from 'react';
 
-	disableActiveIcon?: boolean;
+
+//Typings
+export type ListItemAnchor = HTMLAttributes<HTMLAnchorElement> & {
+	children: any;
+	href: string;
 }
 
 
 //Main component content
 const ListItemAnchor = (props: ListItemAnchor): JSX.Element => {
 
-	//NextJS
-	const pathname = usePathname();
+	const { children, href, className, ...propsAttributes } = props;
 
-	const isActive = props.href === pathname;
 
-	const _dynamicIcon = isActive ? props.activeIcon : props.icon;
-	
-	
 	//Main component render
 	return (
 		<li
-			data-active={isActive}
+			className='list-item'
 		>
 			<Link
-				href={props.href}
-				className='tablet'
+				href={href}
+				{...propsAttributes}
 			>
-				{props.disableActiveIcon ? props.icon : _dynamicIcon}
-				<span
-					className='grow'
-				>
-					{props.children}
-				</span>
-			</Link>
-			<Link
-				href={props.href}
-				className='mobile'
-			>
-				{props.disableActiveIcon ? props.icon : _dynamicIcon}
+				{children}
 			</Link>
 		</li>
 	);

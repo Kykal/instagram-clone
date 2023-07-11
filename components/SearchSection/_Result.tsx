@@ -4,6 +4,7 @@ import Link from "next/link";
 
 
 //MATERIAL DESIGN
+//Components
 //Icons
 import {
 	BsDot,
@@ -14,7 +15,7 @@ import {
 
 
 //Typings
-type SearchResult = {
+type Result = {
 	username: string;
 	name: string;
 	followers: number;
@@ -33,10 +34,10 @@ type ProfileData = {
 
 
 //Main component content
-const SearchResult = (props: SearchResult): JSX.Element => {
-	
+const Result = (props: Result): JSX.Element => {
+
 	const url = `/${props.username}`;
-	
+
 
 	//Main component render
 	return (
@@ -63,7 +64,7 @@ const SearchResult = (props: SearchResult): JSX.Element => {
 };
 
 
-export default SearchResult; //Export main component
+export default Result; //Export main component
 
 
 

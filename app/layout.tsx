@@ -23,9 +23,9 @@ const roboto = Roboto({
 
 
 //Components
-import AsideBar from '@/components/AsideBar/AsideBar';
-import NavBar from '@/components/NavBar/NavBar';
-import Header from '@/components/Header';
+import AsideBar from '@/layouts/AsideBar';
+import NavBar from '@/layouts/NavBar';
+import Header from '@/layouts/Header';
 
 
 //Typings

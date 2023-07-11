@@ -1,36 +1,27 @@
+//React
+import { HTMLAttributes } from 'react';
+
+
 //Typings
-export type ListItem = {
+export type ListItem = HTMLAttributes<HTMLLIElement> & {
 	children: any;
-	icon?: JSX.Element;
-	dynamicIcon?: boolean;
-	disableActiveIcon?: boolean;
 	onClick?: () => void;
 }
 
 
 //Main component content
 const ListItem = (props: ListItem): JSX.Element => {
+
+	const { children, onClick, className, ...propsAttributes } = props;
+
 	//Main component render
 	return (
 		<li
 			className='list-item'
-			onClick={props.onClick}
+			{...propsAttributes}
+			onClick={onClick}
 		>
-			<button
-				className='tablet'
-			>
-				{props.icon}
-				<span
-					className='grow'
-				>
-					{props.children}
-				</span>
-			</button>
-			<button
-				className='mobile'
-			>
-				{props.icon}
-			</button>
+			{children}
 		</li>
 	);
 };

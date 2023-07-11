@@ -29,19 +29,19 @@ const Tooltip = (props: Tooltip): JSX.Element => {
 
 	
 	const _className = className
-		? `${className} ${baseTooltipClassName}`
-		: baseTooltipClassName;
+		? `${className} 'tooltip relative'`
+		: 'tooltip relative';
 
 
 	//Main component render
 	return (
 		<div
-			className='tooltip relative'
+			className={_className}
 			{...propsAttributes}
 		>
 			{children}
 			<span
-				className={_className}
+				className={baseTooltipClassName}
 			>
 				{label}
 			</span>

@@ -16,7 +16,7 @@ export type ActionIcon = HTMLAttributes<HTMLButtonElement> & {
 //Main component content
 const ActionIcon = (props: ActionIcon): JSX.Element => {
 
-	const { className: className, onClick, activeIcon, disableActiveIcon, children, isActive, ...componentProps } = props;
+	const { className, onClick, activeIcon, disableActiveIcon, children, isActive, ...componentProps } = props;
 
 	
 	const baseClassName = 'peer aspect-square p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md';
