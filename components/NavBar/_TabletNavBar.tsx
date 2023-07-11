@@ -139,13 +139,15 @@ const NavList = (props: TabletNavBar) => {
 				</Tooltip>
 			</li>
 			<li>
-				<ActionIconAnchor
-					href='/direct/inbox'
-					activeIcon={<BsChatHeartFill className='text-2xl' />}
-					className='w-full'
-				>
-					<BsChatHeart className='text-2xl' />
-				</ActionIconAnchor>
+				<Tooltip label='Messages' >
+					<ActionIconAnchor
+						href='/direct/inbox'
+						activeIcon={<BsChatHeartFill className='text-2xl' />}
+						className='w-full'
+					>
+						<BsChatHeart className='text-2xl' />
+					</ActionIconAnchor>
+				</Tooltip>
 			</li>
 			<li>
 				<Tooltip label='Notifications' >
