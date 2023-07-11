@@ -47,16 +47,14 @@ const CreateActionIconDialog = () => {
 
 	return(
 		<>
-			<li>
-				<ActionIcon
-					className={`w-full border border-transparent`}
-					activeIcon={<BsPlusSquareFill className='text-2xl' />}
-					isActive={isOpen}
-					onClick={openHandler}
-				>
-					<BsPlusSquare className='text-2xl' />
-				</ActionIcon>
-			</li>
+			<ActionIcon
+				className={`w-full border border-transparent`}
+				activeIcon={<BsPlusSquareFill className='text-2xl' />}
+				isActive={isOpen}
+				onClick={openHandler}
+			>
+				<BsPlusSquare className='text-2xl' />
+			</ActionIcon>
 			{typeof window !== "undefined" && createPortal(
 				<Dialog
 					open={isOpen}
