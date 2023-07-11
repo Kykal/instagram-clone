@@ -4,7 +4,7 @@
 
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "./UI/ActionIconAnchor";
+import ActionIconAnchor from './UI/ActionIconAnchor';
 //Icons
 import {
 	BsHeart,
