@@ -36,7 +36,7 @@ const Tooltip = (props: Tooltip): JSX.Element => {
 	//Main component render
 	return (
 		<div
-			className='relative'
+			className='tooltip relative'
 			{...propsAttributes}
 		>
 			{children}
