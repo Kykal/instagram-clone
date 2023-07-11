@@ -120,6 +120,7 @@ const CreateActionIconDialog = () => {
 					activeIcon={<BsPlusSquareFill className='text-2xl' />}
 					isActive={isOpen}
 					onClick={openHandler}
+					tooltip='Create'
 				>
 					<BsPlusSquare className='text-2xl' />
 				</ActionIcon>

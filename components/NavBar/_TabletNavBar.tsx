@@ -99,6 +99,7 @@ const NavList = (props: TabletNavBar) => {
 					href='/'
 					activeIcon={<GoHomeFill className='text-2xl' />}
 					className='w-full'
+					tooltip='Home'
 				>
 					<GoHome className='text-2xl' />
 				</ActionIconAnchor>
@@ -107,6 +108,7 @@ const NavList = (props: TabletNavBar) => {
 				<ActionIcon
 					className={`w-full border ${props.activeItem === 'search' ? 'border-neutral-200' : 'border-transparent'}`}
 					onClick={searchActiveItemHandler}
+					tooltip='Search'
 				>
 					<BsSearch className='text-2xl' />
 				</ActionIcon>
@@ -116,6 +118,7 @@ const NavList = (props: TabletNavBar) => {
 					href='/explore'
 					activeIcon={<BsCompassFill className='text-2xl' />}
 					className='w-full'
+					tooltip='Explore'
 				>
 					<BsCompass className='text-2xl' />
 				</ActionIconAnchor>
@@ -125,6 +128,7 @@ const NavList = (props: TabletNavBar) => {
 					href='/reels'
 					activeIcon={<BiSolidMoviePlay className='text-2xl' />}
 					className='w-full'
+					tooltip='Reels'
 				>
 					<BiMoviePlay className='text-2xl' />
 				</ActionIconAnchor>
@@ -134,6 +138,7 @@ const NavList = (props: TabletNavBar) => {
 					href='/direct/inbox'
 					activeIcon={<BsChatHeartFill className='text-2xl' />}
 					className='w-full'
+					tooltip='Messages'
 				>
 					<BsChatHeart className='text-2xl' />
 				</ActionIconAnchor>
@@ -144,6 +149,7 @@ const NavList = (props: TabletNavBar) => {
 					onClick={notificationsActiveItemHandler}
 					activeIcon={<BsHeartFill className='text-2xl' />}
 					isActive={props.activeItem === 'notifications'}
+					tooltip='Notifications'
 				>
 					<BsHeart className='text-2xl' />
 				</ActionIcon>
@@ -153,6 +159,7 @@ const NavList = (props: TabletNavBar) => {
 				<ActionIconAnchor
 					href='/kykal'
 					disableActiveIcon
+					tooltip='Profile &bull; kykal'
 				>
 					<div
 						className='rounded-full overflow-hidden'
