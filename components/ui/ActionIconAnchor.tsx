@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 //Typings
 export type ActionIconAnchor = {
-	children: JSX.Element;
+	children: JSX.Element | string;
 	href: string;
 	activeIcon?: JSX.Element;
 	disableActiveIcon?: boolean;

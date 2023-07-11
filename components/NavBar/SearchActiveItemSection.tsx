@@ -102,7 +102,7 @@ const SearchHistory = () => {
 			username='kykal'
 			followers={239}
 			name='Alan Benavides'
-			imageUrl='https://avatars.githubusercontent.com/u/54295964?v=4'
+			imageUrl='https://avatars.githubusercontent.com/u/54295964'
 			hasStories={true}
 		/>
 	);

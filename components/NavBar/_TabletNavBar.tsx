@@ -1,13 +1,15 @@
+//NextJS
+import Image from "next/image";
+
+
 //MATERIAL DESIGN
 //Components
 import ActionIconAnchor from "../ui/ActionIconAnchor";
 import ActionIcon from "../ui/ActionIcon";
 //Icons
-
 import {
 	RiPolaroid2Line,
 } from 'react-icons/ri';
-//Icons
 import {
 	BsCompass,
 	BsCompassFill,
@@ -147,6 +149,24 @@ const NavList = (props: TabletNavBar) => {
 				</ActionIcon>
 			</li>
 			<CreateActionIconDialog />
+			<li>
+				<ActionIconAnchor
+					href='/kykal'
+					disableActiveIcon
+				>
+					<div
+						className='rounded-full overflow-hidden'
+					>
+						<Image
+							src='https://avatars.githubusercontent.com/u/54295964'
+							alt='Profile'
+							width={50}
+							height={50}
+							className='border border-transparent rounded-full w-7 h-7'
+						/>
+					</div>
+				</ActionIconAnchor>
+			</li>
 		</ul>
 	);
 }
