@@ -5,7 +5,7 @@ import Image from "next/image";
 //MATERIAL DESIGN
 //Components
 import ActionIconAnchor from "../UI/ActionIconAnchor";
-import ActionIcon from "../UI/ActionIcon";
+import ActionIcon from "../material/ActionIcon";
 import Tooltip from "../UI/Tooltip";
 //Icons
 import {
