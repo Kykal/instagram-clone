@@ -4,7 +4,7 @@
 
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "./ui/ActionIconAnchor";
+import ActionIconAnchor from "./UI/ActionIconAnchor";
 //Icons
 import {
 	BsHeart,
@@ -43,6 +43,7 @@ const HomeActionIcon = () => {
 		<ActionIconAnchor
 			href='/'
 			disableActiveIcon
+			className='h-full'
 		>
 			<RiPolaroid2Line className='text-xl' />
 		</ActionIconAnchor>
@@ -55,6 +56,7 @@ const NotificationsActionIcon = () => {
 		<ActionIconAnchor
 			href='/notifications'
 			activeIcon={<BsHeartFill className='text-xl' />}
+			className='h-full'
 		>
 			<BsHeart className='text-xl' />
 		</ActionIconAnchor>
