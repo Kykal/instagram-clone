@@ -5,8 +5,8 @@ import useDisclosure from '@/hooks/useDisclosure';
 
 //MATERIAL DESIGN
 //Components
-import Menu from '../ui/Menu';
-import ListItemAnchor from '../ui/ListItemAnchor';
+import Menu from '../UI/Menu';
+import ListItemAnchor from '../UI/ListItemAnchor';
 //Icons
 import {
 	CgMenu,
@@ -26,7 +26,7 @@ import {
 	VscReport,
 } from 'react-icons/vsc';
 import ReportButton from './_ReportButton';
-import ListItem from '../ui/ListItem';
+import ListItem from '../UI/ListItem';
 
 
 //Main component content

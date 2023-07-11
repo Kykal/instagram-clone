@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 //MATERIAL DESIGN
 //Components
-import Divider from "../ui/Divider";
+import Divider from "../UI/Divider";
 
 
 //Components

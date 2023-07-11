@@ -5,8 +5,8 @@ import { createPortal } from "react-dom";
 
 //MATERIAL DESIGN
 //Components
-import ActionIcon from "../ui/ActionIcon";
-import Divider from "../ui/Divider";
+import ActionIcon from "../UI/ActionIcon";
+import Divider from "../UI/Divider";
 //Icons
 import {
 	BsPlusSquare,
@@ -53,7 +53,6 @@ const CreateActionIconDialog = () => {
 					activeIcon={<BsPlusSquareFill className='text-2xl' />}
 					isActive={isOpen}
 					onClick={openHandler}
-					tooltip='Create'
 				>
 					<BsPlusSquare className='text-2xl' />
 				</ActionIcon>

@@ -1,6 +1,6 @@
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "../ui/ActionIconAnchor";
+import ActionIconAnchor from "../UI/ActionIconAnchor";
 //Icons
 import {
 	BsCompass,
@@ -25,7 +25,7 @@ import {
 
 
 //Typings
-import type { ActionIconAnchor as ActionIconAnchorType } from '../ui/ActionIconAnchor';
+import type { ActionIconAnchor as ActionIconAnchorType } from '../UI/ActionIconAnchor';
 
 
 //Main component content

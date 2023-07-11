@@ -1,6 +1,6 @@
 //MATERIAL DESIGN
 //Components
-import ListItem from "../ui/ListItem";
+import ListItem from "../UI/ListItem";
 //Icons
 import {
 	VscReport,

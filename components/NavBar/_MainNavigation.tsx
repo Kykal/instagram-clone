@@ -1,7 +1,7 @@
 //MATERIAL DESIGN
 //Components
-import ListItemAnchor from '../ui/ListItemAnchor';
-import ListItem from '../ui/ListItem';
+import ListItemAnchor from '../UI/ListItemAnchor';
+import ListItem from '../UI/ListItem';
 //Icons
 import {
 	HiSearch

@@ -10,14 +10,13 @@ export type ActionIcon = HTMLAttributes<HTMLButtonElement> & {
 	className?: string;
 	isActive?: boolean;
 	onClick: () => void;
-	tooltip?: string;
 }
 
 
 //Main component content
 const ActionIcon = (props: ActionIcon): JSX.Element => {
 
-	const { className: className, onClick, activeIcon, disableActiveIcon, children, isActive, tooltip, ...componentProps } = props;
+	const { className: className, onClick, activeIcon, disableActiveIcon, children, isActive, ...componentProps } = props;
 
 	
 	const baseClassName = 'peer aspect-square p-1 hover:bg-neutral-100 flex items-center justify-center rounded-md';
@@ -33,25 +32,14 @@ const ActionIcon = (props: ActionIcon): JSX.Element => {
 
 	//Main component render
 	return (
-		<div
-			className='relative'
+		<button
+			className={_className}
+			onClick={onClick}
+			{...componentProps}
 		>
-			<button
-				className={_className}
-				onClick={onClick}
-				{...componentProps}
-			>
-				{disableActiveIcon ? children :  _dynamicIcon}
+			{disableActiveIcon ? children :  _dynamicIcon}
 
-			</button>
-			{tooltip && (
-				<span
-					className='z-10 absolute mx-auto p-2 bg-white shadow rounded-md text-sm top-1 transition-all duration-100 left-16 scale-0 peer-hover:scale-100 origin-left'
-				>
-					{tooltip}
-				</span>
-			)}
-		</div>
+		</button>
 	);
 };
 

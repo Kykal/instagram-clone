@@ -4,8 +4,8 @@ import Image from "next/image";
 
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "../ui/ActionIconAnchor";
-import ActionIcon from "../ui/ActionIcon";
+import ActionIconAnchor from "../UI/ActionIconAnchor";
+import ActionIcon from "../UI/ActionIcon";
 //Icons
 import {
 	RiPolaroid2Line,
@@ -45,7 +45,7 @@ const TabletNavBar = (props: TabletNavBar): JSX.Element => {
 	//Main component render
 	return (
 		<nav
-			className='hidden sm:flex flex-col w-20 min-w-[5rem] left-0 top-0 h-screen p-4 border-r border-neutral-200 gap-8'
+			className='hidden sm:flex lg:hidden flex-col w-20 min-w-[5rem] left-0 top-0 h-screen p-4 border-r border-neutral-200 gap-8'
 		>
 			<LogoAnchor />
 			<NavList
@@ -99,7 +99,6 @@ const NavList = (props: TabletNavBar) => {
 					href='/'
 					activeIcon={<GoHomeFill className='text-2xl' />}
 					className='w-full'
-					tooltip='Home'
 				>
 					<GoHome className='text-2xl' />
 				</ActionIconAnchor>
@@ -108,7 +107,6 @@ const NavList = (props: TabletNavBar) => {
 				<ActionIcon
 					className={`w-full border ${props.activeItem === 'search' ? 'border-neutral-200' : 'border-transparent'}`}
 					onClick={searchActiveItemHandler}
-					tooltip='Search'
 				>
 					<BsSearch className='text-2xl' />
 				</ActionIcon>
@@ -118,7 +116,6 @@ const NavList = (props: TabletNavBar) => {
 					href='/explore'
 					activeIcon={<BsCompassFill className='text-2xl' />}
 					className='w-full'
-					tooltip='Explore'
 				>
 					<BsCompass className='text-2xl' />
 				</ActionIconAnchor>
@@ -128,7 +125,6 @@ const NavList = (props: TabletNavBar) => {
 					href='/reels'
 					activeIcon={<BiSolidMoviePlay className='text-2xl' />}
 					className='w-full'
-					tooltip='Reels'
 				>
 					<BiMoviePlay className='text-2xl' />
 				</ActionIconAnchor>
@@ -138,7 +134,6 @@ const NavList = (props: TabletNavBar) => {
 					href='/direct/inbox'
 					activeIcon={<BsChatHeartFill className='text-2xl' />}
 					className='w-full'
-					tooltip='Messages'
 				>
 					<BsChatHeart className='text-2xl' />
 				</ActionIconAnchor>
@@ -149,7 +144,6 @@ const NavList = (props: TabletNavBar) => {
 					onClick={notificationsActiveItemHandler}
 					activeIcon={<BsHeartFill className='text-2xl' />}
 					isActive={props.activeItem === 'notifications'}
-					tooltip='Notifications'
 				>
 					<BsHeart className='text-2xl' />
 				</ActionIcon>
@@ -159,7 +153,6 @@ const NavList = (props: TabletNavBar) => {
 				<ActionIconAnchor
 					href='/kykal'
 					disableActiveIcon
-					tooltip='Profile &bull; kykal'
 				>
 					<div
 						className='rounded-full overflow-hidden'
