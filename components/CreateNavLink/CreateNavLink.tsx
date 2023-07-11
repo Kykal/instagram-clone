@@ -26,12 +26,12 @@ const CreateNavLink = () => {
 	return(
 		<>
 			<ActionIcon
-				className={`w-full border border-transparent`}
+				className={`h-full border border-transparent`}
 				activeIcon={<BsPlusSquareFill className='text-2xl' />}
 				isActive={isOpen}
 				onClick={open}
 			>
-				<BsPlusSquare className='text-2xl' />
+				<BsPlusSquare className='text-xl' />
 			</ActionIcon>
 			<CreateDialog
 				open={isOpen}
