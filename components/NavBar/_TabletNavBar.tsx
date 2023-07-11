@@ -38,6 +38,9 @@ import {
 import {
 	BsSearch,
 } from 'react-icons/bs';
+import {
+	LiaPhotoVideoSolid,
+} from 'react-icons/lia';
 
 
 //Components
@@ -185,9 +188,12 @@ const CreateActionButton = () => {
 			open={isOpen}
 			onClose={closeHandler}
 			className='rounded-md p-0 container max-w-2xl w-auto'
+			aria-label='Create dialog'
+			aria-description='Upload multimedia to post'
 		>
 			<header
 				className='relative p-2'
+				aria-label='Header'
 			>
 				<h1
 					className='text-center font-medium'
@@ -201,6 +207,7 @@ const CreateActionButton = () => {
 					className='absolute right-4 top-2'
 					title='Close create dialog'
 					aria-label='Close create dialog button'
+					aria-description='Closes actual dialog'
 				>
 					<MdClose
 						className='fill-neutral-400 text-xl'
@@ -208,12 +215,24 @@ const CreateActionButton = () => {
 					/>
 				</ActionIcon>
 			</header>
-			<Divider />
+			<Divider
+				aria-label='Divider'
+				aria-description='Divides header from main'
+			/>
 			<main
 				className='p-2 flex flex-col gap-2 items-center justify-center h-96'
+				aria-label='Dialog main container'
 			>
+				<div
+					className='relative flex text-8xl'
+				>
+					<LiaPhotoVideoSolid
+						title='Pictures and videos'
+						aria-label='Pictures and videos'
+					/>
+				</div>
 				<span
-					className='text-xl'
+					className='text-xl font-light'
 					title='Drag here pictures and videos'
 					aria-label='Drag here pictures and videos'
 				>
