@@ -15,6 +15,7 @@ const roboto = Roboto({
 		'latin'
 	],
 	weight: [
+		'300',
 		'400',
 		'500'
 	],
