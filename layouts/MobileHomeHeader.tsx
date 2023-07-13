@@ -20,21 +20,25 @@ import SearchInput from '@/components/SearchInput';
 
 
 //Main component content
-const Header = (): JSX.Element => {
+const MobileHomeHeader = (): JSX.Element => {
 	//Main component render
 	return (
 		<header
-			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200 h-14 flex items-center gap-2 p-2'
+			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200  p-2'
 		>
-			<HomeActionIcon />
-			<SearchInput />
-			<NotificationsActionIcon />
+			<div
+				className='h-9 flex items-center gap-2'
+			>
+				<HomeActionIcon />
+				<SearchInput />
+				<NotificationsActionIcon />
+			</div>
 		</header>
 	);
 };
 
 
-export default Header; //Export main component
+export default MobileHomeHeader; //Export main component
 
 
 

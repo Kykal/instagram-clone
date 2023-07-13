@@ -25,7 +25,7 @@ const roboto = Roboto({
 //Components
 import AsideBar from '@/layouts/AsideBar';
 import NavBar from '@/layouts/NavBar';
-import Header from '@/layouts/Header';
+import MobileHomeHeader from '@/layouts/MobileHomeHeader';
 
 
 //Typings
@@ -48,7 +48,7 @@ const Layout = (props: Layout): JSX.Element => {
 			<body
 				className={`${roboto.className} ${display}`}
 			>
-				<Header />
+				<MobileHomeHeader />
 				<NavBar />
 				<main
 					className='container mx-auto px-4 py-16 flex flex-col gap-4 items-center'
