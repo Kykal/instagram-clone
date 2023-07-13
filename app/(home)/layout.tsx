@@ -8,7 +8,7 @@ export const metadata: Metadata = sharedMetadata
 
 
 //Styles
-import './globals.css'
+import '../globals.css'
 import { Roboto } from 'next/font/google'
 const roboto = Roboto({
 	subsets: [
