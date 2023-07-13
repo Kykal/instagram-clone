@@ -4,7 +4,7 @@
 
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "./ui/ActionIconAnchor";
+import ActionIconAnchor from '@/components/UI/ActionIconAnchor';
 //Icons
 import {
 	BsHeart,
@@ -16,25 +16,29 @@ import {
 
 
 //Components
-import SearchInput from "./SearchInput";
+import SearchInput from '@/components/SearchInput';
 
 
 //Main component content
-const Header = (): JSX.Element => {
+const MobileHomeHeader = (): JSX.Element => {
 	//Main component render
 	return (
 		<header
-			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200 h-14 flex items-center gap-2 p-2'
+			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200  p-2'
 		>
-			<HomeActionIcon />
-			<SearchInput className='h-full' />
-			<NotificationsActionIcon />
+			<div
+				className='h-9 flex items-center gap-2'
+			>
+				<HomeActionIcon />
+				<SearchInput />
+				<NotificationsActionIcon />
+			</div>
 		</header>
 	);
 };
 
 
-export default Header; //Export main component
+export default MobileHomeHeader; //Export main component
 
 
 
@@ -43,8 +47,9 @@ const HomeActionIcon = () => {
 		<ActionIconAnchor
 			href='/'
 			disableActiveIcon
+			className='h-full'
 		>
-			<RiPolaroid2Line className='text-xl' />
+			<RiPolaroid2Line className='text-2xl' />
 		</ActionIconAnchor>
 	);
 }
@@ -55,6 +60,7 @@ const NotificationsActionIcon = () => {
 		<ActionIconAnchor
 			href='/notifications'
 			activeIcon={<BsHeartFill className='text-xl' />}
+			className='h-full'
 		>
 			<BsHeart className='text-xl' />
 		</ActionIconAnchor>

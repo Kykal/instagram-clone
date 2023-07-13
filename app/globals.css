@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+	.list-item {
+		@apply p-2 hover:bg-neutral-100 rounded-md gap-2 cursor-pointer flex items-center h-12;
+	}
+
+	.list-item a {
+		@apply flex items-center gap-2 h-full w-full;
+	}
+}

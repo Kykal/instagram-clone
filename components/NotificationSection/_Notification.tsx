@@ -1,41 +1,41 @@
 //NextJS
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 
 //Typings
 import {
-	NotificationPeople,
-	NotificationRelatedPost
+	People,
+	Post
 } from "@/typings/Notification";
-export type NotificationAnchor = {
+type Notification = {
 	type: 'liked' | 'mention';
-	people: NotificationPeople[];
-	relatedPost: NotificationRelatedPost;
+	people: People[];
+	post: Post;
 	timestamp: string;
 	comment?: JSX.Element;
 	totalPeople?: number;
 }
 type LeftMedia = {
-	people: NotificationPeople[];
+	people: People[];
 }
 type Content = {
 	type: 'liked' | 'mention';
-	people: NotificationPeople[];
+	people: People[];
 	timestamp: string;
 	totalPeople?: number;
 	comment?: JSX.Element;
 }
 type RightMedia = {
-	relatedPost: NotificationRelatedPost;
+	post: Post;
 }
 type PersonProfileAnchor = {
-	person: NotificationPeople;
+	person: People;
 }
 
 
 //Main component content
-const NotificationAnchor = (props: NotificationAnchor): JSX.Element => {
+const Notification = (props: Notification): JSX.Element => {
 	//Main component render
 	return (
 		<div
@@ -64,7 +64,7 @@ const NotificationAnchor = (props: NotificationAnchor): JSX.Element => {
 					/>
 				)}
 				<RightMedia
-					relatedPost={props.relatedPost}
+					post={props.post}
 				/>
 			</div>
 		</div>
@@ -72,7 +72,7 @@ const NotificationAnchor = (props: NotificationAnchor): JSX.Element => {
 };
 
 
-export default NotificationAnchor; //Export main component
+export default Notification; //Export main component
 
 
 
@@ -90,7 +90,7 @@ const LeftMedia = (props: LeftMedia) => {
 		return(
 			<Link
 				href={href}
-				className='block rounded-full overflow-hidden w-[50px] h-[50px]'
+				className='block rounded-full overflow-hidden min-w-[50px] w-[50px] h-[50px]'
 			>
 				<Image
 					src={person.imgUrl}
@@ -104,7 +104,7 @@ const LeftMedia = (props: LeftMedia) => {
 
 	return(
 		<div
-			className='relative w-[50px] h-[50px]'
+			className='relative min-w-[50px] w-[50px] h-[50px]'
 		>
 			<Image
 				src={props.people[0].imgUrl}
@@ -128,7 +128,7 @@ const LeftMedia = (props: LeftMedia) => {
 const LikedContent = (props: Content) => {
 	return(
 		<div
-			className='grow flex h-full items-start text-sm w-[219px]'
+			className='grow flex h-full items-start text-sm'
 		>
 			<p>
 				<PersonProfileAnchor person={props.people[0]} />, <PersonProfileAnchor person={props.people[1]} /> {props.totalPeople && <>and {props.totalPeople} others</>} liked your comment: {props.comment} <span className='text-neutral-400' >{props.timestamp}</span>
@@ -141,7 +141,7 @@ const LikedContent = (props: Content) => {
 const MentionContent = (props: Content) => {
 	return(
 		<div
-			className='grow flex h-full items-start text-sm w-[219px]'
+			className='grow flex h-full items-start'
 		>
 			<p>
 				<PersonProfileAnchor person={props.people[0]} /> mentioned you in a comment: {props.comment} <span className='text-neutral-400' >{props.timestamp}</span>
@@ -153,19 +153,19 @@ const MentionContent = (props: Content) => {
 
 const RightMedia = (props: RightMedia) => {
 
-	const href = `/p/${props.relatedPost.postId}`;
+	const href = `/p/${props.post.postId}`;
 	const size = 100;
 
 	return(
 		<div
-			className='w-[50px] h-full'
+			className='min-w-[50px] w-[50px] h-full'
 		>
 			<Link
 				href={href}
 				className='overflow-hidden h-[50px] w-[50px] flex items-center justify-center object-cover'
 			>
 				<Image
-					src={props.relatedPost.imgUrl}
+					src={props.post.imgUrl}
 					alt='Post'
 					width={size}
 					height={size}
