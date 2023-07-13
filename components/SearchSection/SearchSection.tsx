@@ -18,9 +18,7 @@ const SearchSection = (): JSX.Element => {
 				>
 					Search
 				</h1>
-				<SearchInput
-					className='h-10'
-				/>
+				<SearchInput />
 			</header>
 			<main
 				className='flex flex-col gap-4'
