@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 
 //MATERIAL DESIGN
 //Components
-import ActionIcon	from "../UI/ActionIcon";
+import IconButton	from "../UI/IconButton";
 import Divider		from "../UI/Divider";
 //Icons
 import {
@@ -50,7 +50,7 @@ const CreateDialog = ({ open, onClose }: CreateDialog): JSX.Element => {
 						>
 							Create new post
 						</h1>
-						<ActionIcon
+						<IconButton
 							onClick={onClose}
 							className='absolute right-4 top-2'
 							title='Close create dialog'
@@ -61,7 +61,7 @@ const CreateDialog = ({ open, onClose }: CreateDialog): JSX.Element => {
 								className='fill-neutral-400 text-xl'
 								aria-label='Close icon'
 							/>
-						</ActionIcon>
+						</IconButton>
 					</header>
 					<Divider
 						aria-label='Divider'

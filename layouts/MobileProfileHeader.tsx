@@ -1,6 +1,6 @@
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "@/components/UI/ActionIconAnchor";
+import NavLink from '@/components/UI/NavLink';
 //Icons
 import {
 	MdSettings,
@@ -26,29 +26,32 @@ const MobileProfileHeader = (props: MobileProfileHeader): JSX.Element => {
 			<div
 				className='h-9 flex items-center justify-between'
 			>
-				<ActionIconAnchor
+				<NavLink
 					href='/account/settings'
 					title='Settings'
 					aria-label='Settings'
-					disableActiveIcon
+
+					startIcon={<MdSettings className='text-2xl' />}
+
 					className='h-full'
 				>
-					<MdSettings className='text-2xl' />
-				</ActionIconAnchor>
+					Settings
+				</NavLink>
 				<h1
 					className='font-medium'
 				>
 					{props.username}
 				</h1>
-				<ActionIconAnchor
+				<NavLink
 					href='/explore/people'
 					title='Explore people'
 					aria-label='Explore people'
-					disableActiveIcon
 					className='h-full'
+
+					startIcon={<IoPersonAddOutline className='text-2xl' />}
 				>
-					<IoPersonAddOutline className='text-2xl' />
-				</ActionIconAnchor>
+					Explore people
+				</NavLink>
 			</div>
 		</header>
 	);

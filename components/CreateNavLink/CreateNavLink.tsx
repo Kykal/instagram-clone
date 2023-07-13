@@ -4,7 +4,7 @@ import useDisclosure from "@/hooks/useDisclosure";
 
 //MATERIAL DESIGN
 //Components
-import ActionIcon from "../UI/ActionIcon";
+import IconButton from "../UI/IconButton";
 //Icons
 import {
 	BsPlusSquare,
@@ -25,14 +25,16 @@ const CreateNavLink = () => {
 
 	return(
 		<>
-			<ActionIcon
+			<IconButton
 				className={`h-full border border-transparent`}
-				activeIcon={<BsPlusSquareFill className='text-2xl' />}
-				isActive={isOpen}
 				onClick={open}
 			>
-				<BsPlusSquare className='text-xl' />
-			</ActionIcon>
+				{isOpen ? (
+					<BsPlusSquareFill className='text-2xl' />
+				) : (
+					<BsPlusSquare className='text-xl' />
+				)}
+			</IconButton>
 			<CreateDialog
 				open={isOpen}
 				onClose={close}
