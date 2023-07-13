@@ -60,12 +60,11 @@ const MobileNavBar = (): JSX.Element => {
 				className='h-9 w-full flex items-center justify-evenly gap-2'
 			>
 				{navitems.map( (navitem, index) => (
-					<>
+					<li
+						key={`navitem-${index}`}
+						className='h-full'
+					>
 						{navitem.url ? (
-							<li
-								key={`navitem-${index}`}
-								className='h-full'
-							>
 								<ActionIconAnchor
 									href={navitem.url}
 									className='h-full'
@@ -73,21 +72,13 @@ const MobileNavBar = (): JSX.Element => {
 								>
 									{navitem.icon}
 								</ActionIconAnchor>
-							</li>
 						) : (
-							<li
-								className='h-full'
-							>
+							<>
 								{navitem.icon}
-							</li>
+							</>
 						)}
-					</>
+					</li>
 				) )}
-				<li
-					className=''
-				>
-					
-				</li>
 			</ul>
 		</nav>
 	);
