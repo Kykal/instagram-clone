@@ -5,11 +5,14 @@ import MobileHomeHeader from "@/layouts/MobileHomeHeader";
 const Page = (): JSX.Element => {
 	//Main component render
 	return (
-		<main
-			className=''
-		>
-			Home page
-		</main>
+		<>
+				<MobileHomeHeader />
+				<main
+					className='w-full pt-16'
+				>
+					Home page
+				</main>
+		</>
 	);
 };
 

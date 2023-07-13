@@ -45,7 +45,6 @@ const RootLayout = ({ children }: Layout): JSX.Element => {
 				className={`${roboto.className} flex`}
 			>
 				<NavBar />
-				<MobileHomeHeader />
 				{children}
 				<AsideBar />
 			</body>

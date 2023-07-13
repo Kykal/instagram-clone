@@ -2,9 +2,9 @@
 const Page = (): JSX.Element => {
 	//Main component render
 	return (
-		<>
-			Messages
-		</>
+		<div>
+			Direct inbox
+		</div>
 	);
 };
 
