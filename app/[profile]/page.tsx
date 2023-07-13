@@ -2,9 +2,11 @@
 const Page = (): JSX.Element => {
 	//Main component render
 	return (
-		<>
-			Profile
-		</>
+		<main
+			className='w-full pt-16'
+		>
+			Profile page
+		</main>
 	);
 };
 

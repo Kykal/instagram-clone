@@ -21,7 +21,7 @@ const MobileProfileHeader = (props: MobileProfileHeader): JSX.Element => {
 	//Main component render
 	return (
 		<header
-			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200  p-2'
+			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200 p-2 bg-white'
 		>
 			<div
 				className='h-9 flex items-center justify-between'

@@ -24,7 +24,7 @@ const MobileHomeHeader = (): JSX.Element => {
 	//Main component render
 	return (
 		<header
-			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200  p-2'
+			className='sm:hidden absolute top-0 left-0 w-full border-b border-neutral-200 bg-white p-2'
 		>
 			<div
 				className='h-9 flex items-center gap-2'

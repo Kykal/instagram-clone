@@ -3,7 +3,7 @@ const Page = (): JSX.Element => {
 	//Main component render
 	return (
 		<div>
-			Direct inbox
+			Explore people
 		</div>
 	);
 };
