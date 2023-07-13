@@ -25,6 +25,7 @@ const roboto = Roboto({
 //Layouts
 import AsideBar from '@/layouts/AsideBar';
 import NavBar from '@/layouts/NavBar';
+import MobileHomeHeader from '@/layouts/MobileHomeHeader';
 
 
 //Typings
@@ -34,25 +35,18 @@ type Layout = {
 
 
 //Main component content
-const Layout = (props: Layout): JSX.Element => {
-
-	const display = 'flex';
-
-
+const RootLayout = ({ children }: Layout): JSX.Element => {
 	//Main component render
 	return (
 		<html
 			lang='en'
 		>
 			<body
-				className={`${roboto.className} ${display}`}
+				className={`${roboto.className} flex`}
 			>
 				<NavBar />
-				<main
-					className='container mx-auto px-4 py-16 flex flex-col gap-4 items-center'
-				>
-					{props.children}
-				</main>
+				<MobileHomeHeader />
+				{children}
 				<AsideBar />
 			</body>
 		</html>
@@ -60,4 +54,4 @@ const Layout = (props: Layout): JSX.Element => {
 };
 
 
-export default Layout; //Export main component
+export default RootLayout; //Export main component
