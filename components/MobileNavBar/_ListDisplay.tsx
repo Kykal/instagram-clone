@@ -1,14 +1,4 @@
-//NextJS
-import Image from "next/image";
-
-
-//Constants
-import { profilePictureUrl } from "@/constants";
-
-
 //MATERIAL DESIGN
-//Components
-import ActionIconAnchor from "../UI/ActionIconAnchor";
 //Icons
 import {
 	BsCompass,
@@ -29,6 +19,7 @@ import {
 //Components
 import CreateNavLink from "../CreateNavLink";
 import NavItem from "./_NavItem";
+import ProfileNavItem from "./_ProfileNavItem";
 
 
 //Typing
@@ -76,23 +67,7 @@ const ListDisplay = (): JSX.Element => {
 					{...navItem}
 				/>
 			) )}
-			<li
-				className='h-full'
-			>
-				<ActionIconAnchor
-					href='/kykal'
-					className='h-full'
-					disableActiveIcon
-				>
-					<Image
-						src={profilePictureUrl}
-						alt='Profile picture'
-						width={100}
-						height={100}
-						className='h-full rounded-full'
-					/>
-				</ActionIconAnchor>
-			</li>
+			<ProfileNavItem />
 		</ul>
 	);
 };
