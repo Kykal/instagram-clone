@@ -8,7 +8,7 @@ export const metadata: Metadata = sharedMetadata
 
 
 //Styles
-import '../../globals.css'
+import './globals.css'
 import { Roboto } from 'next/font/google'
 const roboto = Roboto({
 	subsets: [
@@ -22,18 +22,14 @@ const roboto = Roboto({
 });
 
 
-//Components
+//Layouts
 import AsideBar from '@/layouts/AsideBar';
 import NavBar from '@/layouts/NavBar';
-import MobileProfileHeader from '@/layouts/MobileProfileHeader';
 
 
 //Typings
 type Layout = {
 	children: JSX.Element;
-	params: {
-		profile: string;
-	};
 }
 
 
@@ -41,6 +37,7 @@ type Layout = {
 const Layout = (props: Layout): JSX.Element => {
 
 	const display = 'flex';
+
 
 	//Main component render
 	return (
@@ -50,9 +47,6 @@ const Layout = (props: Layout): JSX.Element => {
 			<body
 				className={`${roboto.className} ${display}`}
 			>
-				<MobileProfileHeader
-					username={props.params.profile}
-				/>
 				<NavBar />
 				<main
 					className='container mx-auto px-4 py-16 flex flex-col gap-4 items-center'
