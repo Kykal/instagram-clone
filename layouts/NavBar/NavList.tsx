@@ -40,7 +40,7 @@ const NavList = (): JSX.Element => {
 					/>
 				</li>
 				<li
-					className='navigation-list___item'
+					className='hidden md:block navigation-list___item'
 				>
 					<SearchButton
 						isActive={Boolean(activeSection)}
