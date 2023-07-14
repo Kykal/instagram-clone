@@ -1,14 +1,8 @@
-//NextJS
-import { usePathname } from "next/navigation";
-
-
 //Configuration
 import Routes from "@/configuration/routes";
 
 
 //MATERIAL DESIGN
-//Components
-import NavLink from "./UI/NavLink";
 //Icons
 import {
 	GoHome,
@@ -16,39 +10,28 @@ import {
 } from 'react-icons/go';
 
 
+//Components
+import DynamicNavLink from "./DynamicNavLink";
+
+
 //Typings
 type HomeNavLink = {
-	isSectionActive?: boolean;
+	isSectionActive: boolean;
 }
 
 
 //Main component content
 const HomeNavLink = ({isSectionActive}: HomeNavLink): JSX.Element => {
-
-
-	//NextJS
-	const pathname = usePathname();
-
-	const isActive = pathname === Routes.HOME;
-
-	const icon = isActive
-		? <GoHomeFill className='text-2xl' />
-		: <GoHome className='text-2xl' />;
-
-
 	//Main component render
 	return (
-		<NavLink
-			href={Routes.HOME}
+		<DynamicNavLink
+			url={Routes.HOME}
+			label='Home'
 
-			icon={icon}
+			icon={<GoHome className='text-2xl' />}
+			activeIcon={<GoHomeFill className='text-2xl' />}
 			isSectionActive={isSectionActive}
-
-			className={`nav-item`}
-			data-is-active={isActive}
-		>
-			Home
-		</NavLink>
+		/>
 	);
 };
 
