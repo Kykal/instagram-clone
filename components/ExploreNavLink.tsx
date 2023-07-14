@@ -4,12 +4,13 @@ import { usePathname } from 'next/navigation';
 
 
 //MATERIAL DESIGN
+//Components
+import NavLink from './UI/NavLink';
 //Icon
 import {
 	BsCompass,
 	BsCompassFill,
 } from 'react-icons/bs';
-import NavLink from './UI/NavLink';
 
 
 //Typings
@@ -28,7 +29,7 @@ const ExploreNavLink = ({isSectionActive}: ExploreNavLink): JSX.Element => {
 
 	const icon = isActive ? <BsCompassFill className='text-2xl' /> : <BsCompass className='text-2xl' />;
 
-	
+
 	//Main component render
 	return (
 		<NavLink
