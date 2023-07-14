@@ -3,16 +3,18 @@
 
 
 //Components
-import MobileNavBar from "@/components/MobileNavBar/MobileNavBar";
+import NavList from "./NavList";
 
 
 //Main component content
 const NavBar = (): JSX.Element => {
 	//Main component render
 	return (
-		<>
-			<MobileNavBar />
-		</>
+		<nav
+			className='main-navigation'
+		>
+			<NavList />
+		</nav>
 	);
 };
 

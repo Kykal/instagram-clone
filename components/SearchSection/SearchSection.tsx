@@ -1,3 +1,7 @@
+//React
+import { createPortal } from "react-dom";
+
+
 //Components
 import SearchInput from "../SearchInput";
 import History from "./_History";
@@ -7,39 +11,44 @@ import History from "./_History";
 const SearchSection = (): JSX.Element => {
 	//Main component render
 	return (
-		<section
-			className='hidden absolute left-20 sm:flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
-		>
-			<header
-				className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200'
-			>
-				<h1
-					className='font-bold text-2xl'
+		<>
+			{typeof window !== "undefined" && createPortal(
+				<section
+					className='hidden absolute left-[73px] sm:flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
 				>
-					Search
-				</h1>
-				<SearchInput />
-			</header>
-			<main
-				className='flex flex-col gap-4'
-			>
-				<div
-					className='flex justify-between items-center px-6 pt-6'
-				>
-					<span
-						className='text-md font-semibold'
+					<header
+						className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200'
 					>
-						Recent
-					</span>
-					<button
-						className='font-bold text-cyan-500 hover:text-black text-sm'
+						<h1
+							className='font-bold text-2xl'
+						>
+							Search
+						</h1>
+						<SearchInput />
+					</header>
+					<main
+						className='flex flex-col gap-4'
 					>
-						Clear all
-					</button>
-				</div>
-				<History />
-			</main>
-		</section>
+						<div
+							className='flex justify-between items-center px-6 pt-6'
+						>
+							<span
+								className='text-md font-semibold'
+							>
+								Recent
+							</span>
+							<button
+								className='font-bold text-cyan-500 hover:text-black text-sm'
+							>
+								Clear all
+							</button>
+						</div>
+						<History />
+					</main>
+				</section>,
+				document.body,
+			)}
+		</>
 	);
 };
 

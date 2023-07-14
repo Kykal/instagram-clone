@@ -5,11 +5,69 @@
 
 
 @layer components {
+	* {
+		@apply box-border;
+	}
+	
 	.list-item {
-		@apply p-2 hover:bg-neutral-100 rounded-md gap-2 cursor-pointer flex items-center h-12;
+		@apply
+			p-2 hover:bg-neutral-100 rounded-md gap-2 cursor-pointer flex items-center justify-center;
 	}
 
-	.list-item a {
-		@apply flex items-center gap-2 h-full w-full;
+	.icon-button {
+		@apply
+			flex items-center justify-center
+			hover:bg-neutral-100
+			rounded-md
+			cursor-pointer
+			aspect-square
+		;
+	}
+
+	.main-navigation {
+		@apply
+			bg-white 
+			border-t border-neutral-200
+			md:p-3
+			absolute bottom-0 left-0 right-0 md:static
+			w-full md:w-auto
+			md:border-r md:h-screen
+		;
+	}
+
+	.main-navigation .navigation-list {
+		@apply
+			h-12 md:h-auto
+			flex md:flex-col
+			justify-evenly md:justify-center xl:justify-start
+			md:gap-2
+		;
+	}
+
+	.navigation-list___item {
+		@apply
+			md:w-full
+			aspect-square xl:aspect-auto
+		;
+	}
+
+	.nav-item {
+		@apply
+			bg-white hover:bg-neutral-100
+			flex items-center justify-center xl:justify-start
+			h-full md:h-auto xl:h-12
+			aspect-square xl:aspect-auto
+			rounded-md
+			xl:px-3
+			xl:py-2.5
+			md:gap-2
+			data-[is-active=true]:font-medium
+		;
+	}
+
+	.nav-item__label {
+		@apply
+			hidden xl:block
+		;
 	}
 }

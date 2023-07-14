@@ -1,6 +1,9 @@
+//Configuration
+import Routes from '@/configuration/routes';
+
 //MATERIAL DESIGN
 //Components
-import ActionIconAnchor from "@/components/UI/ActionIconAnchor";
+import NavLink from '@/components/UI/NavLink';
 //Icons
 import {
 	MdSettings,
@@ -26,29 +29,28 @@ const MobileProfileHeader = (props: MobileProfileHeader): JSX.Element => {
 			<div
 				className='h-9 flex items-center justify-between'
 			>
-				<ActionIconAnchor
-					href='/account/settings'
+				<NavLink
+					href={Routes.ACCOUNT_SETTINGS}
 					title='Settings'
 					aria-label='Settings'
-					disableActiveIcon
+
+					icon={<MdSettings className='text-2xl' />}
+
 					className='h-full'
-				>
-					<MdSettings className='text-2xl' />
-				</ActionIconAnchor>
+				/>
 				<h1
 					className='font-medium'
 				>
 					{props.username}
 				</h1>
-				<ActionIconAnchor
-					href='/explore/people'
+				<NavLink
+					href={Routes.EXPLORE_PEOPLE}
 					title='Explore people'
 					aria-label='Explore people'
-					disableActiveIcon
 					className='h-full'
-				>
-					<IoPersonAddOutline className='text-2xl' />
-				</ActionIconAnchor>
+
+					icon={<IoPersonAddOutline className='text-2xl' />}
+				/>
 			</div>
 		</header>
 	);
