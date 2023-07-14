@@ -47,7 +47,7 @@
 		;
 	}
 
-	.nav-item span {
+	.nav-item__label {
 		@apply
 			hidden xl:block
 		;

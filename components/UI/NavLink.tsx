@@ -35,7 +35,9 @@ const NavLink = (props: NavLink): JSX.Element => {
 			{...propsAttributes}
 		>
 			{icon}
-			<span>
+			<span
+				className='nav-item__label'
+			>
 				{children}
 			</span>
 		</Link>
