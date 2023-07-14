@@ -44,7 +44,7 @@
 		;
 	}
 
-	.navigation-list___item {
+	.navigation-list__item {
 		@apply
 			md:w-full
 			aspect-square xl:aspect-auto
