@@ -14,6 +14,8 @@ import { HTMLAttributes } from "react";
 type NavLink = HTMLAttributes<HTMLAnchorElement> & {
 	href: Routes;
 	icon: JSX.Element;
+
+	isSectionActive?: boolean;
 	
 	children?: string;
 }
@@ -22,7 +24,7 @@ type NavLink = HTMLAttributes<HTMLAnchorElement> & {
 //Main component content
 const NavLink = (props: NavLink): JSX.Element => {
 
-	const { href, children, className, icon, ...propsAttributes } = props;
+	const { href, children, className, icon, isSectionActive, ...propsAttributes } = props;
 
 
 	//Main component render
@@ -30,13 +32,14 @@ const NavLink = (props: NavLink): JSX.Element => {
 		<Link
 			href={href}
 
-			className='nav-item'
+			className='nav-item group'
+			data-section-active={isSectionActive}
 
 			{...propsAttributes}
 		>
 			{icon}
 			<span
-				className='nav-item__label'
+				className='nav-item__label group-data-[section-active=true]:hidden'
 			>
 				{children}
 			</span>

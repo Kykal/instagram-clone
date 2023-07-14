@@ -29,12 +29,14 @@ const SearchButton = (props: SearchButton): JSX.Element => {
 	//Main component render
 	return (
 		<button
-			className='nav-item w-full'
+			className='nav-item group w-full'
 			onClick={activeSearchSectionHandler}
+
+			data-section-active={isActive}
 		>
 			{icon}
 			<span
-				className='nav-item__label'
+				className='nav-item__label group-data-[section-active=true]:hidden'
 			>
 				Search
 			</span>

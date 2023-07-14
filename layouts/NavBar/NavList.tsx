@@ -25,19 +25,22 @@ const NavList = (): JSX.Element => {
 		setActiveSection(newSection);
 	};
 
+	
 	//Main component render
 	return (
 		<>
 			<ul
-				className='h-12 md:h-auto flex md:flex-col justify-evenly md:justify-center xl:justify-start md:w-12'
+				className={`navigation-list ${Boolean(activeSection) ? 'w-12' : 'md:w-12 xl:w-56'}`}
 			>
 				<li
-					className='md:w-full aspect-square'
+					className='navigation-list___item'
 				>
-					<HomeAnchorNavLink />
+					<HomeAnchorNavLink
+						isSectionActive={Boolean(activeSection)}
+					/>
 				</li>
 				<li
-					className='md:w-full aspect-square'
+					className='navigation-list___item'
 				>
 					<SearchButton
 						isActive={Boolean(activeSection)}

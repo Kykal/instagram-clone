@@ -16,8 +16,14 @@ import {
 } from 'react-icons/go';
 
 
+//Typings
+type HomeAnchorNavLink = {
+	isSectionActive?: boolean;
+}
+
+
 //Main component content
-const HomeAnchorNavLink = (): JSX.Element => {
+const HomeAnchorNavLink = ({isSectionActive}: HomeAnchorNavLink): JSX.Element => {
 
 
 	//NextJS
@@ -36,8 +42,9 @@ const HomeAnchorNavLink = (): JSX.Element => {
 			href={Routes.HOME}
 
 			icon={icon}
+			isSectionActive={isSectionActive}
 
-			className='nav-item'
+			className={`nav-item`}
 			data-is-active={isActive}
 		>
 			Home

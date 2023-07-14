@@ -31,14 +31,31 @@
 		;
 	}
 
+	.main-navigation .navigation-list {
+		@apply
+			h-12 md:h-auto
+			flex md:flex-col
+			justify-evenly md:justify-center xl:justify-start
+			md:gap-2
+		;
+	}
+
+	.navigation-list___item {
+		@apply
+			md:w-full
+			aspect-square xl:aspect-auto
+		;
+	}
+
 	.nav-item {
 		@apply
 			bg-white hover:bg-neutral-100
 			flex items-center justify-center xl:justify-start
-			h-full md:h-auto
+			h-full md:h-auto xl:h-12
 			aspect-square xl:aspect-auto
 			rounded-md
-			xl:pl-3
+			xl:px-3
+			xl:py-2.5
 			md:gap-2
 			data-[is-active=true]:font-medium
 		;
