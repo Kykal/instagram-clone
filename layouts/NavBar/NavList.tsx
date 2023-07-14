@@ -1,5 +1,9 @@
+//NextJS
+import { usePathname } from "next/navigation";
+
+
 //React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 //Components
@@ -11,6 +15,10 @@ import ExploreNavLink from "@/components/ExploreNavLink";
 
 //Main component content
 const NavList = (): JSX.Element => {
+
+	//NextJS
+	const pathname = usePathname();
+
 
 	//React
 	const [ activeSection, setActiveSection ] = useState<string>('');
@@ -26,6 +34,11 @@ const NavList = (): JSX.Element => {
 		setActiveSection(newSection);
 	};
 
+
+	useEffect( () => {
+		setActiveSection('');
+	}, [pathname] );
+	
 	
 	//Main component render
 	return (
