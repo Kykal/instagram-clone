@@ -2,7 +2,6 @@
 //Icons
 import {
 	BsCompass,
-	BsCompassFill,
 } from 'react-icons/bs';
 
 //Typings
@@ -18,23 +17,21 @@ const SearchButton = (props: SearchButton): JSX.Element => {
 	const { isActive, onClick } = props;
 
 
-	const icon = isActive ? <BsCompassFill className='text-2xl' />: <BsCompass className='text-2xl' />
-
-
 	//Handlers
 	const activeSearchSectionHandler = () => {
 		onClick('search');
 	};
 
+
 	//Main component render
 	return (
 		<button
-			className='nav-item group w-full'
+			className='nav-item group xl:pl-[11px] w-full border border-transparent data-[section-active=true]:border-neutral-200'
 			onClick={activeSearchSectionHandler}
 
 			data-section-active={isActive}
 		>
-			{icon}
+			<BsCompass className='text-2xl min-w-[24px]' />
 			<span
 				className='nav-item__label group-data-[section-active=true]:hidden'
 			>

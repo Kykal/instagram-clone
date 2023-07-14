@@ -30,7 +30,7 @@ const NavList = (): JSX.Element => {
 	return (
 		<>
 			<ul
-				className={`navigation-list ${Boolean(activeSection) ? 'w-12' : 'md:w-12 xl:w-56'}`}
+				className={`navigation-list ${Boolean(activeSection) ? 'w-12' : 'md:w-12 xl:w-80'}`}
 			>
 				<li
 					className='navigation-list___item'
