@@ -8,6 +8,7 @@ import {
 import {
 	IoPersonAddOutline
 } from 'react-icons/io5';
+import Routes from '@/configuration/routes';
 
 
 //Typings
@@ -27,31 +28,27 @@ const MobileProfileHeader = (props: MobileProfileHeader): JSX.Element => {
 				className='h-9 flex items-center justify-between'
 			>
 				<NavLink
-					href='/account/settings'
+					href={Routes.ACCOUNT_SETTINGS}
 					title='Settings'
 					aria-label='Settings'
 
-					startIcon={<MdSettings className='text-2xl' />}
+					icon={<MdSettings className='text-2xl' />}
 
 					className='h-full'
-				>
-					Settings
-				</NavLink>
+				/>
 				<h1
 					className='font-medium'
 				>
 					{props.username}
 				</h1>
 				<NavLink
-					href='/explore/people'
+					href={Routes.EXPLORE_PEOPLE}
 					title='Explore people'
 					aria-label='Explore people'
 					className='h-full'
 
-					startIcon={<IoPersonAddOutline className='text-2xl' />}
-				>
-					Explore people
-				</NavLink>
+					icon={<IoPersonAddOutline className='text-2xl' />}
+				/>
 			</div>
 		</header>
 	);
