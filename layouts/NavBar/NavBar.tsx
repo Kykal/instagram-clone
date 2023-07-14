@@ -3,7 +3,7 @@
 
 
 //Components
-import HomeAnchorNavLink from "@/components/HomeAnchorNavLink";
+import NavList from "./NavList";
 
 
 //Main component content
@@ -13,15 +13,7 @@ const NavBar = (): JSX.Element => {
 		<nav
 			className='main-navigation'
 		>
-			<ul
-				className='h-12 md:h-auto flex md:flex-col justify-evenly md:justify-center xl:justify-start md:p-2'
-			>
-				<li
-					className='md:w-12 xl:w-full'
-				>
-					<HomeAnchorNavLink />
-				</li>
-			</ul>
+			<NavList />
 		</nav>
 	);
 };

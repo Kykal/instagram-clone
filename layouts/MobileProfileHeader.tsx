@@ -1,3 +1,6 @@
+//Configuration
+import Routes from '@/configuration/routes';
+
 //MATERIAL DESIGN
 //Components
 import NavLink from '@/components/UI/NavLink';
@@ -8,7 +11,6 @@ import {
 import {
 	IoPersonAddOutline
 } from 'react-icons/io5';
-import Routes from '@/configuration/routes';
 
 
 //Typings
