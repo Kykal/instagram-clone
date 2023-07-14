@@ -3,9 +3,10 @@ import { useState } from "react";
 
 
 //Components
-import HomeAnchorNavLink from "@/components/HomeAnchorNavLink";
+import HomeNavLink from "@/components/HomeNavLink";
 import SearchButton from "@/components/SearchButton";
 import SearchSection from "@/components/SearchSection";
+import ExploreNavLink from "@/components/ExploreNavLink";
 
 
 //Main component content
@@ -35,7 +36,7 @@ const NavList = (): JSX.Element => {
 				<li
 					className='navigation-list___item'
 				>
-					<HomeAnchorNavLink
+					<HomeNavLink
 						isSectionActive={Boolean(activeSection)}
 					/>
 				</li>
@@ -45,6 +46,13 @@ const NavList = (): JSX.Element => {
 					<SearchButton
 						isActive={Boolean(activeSection)}
 						onClick={activeSearchSectionHandler}
+					/>
+				</li>
+				<li
+					className='hidden md:block navigation-list__item'
+				>
+					<ExploreNavLink
+						isSectionActive={Boolean(activeSection)}
 					/>
 				</li>
 			</ul>

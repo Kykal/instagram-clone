@@ -17,13 +17,13 @@ import {
 
 
 //Typings
-type HomeAnchorNavLink = {
+type HomeNavLink = {
 	isSectionActive?: boolean;
 }
 
 
 //Main component content
-const HomeAnchorNavLink = ({isSectionActive}: HomeAnchorNavLink): JSX.Element => {
+const HomeNavLink = ({isSectionActive}: HomeNavLink): JSX.Element => {
 
 
 	//NextJS
@@ -53,4 +53,4 @@ const HomeAnchorNavLink = ({isSectionActive}: HomeAnchorNavLink): JSX.Element =>
 };
 
 
-export default HomeAnchorNavLink; //Export main component
+export default HomeNavLink; //Export main component
