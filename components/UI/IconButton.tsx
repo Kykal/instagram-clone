@@ -17,7 +17,7 @@ const IconButton = (props: IconButton): JSX.Element => {
 	const { className, onClick, children, ...componentProps } = props;
 
 	
-	const baseClassName = 'peer action-icon';
+	const baseClassName = 'peer icon-button';
 
 	const _className = className
 		? `${props.className} ${baseClassName}`

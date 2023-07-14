@@ -2,41 +2,40 @@
 import Link from "next/link";
 
 
+//Configuration
+import Routes from "@/configuration/routes";
+
+
 //React
 import { HTMLAttributes } from "react";
 
 
 //Typings
 type NavLink = HTMLAttributes<HTMLAnchorElement> & {
-	children: string;
-	href: string;
-
-	startIcon?: JSX.Element;
+	href: Routes;
+	icon: JSX.Element;
+	
+	children?: string;
 }
 
 
 //Main component content
 const NavLink = (props: NavLink): JSX.Element => {
 
-	const { href, children, startIcon, className, ...propsAttributes } = props;
-
-
-	const _className = className
-		? `${className} action-icon`
-		: 'action-icon';
+	const { href, children, className, icon, ...propsAttributes } = props;
 
 
 	//Main component render
 	return (
 		<Link
-			href={props.href}
-			className={_className}
+			href={href}
+
+			className='nav-item'
+
 			{...propsAttributes}
 		>
-			{startIcon}
-			<span
-				className='hidden md:block'
-			>
+			{icon}
+			<span>
 				{children}
 			</span>
 		</Link>
