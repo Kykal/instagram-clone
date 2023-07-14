@@ -1,8 +1,9 @@
 //MATERIAL DESIGN
 //Icons
 import {
-	BsCompass,
+	BsSearch,
 } from 'react-icons/bs';
+
 
 //Typings
 type SearchButton = {
@@ -31,7 +32,7 @@ const SearchButton = (props: SearchButton): JSX.Element => {
 
 			data-section-active={isActive}
 		>
-			<BsCompass className='text-2xl min-w-[24px]' />
+			<BsSearch className='text-2xl min-w-[24px]' />
 			<span
 				className='nav-item__label group-data-[section-active=true]:hidden'
 			>
