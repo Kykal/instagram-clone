@@ -13,6 +13,8 @@ import SearchSection from "@/components/SearchSection";
 import ExploreNavLink from "@/components/ExploreNavLink";
 import ReelsNavLink from "@/components/ReelsNavLink";
 import CreateNavButton from "@/components/CreateNavButton";
+import MessagesNavLink from "@/components/MessagesNavLink";
+import Routes from "@/configuration/routes";
 
 
 //Main component content
@@ -38,10 +40,15 @@ const NavList = (): JSX.Element => {
 
 
 	useEffect( () => {
+		if( pathname === Routes.MESSAGES ){
+			setActiveSection('messages');
+			return;
+		}
+
 		setActiveSection('');
 	}, [pathname] );
 	
-	
+
 	//Main component render
 	return (
 		<>
@@ -74,6 +81,13 @@ const NavList = (): JSX.Element => {
 					className='navigation-list__item'
 				>
 					<ReelsNavLink
+						isSectionActive={Boolean(activeSection)}
+					/>
+				</li>
+				<li
+					className='navigation-list__item'
+				>
+					<MessagesNavLink
 						isSectionActive={Boolean(activeSection)}
 					/>
 				</li>
