@@ -13,7 +13,7 @@ import {
 
 //Components
 import NavButton from "./NavButton";
-import CreateDialog from "./CreateDialog";
+import CreateDialog from "./CreateDialog/CreateDialog";
 
 
 //Typings
@@ -38,7 +38,6 @@ const CreateNavButton = (props: CreateNavButton): JSX.Element => {
 			<NavButton
 				icon={icon}
 				onClick={open}
-
 
 				data-section-active={props.isSectionActive}
 				data-is-active={isOpen}
