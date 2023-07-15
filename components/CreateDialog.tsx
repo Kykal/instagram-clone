@@ -4,8 +4,8 @@ import { createPortal } from "react-dom";
 
 //MATERIAL DESIGN
 //Components
-import IconButton	from "../UI/IconButton";
-import Divider		from "../UI/Divider";
+import IconButton	from "./UI/IconButton";
+import Divider		from "./UI/Divider";
 //Icons
 import {
 	MdClose,

@@ -12,6 +12,8 @@ import SearchButton from "@/components/SearchButton";
 import SearchSection from "@/components/SearchSection";
 import ExploreNavLink from "@/components/ExploreNavLink";
 import ReelsNavLink from "@/components/ReelsNavLink";
+import CreateNavLink from "@/components/CreateNavLink";
+import CreateNavButton from "@/components/CreateNavButton";
 
 
 //Main component content
@@ -75,6 +77,11 @@ const NavList = (): JSX.Element => {
 					<ReelsNavLink
 						isSectionActive={Boolean(activeSection)}
 					/>
+				</li>
+				<li
+					className='navigation-list__item'
+				>
+					<CreateNavButton />
 				</li>
 			</ul>
 			{activeSection === 'search' && (

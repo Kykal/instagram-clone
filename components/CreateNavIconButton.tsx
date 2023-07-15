@@ -4,7 +4,7 @@ import useDisclosure from "@/hooks/useDisclosure";
 
 //MATERIAL DESIGN
 //Components
-import IconButton from "../UI/IconButton";
+import IconButton from "./UI/IconButton";
 //Icons
 import {
 	BsPlusSquare,
@@ -13,15 +13,14 @@ import {
 
 
 //Components
-import CreateDialog from "./_CreateDialog";
+import CreateDialog from "./CreateDialog";
 
 
 //Main component content
-const CreateNavLink = () => {
+const CreateNavIconButton = () => {
 
 	//React
 	const [ isOpen, {open, close} ] = useDisclosure();
-
 
 	return(
 		<>
@@ -44,4 +43,4 @@ const CreateNavLink = () => {
 }
 
 
-export default CreateNavLink; //Export main component
+export default CreateNavIconButton; //Export main component
