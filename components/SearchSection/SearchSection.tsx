@@ -14,7 +14,7 @@ const SearchSection = (): JSX.Element => {
 		<>
 			{typeof window !== "undefined" && createPortal(
 				<section
-					className='hidden absolute left-[73px] sm:flex flex-col h-screen top-0 border-r border-neutral-200 rounded-r-md w-96 bg-white'
+					className='navbar-section'
 				>
 					<header
 						className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200'
