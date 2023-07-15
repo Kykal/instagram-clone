@@ -18,7 +18,7 @@ import CreateDialog from "./CreateDialog/CreateDialog";
 
 //Typings
 type CreateNavButton = {
-	isSectionActive: boolean;
+	activeSection: string;
 }
 
 
@@ -28,8 +28,9 @@ const CreateNavButton = (props: CreateNavButton): JSX.Element => {
 	//React
 	const [ isOpen, { open, close } ] = useDisclosure();
 
+	const buttonStyles = 'text-2xl aspect-square min-h-[24px] min-w-[24px]';
 
-	const icon = isOpen ? <BsPlusSquareFill className='text-2xl' /> : <BsPlusSquare className='text-2xl' />;
+	const icon = isOpen ? <BsPlusSquareFill className={buttonStyles} /> : <BsPlusSquare className={buttonStyles} />;
 
 
 	//Main component render
@@ -39,8 +40,7 @@ const CreateNavButton = (props: CreateNavButton): JSX.Element => {
 				icon={icon}
 				onClick={open}
 
-				data-section-active={props.isSectionActive}
-				data-is-active={isOpen}
+				activeSection={props.activeSection}
 			>
 				Create
 			</NavButton>

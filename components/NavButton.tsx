@@ -8,28 +8,35 @@ type NavButton = HTMLAttributes<HTMLButtonElement> & {
 
 	icon: JSX.Element;
 	onClick: () => void;
+	activeSection: string;
 }
 
 
 //Main component content
 const NavButton = (props: NavButton): JSX.Element => {
 
-	const { children, icon, onClick, ...propsAttributes } = props;
+	const { children, icon, onClick, activeSection, ...propsAttributes } = props;
+
+
+	const isThisActive = activeSection === 'create';
+
 
 	//Main component render
 	return (
 		<button
-			className='nav-item group xl:pl-[11px] w-full border border-transparent data-[section-active=true]:border-neutral-200'
+			className={`nav-item xl:pl-[11px] w-full border ${isThisActive ? 'border-neutral-200' : 'border-transparent'}`}
 			onClick={onClick}
 
 			{...propsAttributes}
 		>
 			{icon}
-			<span
-				className='nav-item__label group-data-[section-active=true]:hidden'
-			>
-				{children}
-			</span>
+			{!Boolean(activeSection) && (
+				<span
+					className='nav-item__label'
+				>
+					{children}
+				</span>
+			)}
 		</button>
 	);
 };

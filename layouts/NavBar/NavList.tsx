@@ -59,7 +59,7 @@ const NavList = (): JSX.Element => {
 					className='hidden md:block navigation-list__item'
 				>
 					<SearchButton
-						isActive={Boolean(activeSection)}
+						activeSection={activeSection}
 						onClick={activeSearchSectionHandler}
 					/>
 				</li>
@@ -81,7 +81,7 @@ const NavList = (): JSX.Element => {
 					className='navigation-list__item'
 				>
 					<CreateNavButton
-						isSectionActive={Boolean(activeSection)}
+						activeSection={activeSection}
 					/>
 				</li>
 			</ul>
