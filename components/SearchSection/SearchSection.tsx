@@ -2,6 +2,10 @@
 import { createPortal } from "react-dom";
 
 
+//Layouts
+import NavBarSection from "@/layouts/NavBarSection";
+
+
 //Components
 import SearchInput from "../SearchInput";
 import History from "./_History";
@@ -13,9 +17,7 @@ const SearchSection = (): JSX.Element => {
 	return (
 		<>
 			{typeof window !== "undefined" && createPortal(
-				<section
-					className='navbar-section'
-				>
+				<NavBarSection>
 					<header
 						className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200'
 					>
@@ -45,7 +47,7 @@ const SearchSection = (): JSX.Element => {
 						</div>
 						<History />
 					</main>
-				</section>,
+				</NavBarSection>,
 				document.body,
 			)}
 		</>
