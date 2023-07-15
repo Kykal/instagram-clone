@@ -7,15 +7,15 @@ import {
 
 //Typings
 type SearchButton = {
-	isActive: boolean;
 	onClick: (newSection: string) => void;
+	activeSection: string;
 }
 
 
 //Main component content
 const SearchButton = (props: SearchButton): JSX.Element => {
 
-	const { isActive, onClick } = props;
+	const { activeSection, onClick } = props;
 
 
 	//Handlers
@@ -24,20 +24,25 @@ const SearchButton = (props: SearchButton): JSX.Element => {
 	};
 
 
+	const isSearchSectionActive = activeSection === 'search';
+
+	
 	//Main component render
 	return (
 		<button
-			className='nav-item group xl:pl-[11px] w-full border border-transparent data-[section-active=true]:border-neutral-200'
+			className={`nav-item xl:pl-[11px] w-full border ${isSearchSectionActive ? 'border-neutral-200' : 'border-transparent'}`}
 			onClick={activeSearchSectionHandler}
 
-			data-section-active={isActive}
+			data-section-active={Boolean(activeSection)}
 		>
 			<BsSearch className='text-2xl min-w-[24px]' />
-			<span
-				className='nav-item__label group-data-[section-active=true]:hidden'
-			>
-				Search
-			</span>
+			{!Boolean(activeSection) && (
+				<span
+					className='nav-item__label'
+				>
+					Search
+				</span>
+			)}
 		</button>
 	);
 };
