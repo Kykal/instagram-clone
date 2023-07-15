@@ -53,7 +53,7 @@ const NavList = (): JSX.Element => {
 	return (
 		<>
 			<ul
-				className={`navigation-list ${Boolean(activeSection) ? 'w-12' : 'md:w-12 xl:w-80'}`}
+				className={`navigation-list ${Boolean(activeSection) ? 'md:w-12' : 'md:w-12 xl:w-80'}`}
 			>
 				<li
 					className='navigation-list__item'

@@ -70,4 +70,16 @@
 			hidden xl:block
 		;
 	}
+
+	.navbar-section {
+		@apply
+			hidden md:flex flex-col
+			absolute left-[73px] top-0
+			h-screen
+			border-r border-neutral-200
+			rounded-r-md
+			w-96
+			bg-white
+		;
+	}
 }
