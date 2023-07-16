@@ -11,8 +11,14 @@ import {
 } from 'react-icons/ri';
 
 
+//Typings
+type InstagramButton = {
+	className?: string;
+}
+
+
 //Main component content
-const InstagramButton = (): JSX.Element => {
+const InstagramButton = ({className}: InstagramButton): JSX.Element => {
 	//Main component render
 	return (
 		<NavLink
@@ -23,7 +29,7 @@ const InstagramButton = (): JSX.Element => {
 			title='Home'
 			aria-label='Home'
 
-			className='h-full'
+			className={className}
 		/>
 	);
 };

@@ -25,13 +25,14 @@ const NavLink = (props: NavLink): JSX.Element => {
 
 	const { href, children, className, icon, isSectionActive, ...propsAttributes } = props;
 
+	const _className = className ? `${className} nav-item` : 'nav-item';
 
 	//Main component render
 	return (
 		<Link
 			href={href}
 
-			className='nav-item'
+			className={_className}
 			data-section-active={isSectionActive}
 
 			{...propsAttributes}
