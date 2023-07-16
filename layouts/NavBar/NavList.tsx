@@ -12,6 +12,7 @@ import CreateNavButton from "@/components/CreateNavButton";
 import MessagesNavLink from "@/components/MessagesNavLink";
 import NotificationNavButton from "@/components/NotificationNavButton";
 import NotificationSection from "@/components/NotificationSection";
+import ProfileNavLink from "@/components/ProfileNavLink";
 
 
 //Typings
@@ -78,6 +79,13 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 				>
 					<CreateNavButton
 						activeSection={activeSection}
+					/>
+				</li>
+				<li
+					className='navigation-list__item'
+				>
+					<ProfileNavLink
+						isSectionActive={Boolean(activeSection)}
 					/>
 				</li>
 			</ul>
