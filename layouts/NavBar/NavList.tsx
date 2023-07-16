@@ -6,6 +6,11 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 
+//Configurations
+import Routes from "@/configuration/routes";
+import NavBarSections from "@/configuration/navBarSections";
+
+
 //Components
 import HomeNavLink from "@/components/HomeNavLink";
 import SearchButton from "@/components/SearchButton";
@@ -14,7 +19,8 @@ import ExploreNavLink from "@/components/ExploreNavLink";
 import ReelsNavLink from "@/components/ReelsNavLink";
 import CreateNavButton from "@/components/CreateNavButton";
 import MessagesNavLink from "@/components/MessagesNavLink";
-import Routes from "@/configuration/routes";
+import NotificationNavButton from "@/components/NotificationNavButton";
+import NotificationSection from "@/components/NotificationSection";
 
 
 //Main component content
@@ -25,7 +31,7 @@ const NavList = (): JSX.Element => {
 
 
 	//React
-	const [ activeSection, setActiveSection ] = useState<string>('');
+	const [ activeSection, setActiveSection ] = useState<NavBarSections | string>('');
 
 
 	//Handlers
@@ -41,7 +47,7 @@ const NavList = (): JSX.Element => {
 
 	useEffect( () => {
 		if( pathname === Routes.MESSAGES ){
-			setActiveSection('messages');
+			setActiveSection(NavBarSections.MESSAGES);
 			return;
 		}
 
@@ -92,6 +98,14 @@ const NavList = (): JSX.Element => {
 					/>
 				</li>
 				<li
+					className='hidden md:block navigation-list__item'
+				>
+					<NotificationNavButton
+						activeSection={activeSection}
+						onClick={activeSearchSectionHandler}
+					/>
+				</li>
+				<li
 					className='navigation-list__item'
 				>
 					<CreateNavButton
@@ -99,8 +113,11 @@ const NavList = (): JSX.Element => {
 					/>
 				</li>
 			</ul>
-			{activeSection === 'search' && (
+			{activeSection === NavBarSections.SEARCH && (
 				<SearchSection />
+			)}
+			{activeSection === NavBarSections.NOTIFICATIONS && (
+				<NotificationSection />
 			)}
 		</>
 	);

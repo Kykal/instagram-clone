@@ -65,6 +65,14 @@
 		;
 	}
 
+	.nav-button {
+		@apply
+			xl:pl-[11px]
+			w-full
+			border
+		;
+	}
+
 	.nav-item__label {
 		@apply
 			hidden xl:block

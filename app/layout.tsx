@@ -1,4 +1,4 @@
-//Configuration
+//Configurations
 import sharedMetadata from '@/configuration/sharedMetadata';
 
 

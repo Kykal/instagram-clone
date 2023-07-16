@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 
-//Configuration
+//Configurations
 import Routes from "@/configuration/routes";
 
 

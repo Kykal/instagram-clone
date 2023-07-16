@@ -1,4 +1,4 @@
-//Configuration
+//Configurations
 import Routes from "@/configuration/routes";
 
 
