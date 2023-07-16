@@ -17,7 +17,7 @@ const Input = (props: Input): JSX.Element => {
 			value={props.value}
 			onChange={props.onChange}
 
-			className='grow peer focus:pl-3 bg-transparent outline-none h-full w-full'
+			className='grow peer focus:pl-3 md:focus:pl-2.5 bg-transparent outline-none h-full w-full'
 		/>
 	);
 };
