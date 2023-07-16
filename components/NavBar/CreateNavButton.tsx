@@ -12,8 +12,8 @@ import {
 
 
 //Components
-import NavButton from "./NavButton";
-import CreateDialog from "./CreateDialog/CreateDialog";
+import NavButton from "../NavButton";
+import CreateDialog from "../CreateDialog/CreateDialog";
 
 
 //Typings

@@ -32,6 +32,7 @@
 			absolute bottom-0 left-0 right-0 md:static
 			w-full md:w-auto
 			md:border-r md:h-screen
+			flex flex-col
 		;
 	}
 
@@ -41,7 +42,12 @@
 			flex md:flex-col
 			justify-evenly md:justify-center xl:justify-start
 			md:gap-2
+			grow
 		;
+	}
+
+	.navbar-options-button {
+		
 	}
 
 	.navigation-list__item {

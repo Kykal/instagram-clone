@@ -4,8 +4,8 @@
 
 //Components
 import SearchInput from '@/components/SearchInput';
-import InstagramButton from '@/components/InstagramButton';
-import NotificationAnchorIconButton from '@/components/NotificationAnchorIconButton';
+import NotificationAnchorIconButton from '@/components/NavBar/NotificationAnchorIconButton';
+import InstagramButton from '@/components/NavBar/InstagramButton';
 
 
 //Main component content
