@@ -30,7 +30,7 @@ const SearchButton = (props: SearchButton): JSX.Element => {
 	//Main component render
 	return (
 		<button
-			className={`nav-item xl:pl-[11px] w-full border ${isSearchSectionActive ? 'border-neutral-200' : 'border-transparent'}`}
+			className={`nav-item nav-button ${isSearchSectionActive ? 'border-neutral-200' : 'border-transparent'}`}
 			onClick={activeSearchSectionHandler}
 
 			data-section-active={Boolean(activeSection)}

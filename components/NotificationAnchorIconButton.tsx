@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 
-//Configuration
+//Configurations
 import Routes from '@/configuration/routes';
 
 
