@@ -3,6 +3,7 @@
 
 
 //Components
+import InstagramLogo from "./InstagramLogo";
 import NavList from "./NavList";
 
 
@@ -13,6 +14,7 @@ const NavBar = (): JSX.Element => {
 		<nav
 			className='main-navigation'
 		>
+			<InstagramLogo />
 			<NavList />
 		</nav>
 	);

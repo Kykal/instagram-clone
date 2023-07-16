@@ -23,7 +23,7 @@ const InstagramButton = (): JSX.Element => {
 			title='Home'
 			aria-label='Home'
 
-			className='h-full'
+			className='w-full xl:hidden'
 		/>
 	);
 };
