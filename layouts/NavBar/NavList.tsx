@@ -1,13 +1,4 @@
-//NextJS
-import { usePathname } from "next/navigation";
-
-
-//React
-import { useState, useEffect } from "react";
-
-
 //Configurations
-import Routes from "@/configuration/routes";
 import NavBarSections from "@/configuration/navBarSections";
 
 
@@ -23,38 +14,15 @@ import NotificationNavButton from "@/components/NotificationNavButton";
 import NotificationSection from "@/components/NotificationSection";
 
 
+//Typings
+type NavList = {
+	activeSection: string;
+	activeSectionHandler: (newSection: string) => void;
+}
+
+
 //Main component content
-const NavList = (): JSX.Element => {
-
-	//NextJS
-	const pathname = usePathname();
-
-
-	//React
-	const [ activeSection, setActiveSection ] = useState<NavBarSections | string>('');
-
-
-	//Handlers
-	const activeSearchSectionHandler = (newSection: string) => {
-		if( activeSection === newSection ){
-			setActiveSection('');
-			return;
-		}
-		
-		setActiveSection(newSection);
-	};
-
-
-	useEffect( () => {
-		if( pathname === Routes.MESSAGES ){
-			setActiveSection(NavBarSections.MESSAGES);
-			return;
-		}
-
-		setActiveSection('');
-	}, [pathname] );
-	
-
+const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element => {
 	//Main component render
 	return (
 		<>
@@ -73,7 +41,7 @@ const NavList = (): JSX.Element => {
 				>
 					<SearchButton
 						activeSection={activeSection}
-						onClick={activeSearchSectionHandler}
+						onClick={activeSectionHandler}
 					/>
 				</li>
 				<li
@@ -102,7 +70,7 @@ const NavList = (): JSX.Element => {
 				>
 					<NotificationNavButton
 						activeSection={activeSection}
-						onClick={activeSearchSectionHandler}
+						onClick={activeSectionHandler}
 					/>
 				</li>
 				<li
