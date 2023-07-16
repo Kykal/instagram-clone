@@ -33,7 +33,7 @@ const SearchInput = (): JSX.Element => {
 	return (
 		<form
 			onSubmit={submitHandler}
-			className='flex h-full grow bg-neutral-100 rounded-md flex-row-reverse'
+			className='flex h-full grow md:py-2 md:grow md:px-1.5 bg-neutral-100 rounded-md flex-row-reverse'
 		>
 			{value.length !== 0 && (
 				<ResetButton
