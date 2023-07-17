@@ -40,14 +40,10 @@
 		@apply
 			h-12 md:h-auto
 			flex md:flex-col
-			justify-evenly md:justify-center xl:justify-start
+			justify-evenly md:justify-start
 			md:gap-2
 			grow
 		;
-	}
-
-	.navbar-options-button {
-		
 	}
 
 	.navigation-list__item {
@@ -94,6 +90,26 @@
 			rounded-r-md
 			w-96
 			bg-white
+		;
+	}
+	
+	.navbar-more-options {
+		@apply
+			hidden md:flex
+			aspect-square xl:aspect-auto
+			w-full
+		;
+	}
+
+	.more-menu {
+		@apply
+			shadow-md
+			rounded-md
+			hidden md:flex flex-col gap-2
+			absolute left-4 bottom-20
+			bg-white
+			px-2 py-2.5
+			min-w-max
 		;
 	}
 }

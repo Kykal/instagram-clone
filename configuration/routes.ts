@@ -7,6 +7,8 @@ enum Routes {
 	EXPLORE_PEOPLE = '/explore/people',
 	NOTIFICATIONS = '/notifications',
 	PROFILE = '/kykal',
+	ACTIVITY = '/your-activity/interactions',
+	SAVED = '/kykal/saved',
 }
 
 
