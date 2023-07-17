@@ -23,19 +23,12 @@ import {
 import ReportButton from './_ReportButton';
 
 
-//Typings
-type Menu = {
-	onClose: () => void;
-}
-
-
 //Main component content
-const Menu = ({onClose}: Menu): JSX.Element => {
+const Menu = (): JSX.Element => {
 	//Main component render
 	return(
 		<menu
 			className='more-menu'
-			onMouseLeave={onClose}
 		>
 			<li>
 				<Link

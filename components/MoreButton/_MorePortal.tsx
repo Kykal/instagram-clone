@@ -9,12 +9,11 @@ import Menu from "./Menu";
 //Typings
 type MorePortal = {
 	opened: boolean;
-	onClose: () => void;
 }
 
 
 //Main component content
-const MorePortal = ({opened, onClose}: MorePortal): JSX.Element | null => {
+const MorePortal = ({opened}: MorePortal): JSX.Element | null => {
 
 	
 	if(!opened){
@@ -29,9 +28,7 @@ const MorePortal = ({opened, onClose}: MorePortal): JSX.Element | null => {
 	return (
 		<>
 			{isClient && createPortal(
-				<Menu
-					onClose={onClose}
-				/>,
+				<Menu />,
 				target,
 			)}
 		</>
