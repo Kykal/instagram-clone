@@ -1,5 +1,6 @@
 //Components
-import Dialog from 'native-react-dialog';
+
+import Dialog from "@/layouts/Dialog";
 
 
 //Typings
@@ -16,8 +17,13 @@ const ReportDialog = ({isOpen, onClose}: ReportDialog): JSX.Element => {
 		<Dialog
 			open={isOpen}
 			onClose={onClose}
+			title='Report a problem'
 		>
-			Hola!	
+			<main
+				className='report-content'
+			>
+				Hola!
+			</main>	
 		</Dialog>
 	);
 };
