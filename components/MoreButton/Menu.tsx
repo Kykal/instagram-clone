@@ -7,8 +7,6 @@ import Routes from '@/configuration/routes';
 
 
 //MATERIAL DESIGN
-//Components
-import NavLink from '../UI/NavLink';
 //Icons
 import {
 	MdSettings,
@@ -19,6 +17,10 @@ import {
 import {
 	PiFlagBanner,
 } from 'react-icons/pi';
+
+
+//Components
+import ReportButton from './_ReportButton';
 
 
 //Typings
@@ -35,7 +37,7 @@ const Menu = ({onClose}: Menu): JSX.Element => {
 			className='more-menu'
 			onMouseLeave={onClose}
 		>
-			<ul>
+			<li>
 				<Link
 					href={Routes.ACCOUNT_SETTINGS}
 					className='more-menu-item'
@@ -46,8 +48,8 @@ const Menu = ({onClose}: Menu): JSX.Element => {
 						Settings
 					</span>
 				</Link>
-			</ul>
-			<ul>
+			</li>
+			<li>
 				<Link
 					href={Routes.ACTIVITY}
 					className='more-menu-item'
@@ -58,8 +60,8 @@ const Menu = ({onClose}: Menu): JSX.Element => {
 						Your Activity
 					</span>
 				</Link>
-			</ul>
-			<ul>
+			</li>
+			<li>
 				<Link
 					href={Routes.ACCOUNT_SETTINGS}
 					className='more-menu-item'
@@ -70,7 +72,10 @@ const Menu = ({onClose}: Menu): JSX.Element => {
 						Saved
 					</span>
 				</Link>
-			</ul>
+			</li>
+			<li>
+				<ReportButton />
+			</li>
 		</menu>
 	);
 };
