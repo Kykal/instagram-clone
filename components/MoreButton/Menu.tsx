@@ -1,3 +1,7 @@
+//NextJS
+import Link from 'next/link';
+
+
 //Configurations
 import Routes from '@/configuration/routes';
 
@@ -32,28 +36,40 @@ const Menu = ({onClose}: Menu): JSX.Element => {
 			onMouseLeave={onClose}
 		>
 			<ul>
-				<NavLink
+				<Link
 					href={Routes.ACCOUNT_SETTINGS}
-					icon={<MdSettings className='text-2xl' />}
+					className='more-menu-item'
+					title='Settings'
 				>
-					Settings
-				</NavLink>
+					<MdSettings className='text-2xl' />
+					<span>
+						Settings
+					</span>
+				</Link>
 			</ul>
 			<ul>
-				<NavLink
+				<Link
 					href={Routes.ACTIVITY}
-					icon={<TbHistoryToggle className='text-2xl' />}
+					className='more-menu-item'
+					title='Your Activity'
 				>
-					Your Activity
-				</NavLink>
+					<TbHistoryToggle className='text-2xl' />
+					<span>
+						Your Activity
+					</span>
+				</Link>
 			</ul>
 			<ul>
-				<NavLink
-					href={Routes.ACTIVITY}
-					icon={<PiFlagBanner className='text-2xl' />}
+				<Link
+					href={Routes.ACCOUNT_SETTINGS}
+					className='more-menu-item'
+					title='Saved'
 				>
-					Saved
-				</NavLink>
+					<PiFlagBanner className='text-2xl' />
+					<span>
+						Saved
+					</span>
+				</Link>
 			</ul>
 		</menu>
 	);

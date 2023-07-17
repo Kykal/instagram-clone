@@ -51,7 +51,10 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 				onClick={toggle}
 				data-is-active={isOpen}
 			>
-				<MdMenu className='text-2xl' />
+				<MdMenu
+					className='text-2xl'
+					aria-label='Settings icon'
+				/>
 				{!Boolean(activeSection) && (
 					<span
 						className='nav-item__label'
