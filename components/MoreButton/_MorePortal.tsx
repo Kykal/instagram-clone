@@ -4,16 +4,18 @@ import { createPortal } from "react-dom";
 
 //Components
 import Menu from "./Menu";
+import BackgroundOnClick from "../BackgroundOnClick";
 
 
 //Typings
 type MorePortal = {
 	opened: boolean;
+	closeMenu: () => void;
 }
 
 
 //Main component content
-const MorePortal = ({opened}: MorePortal): JSX.Element | null => {
+const MorePortal = ({opened, closeMenu}: MorePortal): JSX.Element | null => {
 
 	
 	if(!opened){
@@ -28,7 +30,12 @@ const MorePortal = ({opened}: MorePortal): JSX.Element | null => {
 	return (
 		<>
 			{isClient && createPortal(
-				<Menu />,
+				<>
+					<Menu />
+					<BackgroundOnClick
+						onClick={closeMenu}
+					/>
+				</>,
 				target,
 			)}
 		</>

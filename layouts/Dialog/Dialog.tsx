@@ -40,7 +40,11 @@ const Dialog = (props: Dialog): JSX.Element => {
 				onClose={onClose}
 			/>
 			<Divider />
-			{children}
+			<main
+				className='p-2'
+			>
+				{children}
+			</main>
 		</NativeDialog>
 	);
 };

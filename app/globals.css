@@ -42,7 +42,7 @@
 			flex md:flex-col
 			justify-evenly md:justify-start
 			md:gap-2
-			grow
+			z-40
 		;
 	}
 
@@ -98,6 +98,7 @@
 			hidden md:flex
 			aspect-square xl:aspect-auto
 			w-full
+			z-40
 		;
 	}
 
@@ -112,7 +113,7 @@
 			bg-white
 			px-2 py-2.5
 			min-w-max
-			z-20
+			z-50
 		;
 	}
 

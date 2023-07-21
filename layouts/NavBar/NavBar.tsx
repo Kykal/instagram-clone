@@ -58,10 +58,14 @@ const NavBar = (): JSX.Element => {
 			<InstagramLogo
 				activeSection={activeSection}
 			/>
-			<NavList
-				activeSection={activeSection}
-				activeSectionHandler={activeSectionHandler}
-			/>
+			<div
+				className='grow flex flex-col'
+			>
+				<NavList
+					activeSection={activeSection}
+					activeSectionHandler={activeSectionHandler}
+				/>
+			</div>
 			<MoreOptionsButton
 				activeSection={activeSection}
 			/>

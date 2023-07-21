@@ -65,6 +65,7 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 			</button>
 			<MenuPortal
 				opened={isOpen}
+				closeMenu={close}
 			/>
 		</>
 	);
