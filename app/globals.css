@@ -106,25 +106,33 @@
 		@apply
 			shadow-md
 			rounded-md
-			hidden md:flex flex-col
 			absolute
 			left-16 xl:left-4
 			bottom-4 xl:bottom-20
 			bg-white
 			px-2 py-2.5
 			min-w-max
+			hidden md:flex flex-col
+			gap-2
 			z-50
+		;
+	}
+	
+	.more-menu menu {
+		@apply
+			hidden md:flex flex-col
 		;
 	}
 
 	.more-menu-item {
 		@apply
-			bg-white hover:bg-neutral-100
+			bg-white hover:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed
 			flex items-center
 			rounded-md
 			px-3
 			py-2.5
 			gap-3.5
+			w-full
 		;
 	}
 
