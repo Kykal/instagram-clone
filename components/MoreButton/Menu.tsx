@@ -56,7 +56,7 @@ const Menu = (): JSX.Element => {
 			</li>
 			<li>
 				<Link
-					href={Routes.ACCOUNT_SETTINGS}
+					href={Routes.SAVED}
 					className='more-menu-item'
 					title='Saved'
 				>
