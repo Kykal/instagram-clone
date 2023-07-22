@@ -105,6 +105,7 @@
 	.more-menu {
 		@apply
 			shadow-md
+			overflow-hidden
 			rounded-md
 			absolute
 			left-16 xl:left-4
