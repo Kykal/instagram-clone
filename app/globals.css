@@ -111,7 +111,6 @@
 			left-16 xl:left-4
 			bottom-4 xl:bottom-20
 			bg-white
-			px-2 py-2.5
 			min-w-max
 			hidden md:flex flex-col
 			gap-2
