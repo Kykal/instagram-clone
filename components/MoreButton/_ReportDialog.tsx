@@ -19,7 +19,7 @@ const ReportDialog = ({isOpen, onClose}: ReportDialog): JSX.Element => {
 			onClose={onClose}
 			title='Report a problem'
 		>
-			a
+			In development
 		</Dialog>
 	);
 };
