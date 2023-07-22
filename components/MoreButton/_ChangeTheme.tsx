@@ -21,7 +21,7 @@ const ChangeTheme = (props: ChangeTheme): JSX.Element => {
 		>
 			<BsSun className='text-2xl' />
 			<span>
-				Switch appeareance
+				Switch appearance
 			</span>
 		</button>
 	);
