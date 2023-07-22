@@ -19,7 +19,7 @@ const SearchSection = (): JSX.Element => {
 			{typeof window !== "undefined" && createPortal(
 				<NavBarSection>
 					<header
-						className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200'
+						className='px-6 pt-6 pb-4 flex flex-col gap-4 border-b border-neutral-200 dark:border-neutral-800 dark:bg-black'
 					>
 						<h1
 							className='font-bold text-2xl'

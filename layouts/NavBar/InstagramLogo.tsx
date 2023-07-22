@@ -52,7 +52,7 @@ export default InstagramLogo; //Export main component
 
 const InstagramIconButton = ({className}: InstagramIconButton) => {
 
-	const baseStyles = 'z-40 w-full hover:bg-neutral-100 aspect-square flex items-center justify-center rounded-md';
+	const baseStyles = 'z-40 w-full hover:bg-neutral-100 dark:bg-black dark:hover:bg-neutral-900 aspect-square flex items-center justify-center rounded-md';
 
 
 	const _className = className ? `${className} ${baseStyles}` : baseStyles;

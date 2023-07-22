@@ -43,7 +43,7 @@ const Result = (props: Result): JSX.Element => {
 	return (
 		<Link
 			href={url}
-			className='hover:bg-neutral-100 px-6 py-1 cursor-pointer'
+			className='hover:bg-neutral-100 dark:hover:bg-neutral-900 px-6 py-1 cursor-pointer'
 		>
 			<div
 				className='flex gap-2 items-center'
@@ -88,7 +88,7 @@ const ProfilePicture = (props: ProfilePicture) => {
 					width={size}
 					height={size}
 
-					className='rounded-full border-2 border-white'
+					className='rounded-full border-2 border-white dark:border-black'
 				/>
 			</div>
 		</div>

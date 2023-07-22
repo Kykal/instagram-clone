@@ -30,7 +30,7 @@ const Dialog = (props: Dialog): JSX.Element => {
 	//Main component render
 	return (
 		<NativeDialog
-			className='rounded-md p-0 container max-w-md'
+			className='rounded-md p-0 container max-w-md dark:bg-neutral-800 dark:text-neutral-100'
 			open={open}
 			onClose={onClose}
 			{...propsAttributes}
