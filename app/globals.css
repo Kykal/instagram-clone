@@ -17,7 +17,7 @@
 	.icon-button {
 		@apply
 			flex items-center justify-center
-			hover:bg-neutral-100
+			hover:bg-neutral-100 dark:hover:bg-neutral-700
 			rounded-md
 			cursor-pointer
 			aspect-square
@@ -26,12 +26,12 @@
 
 	.main-navigation {
 		@apply
-			bg-white 
-			border-t border-neutral-200
+			bg-white dark:bg-black
+			border-t border-neutral-200 dark:border-neutral-800
 			md:p-3
 			absolute bottom-0 left-0 right-0 md:static
 			w-full md:w-auto
-			md:border-r md:h-screen
+			md:border-0 md:border-r md:h-screen
 			flex flex-col
 		;
 	}
@@ -55,7 +55,7 @@
 
 	.nav-item {
 		@apply
-			bg-white hover:bg-neutral-100
+			bg-white dark:bg-black hover:bg-neutral-100 dark:hover:bg-neutral-900
 			flex items-center justify-center xl:justify-start
 			h-full md:h-auto xl:h-12
 			aspect-square xl:aspect-auto
@@ -86,10 +86,10 @@
 			hidden md:flex flex-col
 			absolute left-[73px] top-0
 			h-screen
-			border-r border-neutral-200
+			border-r border-neutral-200 dark:border-neutral-800
 			rounded-r-md
 			w-96
-			bg-white
+			bg-white dark:bg-black
 		;
 	}
 	
@@ -110,7 +110,7 @@
 			absolute
 			left-16 xl:left-4
 			bottom-4 xl:bottom-20
-			bg-white
+			bg-white dark:bg-neutral-800
 			min-w-max
 			hidden md:flex flex-col
 			gap-2
@@ -126,7 +126,7 @@
 
 	.more-menu-item {
 		@apply
-			bg-white hover:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed
+			bg-white dark:bg-neutral-800 dark:hover:bg-neutral-700 hover:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed
 			flex items-center
 			rounded-md
 			px-3

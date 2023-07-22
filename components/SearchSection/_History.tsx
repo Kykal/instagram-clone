@@ -32,16 +32,16 @@ const History = (): JSX.Element => {
 						className='px-6 py-2 flex items-center h-16 gap-2'
 					>
 						<div
-							className='bg-neutral-200 h-full aspect-square animate-pulse rounded-full'
+							className='bg-neutral-200 dark:bg-neutral-800 h-full aspect-square animate-pulse rounded-full'
 						/>
 						<div
 							className='grow flex flex-col gap-2'
 						>
 							<div
-								className='bg-neutral-200 h-5 w-full animate-pulse rounded-full'
+								className='bg-neutral-200 dark:bg-neutral-800 h-5 w-full animate-pulse rounded-full'
 							/>
 							<div
-								className='bg-neutral-200 h-5 w-full animate-pulse rounded-full'
+								className='bg-neutral-200 dark:bg-neutral-800 h-5 w-full animate-pulse rounded-full'
 							/>
 						</div>
 					</div>

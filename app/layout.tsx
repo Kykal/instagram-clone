@@ -3,8 +3,8 @@ import sharedMetadata from '@/configuration/sharedMetadata';
 
 
 //NextJS
-import type { Metadata } from 'next'
-export const metadata: Metadata = sharedMetadata
+import type { Metadata } from 'next';
+export const metadata: Metadata = sharedMetadata;
 
 
 //Styles
@@ -39,9 +39,10 @@ const RootLayout = ({ children }: Layout): JSX.Element => {
 	return (
 		<html
 			lang='en'
+			data-theme='light'
 		>
 			<body
-				className={`${roboto.className} sm:flex`}
+				className={`${roboto.className} sm:flex bg-white dark:bg-black dark:text-neutral-100`}
 			>
 				<NavBar />
 				{children}

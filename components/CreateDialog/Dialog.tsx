@@ -23,7 +23,7 @@ const Dialog = ({open, onClose}: Dialog): JSX.Element => {
 		<NativeDialog
 			open={open}
 			onClose={onClose}
-			className='rounded-md p-0 container max-w-2xl w-auto'
+			className='rounded-md p-0 container max-w-2xl w-auto dark:bg-neutral-800 dark:text-neutral-100'
 			aria-label='Create dialog'
 			aria-description='Upload multimedia to post'
 		>

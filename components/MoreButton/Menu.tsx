@@ -63,7 +63,7 @@ const Menu = (): JSX.Element => {
 			className='more-menu'
 		>
 			<div
-				className='relative w-64 transition-all h-[345px] data-[theme-options=true]:h-[100px]'
+				className='relative w-64 transition-all h-[345px] data-[theme-options=true]:h-[105px]'
 				data-theme-options={showThemeOptions}
 			>
 				<MainOptions
@@ -209,7 +209,7 @@ const ThemeOptions = (props: ThemeOptions) => {
 			</div>
 			<Divider />
 			<button
-				className='flex items-center justify-between p-2 hover:bg-neutral-100 rounded-md'
+				className='flex items-center justify-between p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-md'
 			>
 				<span>
 					Dark mode

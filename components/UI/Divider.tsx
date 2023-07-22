@@ -11,7 +11,7 @@ const Divider = (props: Divider): JSX.Element => {
 	
 	const { className: propsClassName, ...propsAttributes } = props;
 
-	const baseClassName = 'border-t border-neutral-200';
+	const baseClassName = 'border-t border-neutral-200 dark:border-neutral-700';
 
 	const _className = propsClassName
 		? `${baseClassName} ${propsClassName}`
