@@ -3,16 +3,16 @@ import NavBarSections from "@/configuration/navBarSections";
 
 
 //Components
-import HomeNavLink from "@/components/HomeNavLink";
-import SearchButton from "@/components/SearchButton";
 import SearchSection from "@/components/SearchSection";
-import ExploreNavLink from "@/components/ExploreNavLink";
-import ReelsNavLink from "@/components/ReelsNavLink";
-import CreateNavButton from "@/components/CreateNavButton";
-import MessagesNavLink from "@/components/MessagesNavLink";
-import NotificationNavButton from "@/components/NotificationNavButton";
 import NotificationSection from "@/components/NotificationSection";
-import ProfileNavLink from "@/components/ProfileNavLink";
+import HomeNavLink from "@/components/NavBar/HomeNavLink";
+import SearchButton from "@/components/NavBar/SearchButton";
+import ExploreNavLink from "@/components/NavBar/ExploreNavLink";
+import ReelsNavLink from "@/components/NavBar/ReelsNavLink";
+import MessagesNavLink from "@/components/NavBar/MessagesNavLink";
+import NotificationNavButton from "@/components/NavBar/NotificationNavButton";
+import CreateNavButton from "@/components/NavBar/CreateNavButton";
+import ProfileNavLink from "@/components/NavBar/ProfileNavLink";
 
 
 //Typings

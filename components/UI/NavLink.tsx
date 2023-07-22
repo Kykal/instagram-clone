@@ -13,7 +13,7 @@ import { HTMLAttributes } from "react";
 //Typings
 type NavLink = HTMLAttributes<HTMLAnchorElement> & {
 	href: Routes;
-	icon: JSX.Element;
+	icon?: JSX.Element;
 	isSectionActive?: boolean;
 	
 	children?: string;

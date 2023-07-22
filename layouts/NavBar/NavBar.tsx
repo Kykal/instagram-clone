@@ -15,6 +15,7 @@ import Routes from "@/configuration/routes";
 //Components
 import InstagramLogo from "./InstagramLogo";
 import NavList from "./NavList";
+import MoreOptionsButton from "@/components/MoreButton";
 
 
 //Main component content
@@ -57,9 +58,16 @@ const NavBar = (): JSX.Element => {
 			<InstagramLogo
 				activeSection={activeSection}
 			/>
-			<NavList
+			<div
+				className='grow flex flex-col'
+			>
+				<NavList
+					activeSection={activeSection}
+					activeSectionHandler={activeSectionHandler}
+				/>
+			</div>
+			<MoreOptionsButton
 				activeSection={activeSection}
-				activeSectionHandler={activeSectionHandler}
 			/>
 		</nav>
 	);

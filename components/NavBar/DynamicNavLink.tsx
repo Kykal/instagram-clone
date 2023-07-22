@@ -8,7 +8,7 @@ import Routes from "@/configuration/routes";
 
 //MATERIAL DESIGN
 //Components
-import NavLink from './UI/NavLink';
+import NavLink from '../UI/NavLink';
 
 
 //Typings
