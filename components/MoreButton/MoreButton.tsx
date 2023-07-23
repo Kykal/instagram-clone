@@ -4,11 +4,12 @@ import { usePathname } from 'next/navigation';
 
 //React
 import useDisclosure from '@/hooks/useDisclosure';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 //Utils
 import initTheme from '@/utils/theme/initTheme';
+import setLocalStorageTheme from '@/utils/theme/setTheme';
 
 
 //MATERIAL DESIGN
@@ -20,6 +21,7 @@ import {
 
 //Components
 import MenuPortal from './_MorePortal';
+import { Theme } from '@/utils/theme/typings';
 
 
 //Typings
@@ -37,22 +39,47 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 	
 	//React
 	const [ isOpen, { close, toggle } ] = useDisclosure();
+	const [ theme, setTheme ] = useState<Theme>('light');
 
 
+	
 	useEffect( () => {
-		const _theme = initTheme();
-
 		const html = document.documentElement;
 		const data = 'data-theme';
+		const _theme = initTheme();
 		
 		html.setAttribute(data, _theme);
+		setTheme(_theme);
 	}, [] );
 
 
 	useEffect( () => {
 		close();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname] );
 
+
+	//Handlers
+	const toggleThemeHandler = () => {
+		const html = document.documentElement;
+		const data = 'data-theme';
+		
+		if(theme === 'light'){
+
+			const newValue = 'dark';
+
+			setTheme(newValue);
+			setLocalStorageTheme(newValue);
+			html.setAttribute(data, newValue);
+			return;
+		}
+
+		const newValue = 'light';
+
+		setTheme(newValue);
+		setLocalStorageTheme(newValue);
+		html.setAttribute(data, newValue);
+	};
 	
 	//Main component render
 	return (
@@ -77,6 +104,8 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 			<MenuPortal
 				opened={isOpen}
 				closeMenu={close}
+				theme={theme}
+				toggleTheme={toggleThemeHandler}
 			/>
 		</>
 	);

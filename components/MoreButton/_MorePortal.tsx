@@ -8,17 +8,20 @@ import BackgroundOnClick from "../BackgroundOnClick";
 
 
 //Typings
+import { Theme } from "@/utils/theme/typings";
 type MorePortal = {
 	opened: boolean;
 	closeMenu: () => void;
+	theme: Theme
+	toggleTheme: () => void;
 }
 
 
 //Main component content
-const MorePortal = ({opened, closeMenu}: MorePortal): JSX.Element | null => {
+const MorePortal = (props: MorePortal): JSX.Element | null => {
 
 	
-	if(!opened){
+	if(!props.opened){
 		return null;
 	}
 	
@@ -31,9 +34,12 @@ const MorePortal = ({opened, closeMenu}: MorePortal): JSX.Element | null => {
 		<>
 			{isClient && createPortal(
 				<>
-					<Menu />
+					<Menu
+						theme={props.theme}
+						toggleTheme={props.toggleTheme}
+					/>
 					<BackgroundOnClick
-						onClick={closeMenu}
+						onClick={props.closeMenu}
 					/>
 				</>,
 				target,
