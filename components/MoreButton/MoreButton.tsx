@@ -7,6 +7,10 @@ import useDisclosure from '@/hooks/useDisclosure';
 import { useEffect } from 'react';
 
 
+//Utils
+import initTheme from '@/utils/theme/initTheme';
+
+
 //MATERIAL DESIGN
 //Icons
 import {
@@ -22,9 +26,6 @@ import MenuPortal from './_MorePortal';
 type MoreButton = {
 	activeSection: string;
 }
-type MoreOptionsMenu = {
-	isOpen: boolean;
-}
 
 
 //Main component content
@@ -36,13 +37,23 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 	
 	//React
 	const [ isOpen, { close, toggle } ] = useDisclosure();
-	
+
+
+	useEffect( () => {
+		const _theme = initTheme();
+
+		const html = document.documentElement;
+		const data = 'data-theme';
+		
+		html.setAttribute(data, _theme);
+	}, [] );
+
 
 	useEffect( () => {
 		close();
 	}, [pathname] );
 
-
+	
 	//Main component render
 	return (
 		<>
