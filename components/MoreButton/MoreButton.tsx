@@ -51,6 +51,7 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 
 	useEffect( () => {
 		close();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname] );
 
 	
