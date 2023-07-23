@@ -1,7 +1,13 @@
+//Utils
 import getTheme from "./getTheme";
 import setTheme from "./setTheme";
 
-const initTheme = (): string => {
+
+//Typings
+import { Theme } from "./typings";
+
+
+const initTheme = (): Theme => {
 	const theme = getTheme();
 
 	if( !theme ){
