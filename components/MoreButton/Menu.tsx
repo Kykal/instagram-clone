@@ -23,8 +23,8 @@ import {
 } from 'react-icons/pi';
 import {
 	BsChevronLeft,
-	BsSun,
 	BsMoon,
+	BsSun,
 } from 'react-icons/bs';
 
 
@@ -36,27 +36,38 @@ import IconButton from '../UI/IconButton';
 
 
 //Typings
+import { Theme } from '@/utils/theme/typings';
+type Menu = {
+	theme: Theme;
+	toggleTheme: () => void;
+}
 type MenuList = {
 	onThemeClick: () => void;
+	theme: Theme;
+	toggleTheme: () => void;
 }
 type MainOptions = {
 	onThemeClick: () => void;
 	showTheme: boolean;
+	theme: Theme;
+	toggleTheme: () => void;
 }
 type ThemeOptions = {
 	showTheme: boolean;
 	closeTheme: () => void;
+	theme: Theme;
+	toggleTheme: () => void;
 }
 
 
 
 //Main component content
-const Menu = (): JSX.Element => {
+const Menu = (props: Menu): JSX.Element => {
 
 	//React
 	const [ showThemeOptions, { open, close } ] = useDisclosure();
 
-
+	
 	//Main component render
 	return(
 		<div
@@ -69,10 +80,14 @@ const Menu = (): JSX.Element => {
 				<MainOptions
 					onThemeClick={open}
 					showTheme={showThemeOptions}
+					theme={props.theme}
+					toggleTheme={props.toggleTheme}
 				/>
 				<ThemeOptions
 					showTheme={showThemeOptions}
 					closeTheme={close}
+					theme={props.theme}
+					toggleTheme={props.toggleTheme}
 				/>
 			</div>
 		</div>
@@ -126,6 +141,8 @@ const MenuList = (props: MenuList) => {
 			<li>
 				<ChangeTheme
 					onClick={props.onThemeClick}
+					theme={props.theme}
+					toggleTheme={props.toggleTheme}
 				/>
 			</li>
 			<li>
@@ -163,7 +180,6 @@ const AuthMenu = () => {
 const MainOptions = (props: MainOptions) => {
 	
 	const translate = props.showTheme ? '-translate-x-full' : 'translate-x-0';
-
 	
 	return(
 		<div
@@ -174,6 +190,8 @@ const MainOptions = (props: MainOptions) => {
 			>
 				<MenuList
 					onThemeClick={props.onThemeClick}
+					theme={props.theme}
+					toggleTheme={props.toggleTheme}
 				/>
 				<Divider />
 				<AuthMenu />
@@ -186,6 +204,12 @@ const MainOptions = (props: MainOptions) => {
 const ThemeOptions = (props: ThemeOptions) => {
 
 	const translate = props.showTheme ? 'translate-x-0' : 'translate-x-full';
+
+
+	const dynamicIcon = props.theme === 'light'
+		? <BsSun className='h-full' />
+		: <BsMoon className='h-full' />;
+
 
 	return(
 		<div
@@ -205,11 +229,12 @@ const ThemeOptions = (props: ThemeOptions) => {
 				>
 					Switch appearance
 				</span>
-				<BsSun className='h-full' />
+				{dynamicIcon}
 			</div>
 			<Divider />
 			<button
 				className='flex items-center justify-between p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-md'
+				onClick={props.toggleTheme}
 			>
 				<span>
 					Dark mode

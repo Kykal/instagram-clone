@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 
 //React
 import useDisclosure from '@/hooks/useDisclosure';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 //Utils
@@ -20,6 +20,7 @@ import {
 
 //Components
 import MenuPortal from './_MorePortal';
+import { Theme } from '@/utils/theme/typings';
 
 
 //Typings
@@ -37,15 +38,17 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 	
 	//React
 	const [ isOpen, { close, toggle } ] = useDisclosure();
+	const [ theme, setTheme ] = useState<Theme>('light');
 
+
+	const html = document.documentElement;
+	const data = 'data-theme';
 
 	useEffect( () => {
 		const _theme = initTheme();
-
-		const html = document.documentElement;
-		const data = 'data-theme';
 		
 		html.setAttribute(data, _theme);
+		setTheme(_theme);
 	}, [] );
 
 
@@ -54,6 +57,18 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname] );
 
+
+	//Handlers
+	const toggleThemeHandler = () => {
+		if(theme === 'light'){
+			setTheme('dark');
+			html.setAttribute(data, 'dark');
+			return;
+		}
+
+		setTheme('light');
+			html.setAttribute(data, 'light');
+	};
 	
 	//Main component render
 	return (
@@ -78,6 +93,8 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 			<MenuPortal
 				opened={isOpen}
 				closeMenu={close}
+				theme={theme}
+				toggleTheme={toggleThemeHandler}
 			/>
 		</>
 	);
