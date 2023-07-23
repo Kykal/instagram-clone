@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 
 //Utils
 import initTheme from '@/utils/theme/initTheme';
+import setLocalStorageTheme from '@/utils/theme/setTheme';
 
 
 //MATERIAL DESIGN
@@ -64,13 +65,20 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 		const data = 'data-theme';
 		
 		if(theme === 'light'){
-			setTheme('dark');
-			html.setAttribute(data, 'dark');
+
+			const newValue = 'dark';
+
+			setTheme(newValue);
+			setLocalStorageTheme(newValue);
+			html.setAttribute(data, newValue);
 			return;
 		}
 
-		setTheme('light');
-			html.setAttribute(data, 'light');
+		const newValue = 'light';
+
+		setTheme(newValue);
+		setLocalStorageTheme(newValue);
+		html.setAttribute(data, newValue);
 	};
 	
 	//Main component render
