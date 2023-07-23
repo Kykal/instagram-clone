@@ -1,5 +1,4 @@
 //NextJS
-'use client';
 import { usePathname } from 'next/navigation';
 
 
@@ -42,10 +41,10 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 	const [ theme, setTheme ] = useState<Theme>('light');
 
 
-	const html = document.documentElement;
-	const data = 'data-theme';
-
+	
 	useEffect( () => {
+		const html = document.documentElement;
+		const data = 'data-theme';
 		const _theme = initTheme();
 		
 		html.setAttribute(data, _theme);
@@ -61,6 +60,9 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 
 	//Handlers
 	const toggleThemeHandler = () => {
+		const html = document.documentElement;
+		const data = 'data-theme';
+		
 		if(theme === 'light'){
 			setTheme('dark');
 			html.setAttribute(data, 'dark');
