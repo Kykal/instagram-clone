@@ -11,6 +11,9 @@ import Routes from '@/configuration/routes';
 
 
 //MATERIAL DESIGN
+//Components
+import Divider from '../UI/Divider';
+import IconButton from '../UI/IconButton';
 //Icons
 import {
 	MdSettings,
@@ -29,10 +32,8 @@ import {
 
 
 //Components
-import ReportButton from './_ReportButton';
+import ReportButton from '../ReportDialog/_ReportButton';
 import ChangeTheme from './_ChangeTheme';
-import Divider from '../UI/Divider';
-import IconButton from '../UI/IconButton';
 
 
 //Typings
