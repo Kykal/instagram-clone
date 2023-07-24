@@ -109,7 +109,7 @@
 			rounded-md
 			absolute
 			left-16 xl:left-4
-			bottom-4 xl:bottom-20
+			bottom-3 xl:bottom-20
 			bg-white dark:bg-neutral-800
 			min-w-max
 			hidden md:flex flex-col
