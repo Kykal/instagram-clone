@@ -5,7 +5,7 @@ const Page = (): JSX.Element => {
 		<main
 			className='grow'
 		>
-			Home page yessir
+			Home page
 		</main>
 	);
 };
