@@ -14,7 +14,7 @@ const ReportTextaArea = (props: ReportTextaArea): JSX.Element => {
 	//Main component render
 	return (
 		<textarea
-			className='w-full bg-neutral-800 border border-neutral-600 p-2 placeholder:text-neutral-600 outline-none'
+			className='w-full dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-600 p-2 placeholder:text-neutral-600 outline-none'
 
 			placeholder='Please include as much info as possible...'
 
