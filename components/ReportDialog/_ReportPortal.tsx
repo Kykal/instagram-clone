@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 
 //Components
-import ReportDialog from "./_ReportDialog";
+import ReportDialog from "./ReportDialog";
 
 
 //Typings
@@ -23,7 +23,7 @@ const ReportPortal = ({isOpen, onClose}: ReportPortal): JSX.Element | null => {
 	//Main component render
 	return (
 		<>
-			{isClient && createPortal(
+			{(isClient && isOpen) && createPortal(
 				<ReportDialog
 					isOpen={isOpen}
 					onClose={onClose}
