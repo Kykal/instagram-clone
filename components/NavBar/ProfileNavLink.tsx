@@ -43,7 +43,7 @@ const ProfileNavLink = ({isSectionActive}: ProfileNavLink): JSX.Element => {
 			src={profilePictureUrl}
 			alt='Profile'
 
-			className={`${baseIconStyles} border-white`}
+			className={`${baseIconStyles} border-2 border-white`}
 
 			width={50}
 			height={50}
