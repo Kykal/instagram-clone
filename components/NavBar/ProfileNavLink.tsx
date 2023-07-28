@@ -1,10 +1,10 @@
 //NextJS
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 
 //Configurations
 import Routes from "@/configuration/routes";
+
 
 //Constants
 import { profilePictureUrl } from "@/constants";
@@ -19,12 +19,9 @@ type ProfileNavLink = {
 	isSectionActive: boolean;
 }
 
+
 //Main component content
 const ProfileNavLink = ({isSectionActive}: ProfileNavLink): JSX.Element => {
-
-	//NextJS
-	const pathname = usePathname();
-
 	const icon = (
 		<Image
 			src={profilePictureUrl}
