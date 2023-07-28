@@ -1,5 +1,6 @@
 //NextJS
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 
 //Configurations
@@ -22,17 +23,33 @@ type ProfileNavLink = {
 
 //Main component content
 const ProfileNavLink = ({isSectionActive}: ProfileNavLink): JSX.Element => {
+
+	const baseIconStyles = 'rounded-full aspect-square h-6 w-6';
+
 	const icon = (
 		<Image
 			src={profilePictureUrl}
 			alt='Profile'
 
-			className='rounded-full aspect-square h-6 w-6'
+			className={baseIconStyles}
 
 			width={50}
 			height={50}
 		/>
 	);
+
+	const activeIcon = (
+		<Image
+			src={profilePictureUrl}
+			alt='Profile'
+
+			className={`${baseIconStyles} border-white`}
+
+			width={50}
+			height={50}
+		/>
+	);
+
 
 	//Main component render
 	return (
@@ -44,7 +61,7 @@ const ProfileNavLink = ({isSectionActive}: ProfileNavLink): JSX.Element => {
 			isSectionActive={isSectionActive}
 
 			icon={icon}
-			activeIcon={icon}
+			activeIcon={activeIcon}
 		/>
 	);
 };
