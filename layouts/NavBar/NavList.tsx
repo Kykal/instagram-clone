@@ -38,7 +38,7 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 					/>
 				</li>
 				<li
-					className='hidden md:block navigation-list__item'
+					className='navigation-list__item'
 				>
 					<SearchButton
 						activeSection={activeSection}
@@ -46,7 +46,7 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 					/>
 				</li>
 				<li
-					className='navigation-list__item'
+					className='hidden md:block navigation-list__item'
 				>
 					<ExploreNavLink
 						isSectionActive={Boolean(activeSection)}
@@ -75,7 +75,7 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 					/>
 				</li>
 				<li
-					className='navigation-list__item'
+					className='hidden md:block navigation-list__item'
 				>
 					<CreateNavButton
 						activeSection={activeSection}
