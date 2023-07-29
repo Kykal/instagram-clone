@@ -176,4 +176,10 @@
 			last:rounded-b-md
 		;
 	}
+
+	.create-menu__item-list__label {
+		@apply
+			text-sm
+		;
+	}
 }
