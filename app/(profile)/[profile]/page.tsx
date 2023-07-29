@@ -3,7 +3,7 @@ const Page = (): JSX.Element => {
 	//Main component render
 	return (
 		<main
-			className='w-full pt-16'
+			className='w-full pt-[53px]'
 		>
 			Profile page
 		</main>
