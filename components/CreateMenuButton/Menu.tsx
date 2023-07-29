@@ -14,10 +14,10 @@ const Menu = (): JSX.Element => {
 	//Main component render
 	return (
 		<div
-			className='create-menu__container absolute top-14 right-4 z-50 w-28'
+			className='create-menu__container absolute top-14 right-4 z-50 w-28 '
 		>
 			<menu
-				className='create-menu flex flex-col gap bg-white dark:bg-neutral-800 rounded-md'
+				className='create-menu flex flex-col gap bg-white dark:bg-neutral-800 rounded-md shadow-md'
 			>
 				<li
 					className='create-menu__item-list flex justify-between items-center p-3'
