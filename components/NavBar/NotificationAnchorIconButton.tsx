@@ -31,7 +31,7 @@ const NotificationAnchorIconButton = (): JSX.Element => {
 			title='Messages'
 			aria-label='Notifications'
 
-			className='h-full icon-button dark:hover:bg-neutral-900'
+			className='h-full icon-button dark:hover:bg-neutral-900 z-40'
 		>
 			{isActive ? <BsHeartFill className='text-xl' /> : <BsHeart className='text-xl' />}
 		</Link>

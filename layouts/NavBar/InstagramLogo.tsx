@@ -67,3 +67,4 @@ const InstagramIconButton = ({className}: InstagramIconButton) => {
 		</Link>
 	);
 }
+	

@@ -1,12 +1,19 @@
+//Layouts
+import MobileHomeHeader from "@/layouts/MobileHomeHeader";
+
+
 //Main component content
 const Page = (): JSX.Element => {
 	//Main component render
 	return (
-		<main
-			className='grow'
-		>
-			Home page
-		</main>
+		<>
+			<MobileHomeHeader />
+			<main
+				className='grow mt-[53px] md:mt-0'
+			>
+				Home page
+			</main>
+		</>
 	);
 };
 

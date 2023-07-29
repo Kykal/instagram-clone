@@ -25,7 +25,6 @@ const roboto = Roboto({
 //Layouts
 import AsideBar from '@/layouts/AsideBar';
 import NavBar from '@/layouts/NavBar';
-import MobileHomeHeader from '@/layouts/MobileHomeHeader';
 
 
 //Typings
@@ -46,7 +45,6 @@ const RootLayout = ({ children }: Layout): JSX.Element => {
 				className={`${roboto.className} sm:flex bg-white dark:bg-black dark:text-neutral-100`}
 			>
 				<NavBar />
-				<MobileHomeHeader />
 				{children}
 				<AsideBar />
 			</body>

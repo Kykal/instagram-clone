@@ -81,6 +81,7 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 		html.setAttribute(data, newValue);
 	};
 	
+	
 	//Main component render
 	return (
 		<>

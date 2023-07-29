@@ -2,9 +2,9 @@
 const Page = (): JSX.Element => {
 	//Main component render
 	return (
-		<>
+		<div>
 			Explore
-		</>
+		</div>
 	);
 };
 
