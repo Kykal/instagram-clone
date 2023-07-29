@@ -148,4 +148,32 @@
 			absolute top-0 bottom-0 left-0 right-0
 		;
 	}
+
+	.create-menu__container {
+		@apply
+			md:hidden
+			absolute top-14 right-4
+			z-50
+			w-28
+		;
+	}
+
+	.create-menu {
+		@apply
+			flex flex-col
+			bg-white dark:bg-neutral-800
+			rounded-md
+			shadow-md
+			overflow-hidden
+		;
+	}
+
+	.create-menu__item-list {
+		@apply
+			flex justify-between items-center
+			p-3
+			first:rounded-t-md
+			last:rounded-b-md
+		;
+	}
 }

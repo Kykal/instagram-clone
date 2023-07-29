@@ -14,13 +14,13 @@ const Menu = (): JSX.Element => {
 	//Main component render
 	return (
 		<div
-			className='create-menu__container md:hidden absolute top-14 right-4 z-50 w-28 '
+			className='create-menu__container'
 		>
 			<menu
-				className='create-menu flex flex-col gap bg-white dark:bg-neutral-800 rounded-md shadow-md'
+				className='create-menu'
 			>
 				<li
-					className='create-menu__item-list flex justify-between items-center p-3'
+					className='create-menu__item-list'
 					role='button'
 				>
 					<span
@@ -31,7 +31,7 @@ const Menu = (): JSX.Element => {
 					<BsGrid3X3 />
 				</li>
 				<li
-					className='create-menu__item-list flex justify-between items-center p-3'
+					className='create-menu__item-list'
 					role='button'
 				>
 					<span
