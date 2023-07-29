@@ -3,16 +3,17 @@ import NavBarSections from "@/configuration/navBarSections";
 
 
 //Components
-import SearchSection from "@/components/SearchSection";
-import NotificationSection from "@/components/NotificationSection";
-import HomeNavLink from "@/components/NavBar/HomeNavLink";
-import SearchButton from "@/components/NavBar/SearchButton";
+import CreateNavButton from "@/components/NavBar/CreateNavButton";
 import ExploreNavLink from "@/components/NavBar/ExploreNavLink";
-import ReelsNavLink from "@/components/NavBar/ReelsNavLink";
+import HomeNavLink from "@/components/NavBar/HomeNavLink";
 import MessagesNavLink from "@/components/NavBar/MessagesNavLink";
 import NotificationNavButton from "@/components/NavBar/NotificationNavButton";
-import CreateNavButton from "@/components/NavBar/CreateNavButton";
+import NotificationSection from "@/components/NotificationSection";
 import ProfileNavLink from "@/components/NavBar/ProfileNavLink";
+import ReelsNavLink from "@/components/NavBar/ReelsNavLink";
+import SearchSection from "@/components/SearchSection";
+import SearchButton from "@/components/NavBar/SearchButton";
+import SearchNavLink from "@/components/NavBar/SearchNavLink";
 
 
 //Typings
@@ -38,12 +39,17 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 					/>
 				</li>
 				<li
-					className='navigation-list__item'
+					className='hidden md:block navigation-list__item'
 				>
 					<SearchButton
 						activeSection={activeSection}
 						onClick={activeSectionHandler}
 					/>
+				</li>
+				<li
+					className='navigation-list__item md:hidden'
+				>
+					<SearchNavLink />
 				</li>
 				<li
 					className='hidden md:block navigation-list__item'
