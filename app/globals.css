@@ -17,7 +17,7 @@
 	.icon-button {
 		@apply
 			flex items-center justify-center
-			hover:bg-neutral-100 dark:hover:bg-neutral-700
+			hover:bg-neutral-100 dark:hover:bg-neutral-900
 			rounded-md
 			cursor-pointer
 			aspect-square
@@ -140,6 +140,12 @@
 		@apply
 			flex flex-col gap-2
 			p-2
+		;
+	}
+
+	.reactive-background {
+		@apply
+			absolute top-0 bottom-0 left-0 right-0
 		;
 	}
 }
