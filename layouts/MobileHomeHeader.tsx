@@ -9,15 +9,11 @@ import useDisclosure from '@/hooks/useDisclosure';
 //Components
 import NotificationAnchorIconButton from '@/components/NavBar/NotificationAnchorIconButton';
 import Link from 'next/link';
+import CreateMenuButton from '@/components/CreateMenuButton';
 
 
 //Main component content
 const MobileHomeHeader = (): JSX.Element => {
-
-	//React
-	const [ opened, { open, close } ] = useDisclosure();
-
-
 	//Main component render
 	return (
 		<header
@@ -27,7 +23,7 @@ const MobileHomeHeader = (): JSX.Element => {
 				className='h-9 flex items-center justify-between gap-2'
 			>
 				<h1
-					className='font-medium text-xl pl-2'
+					className='font-medium text-xl pl-2 z-40'
 				>
 					<Link
 						href='/'
@@ -36,8 +32,9 @@ const MobileHomeHeader = (): JSX.Element => {
 					</Link>
 				</h1>
 				<div
-					className='h-full'
+					className='h-full flex gap-2 items-center'
 				>
+					<CreateMenuButton />
 					<NotificationAnchorIconButton />
 				</div>
 			</div>
