@@ -182,4 +182,42 @@
 			text-sm
 		;
 	}
+
+	.dark-mode-switch__container {
+		@apply
+			w-7 h-full flex items-center justify-center
+		;
+	}
+
+	.dark-mode-switch {
+		@apply
+			w-full h-4
+			relative
+			flex items-center justify-center
+			bg-neutral-300 dark:bg-sky-600
+			transition-all
+			rounded-full
+		;
+	}
+
+	.dark-mode-switch__dot {
+		@apply
+			transition-all
+			translate-x-0 dark:translate-x-3/4
+			before:content-['']
+			rounded-full
+			bg-white
+			border-2 dark:border
+			border-neutral-300 dark:border-sky-600
+			h-full
+			aspect-square
+		;
+	}
+
+	.dark-mode-switch__input {
+		@apply
+			w-full h-full
+			invisible
+		;
+	}
 }
