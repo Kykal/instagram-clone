@@ -233,14 +233,33 @@ const ThemeOptions = (props: ThemeOptions) => {
 				{dynamicIcon}
 			</div>
 			<Divider />
-			<button
-				className='flex items-center justify-between p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-md'
+			<div
+				className='flex items-center justify-between p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-md cursor-pointer select-none'
 				onClick={props.toggleTheme}
 			>
 				<span>
 					Dark mode
 				</span>
-			</button>
+				<div
+					className='dark-mode-switch__container'
+				>
+					<div
+						className='dark-mode-switch'
+					>
+						<div
+							className='dark-mode-switch__dot'
+						/>
+						<input
+							readOnly
+							aria-readonly
+							type="checkbox"
+							checked={props.theme === 'dark'}
+							aria-checked={props.theme === 'dark'}
+							className='dark-mode-switch__input'
+						/>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }

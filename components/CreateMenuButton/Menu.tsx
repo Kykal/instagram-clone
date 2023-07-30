@@ -24,7 +24,7 @@ const Menu = (): JSX.Element => {
 					role='button'
 				>
 					<span
-						className='text-sm'
+						className='create-menu__item-list__label'
 					>
 						Post
 					</span>
@@ -35,7 +35,7 @@ const Menu = (): JSX.Element => {
 					role='button'
 				>
 					<span
-						className='text-sm'
+						className='create-menu__item-list__label'
 					>
 						Story
 					</span>
