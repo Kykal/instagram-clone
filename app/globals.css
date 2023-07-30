@@ -108,8 +108,8 @@
 			overflow-hidden
 			rounded-md
 			absolute
-			left-16 xl:left-4
-			bottom-3 xl:bottom-20
+			left-16 xl:left-3
+			bottom-3 xl:bottom-16
 			bg-white dark:bg-neutral-800
 			min-w-max
 			hidden md:flex flex-col
