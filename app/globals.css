@@ -185,15 +185,15 @@
 
 	.dark-mode-switch__container {
 		@apply
-			w-7 h-full flex items-center justify-center
+			w-7 h-4 flex items-center justify-center
 		;
 	}
 
 	.dark-mode-switch {
 		@apply
-			w-full h-4
 			relative
-			flex items-center justify-center
+			w-full h-full
+			flex items-center
 			bg-neutral-300 dark:bg-sky-600
 			transition-all
 			rounded-full
@@ -216,6 +216,7 @@
 
 	.dark-mode-switch__input {
 		@apply
+			absolute
 			w-full h-full
 			invisible
 		;
