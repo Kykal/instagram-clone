@@ -8,6 +8,12 @@
 	* {
 		@apply box-border;
 	}
+
+	.center {
+		@apply
+			flex items-center justify-center
+		;
+	}
 	
 	.list-item {
 		@apply
@@ -221,4 +227,30 @@
 			invisible
 		;
 	}
+
+	.header-toolbar {
+		@apply
+			before:content-['']
+			w-full
+			h-[53px] md:h-0
+			block md:hidden
+		;
+	}
+
+	.stories__container {
+		@apply
+			w-full h-24
+			bg-neutral-100
+			border-b border-neutral-200
+		;
+	}
+
+	.stories__carousel {
+		@apply
+			w-full
+			h-full
+			flex
+			overflow-auto
+		;
+	}	
 }
