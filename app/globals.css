@@ -301,7 +301,7 @@
 			h-[64px]
 			aspect-square
 			z-30
-			bg-gradient-to-tr from-yellow-500 to-pink-500
+			bg-gradient-to-tr from-yellow-500 from-20% via-pink-500 to-90% to-fuchsia-600
 			rounded-full
 		;
 	}
