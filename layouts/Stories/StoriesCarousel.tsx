@@ -1,5 +1,6 @@
 //Components
 import Story from "./Story";
+import FakeStories from "./_FakeStories";
 
 
 //Main component content
@@ -9,11 +10,12 @@ const StoriesCarousel = (): JSX.Element => {
 		<div
 			className='stories__carousel'
 		>
-			{[...Array(10)].map( (_, index) => (
-				<Story
-					key={index}
-				/>
-			) )}
+			<Story
+				username='Your story'
+				hasStories={false}
+				profilePictureUrl='https://avatars.githubusercontent.com/u/54295964'
+			/>
+			<FakeStories />
 		</div>
 	);
 };

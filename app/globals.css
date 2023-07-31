@@ -307,6 +307,8 @@
 	.stories-story__profile-label {
 		@apply
 			text-xs
+			overflow-ellipsis
+			overflow-hidden
 		;
 	}
 }

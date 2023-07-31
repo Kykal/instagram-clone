@@ -2,8 +2,23 @@
 import Image from "next/image";
 
 
+//Typings
+export type Story = {
+	username: string;
+	profilePictureUrl: string;
+	hasStories: boolean;
+}
+type StoryImage = {
+	profilePictureUrl: string;
+	hasStories: boolean;
+}
+type StoryProfileName = {
+	username: string;
+}
+
+
 //Main component content
-const Story = (): JSX.Element => {
+const Story = (props: Story): JSX.Element => {
 	//Main component render
 	return (
 		<div
@@ -12,8 +27,13 @@ const Story = (): JSX.Element => {
 			<button
 				className='stories-story'
 			>
-				<StoryImage />
-				<StoryProfileName />
+				<StoryImage
+					profilePictureUrl={props.profilePictureUrl}
+					hasStories={props.hasStories}
+				/>
+				<StoryProfileName
+					username={props.username}
+				/>
 			</button>
 		</div>
 	);
@@ -24,10 +44,9 @@ export default Story; //Export main component
 
 
 
-const StoryImage = () => {
+const StoryImage = (props: StoryImage) => {
 
 	const size = 460;
-	const src = 'https://avatars.githubusercontent.com/u/54295964';
 
 	return(
 		<div
@@ -37,7 +56,7 @@ const StoryImage = () => {
 				className='stories-story__profile-picture'
 
 				alt='Profile'
-				src={src}
+				src={props.profilePictureUrl}
 
 				width={size}
 				height={size}
@@ -47,7 +66,7 @@ const StoryImage = () => {
 }
 
 
-const StoryProfileName = () => {
+const StoryProfileName = (props: StoryProfileName) => {
 	return(
 		<div
 			className='stories-story__profile-label__container'
@@ -55,7 +74,7 @@ const StoryProfileName = () => {
 			<span
 				className='stories-story__profile-label'
 			>
-				Your story
+				{props.username}
 			</span>
 		</div>
 	);
