@@ -240,7 +240,7 @@
 	.stories__container {
 		@apply
 			w-full h-24
-			bg-neutral-100
+			bg-neutral-100 dark:bg-neutral-900
 			border-b border-neutral-200
 		;
 	}
@@ -276,6 +276,7 @@
 
 			flex
 			flex-col
+			gap-1
 			items-center
 			justify-center
 		;
@@ -317,7 +318,7 @@
 			h-full
 			z-50
 			border-2
-			border-neutral-100
+			border-neutral-100 dark:border-black
 		;
 	}
 
