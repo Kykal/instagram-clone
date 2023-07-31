@@ -283,14 +283,37 @@
 
 	.stories-story__profile-picture__container {
 		@apply
+			relative
 			flex
 			items-center
 			justify-center
 			rounded-full
 			w-14
 			aspect-square
-			data-[has-stories=true]:bg-gradient-to-tr data-[has-stories=true]:from-yellow-500 data-[has-stories=true]:to-pink-500
-			p-0.5
+		;
+	}
+
+	.stories-story__profile-picture__story-border__background {
+		@apply
+			absolute
+			w-[62px]
+			h-[62px]
+			aspect-square
+			z-30
+			bg-gradient-to-tr from-yellow-500 to-pink-500
+			rounded-full
+		;
+	}
+
+	.stories-story__profile-picture__story-border {
+		@apply
+			absolute
+			rounded-full
+			w-full
+			h-full
+			z-50
+			border-2
+			border-white
 		;
 	}
 
@@ -298,8 +321,8 @@
 		@apply
 			rounded-full
 			w-14
+			z-40
 			aspect-square
-			border-2 border-neutral-100
 		;
 	}
 

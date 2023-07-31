@@ -59,6 +59,10 @@ const StoryImage = (props: StoryImage) => {
 			className='stories-story__profile-picture__container'
 			data-has-stories={props.hasStories}
 		>
+			<div
+				className='stories-story__profile-picture__story-border__background'
+			/>
+			<div className="stories-story__profile-picture__story-border" />
 			<Image
 				className='stories-story__profile-picture'
 
