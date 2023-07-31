@@ -57,12 +57,15 @@ const StoryImage = (props: StoryImage) => {
 	return(
 		<div
 			className='stories-story__profile-picture__container'
-			data-has-stories={props.hasStories}
-		>
+			>
 			<div
 				className='stories-story__profile-picture__story-border__background'
+				data-has-stories={props.hasStories}
 			/>
-			<div className="stories-story__profile-picture__story-border" />
+			<div
+				className="stories-story__profile-picture__story-border"
+				data-has-stories={props.hasStories}
+			/>
 			<Image
 				className='stories-story__profile-picture'
 

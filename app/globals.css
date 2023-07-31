@@ -295,6 +295,8 @@
 
 	.stories-story__profile-picture__story-border__background {
 		@apply
+			hidden
+			data-[has-stories=true]:block
 			absolute
 			w-[62px]
 			h-[62px]
@@ -307,13 +309,15 @@
 
 	.stories-story__profile-picture__story-border {
 		@apply
+			hidden
+			data-[has-stories=true]:block
 			absolute
 			rounded-full
 			w-full
 			h-full
 			z-50
 			border-2
-			border-white
+			border-neutral-100
 		;
 	}
 
