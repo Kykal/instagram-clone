@@ -51,6 +51,7 @@ const StoryImage = (props: StoryImage) => {
 	return(
 		<div
 			className='stories-story__profile-picture__container'
+			data-has-stories={props.hasStories}
 		>
 			<Image
 				className='stories-story__profile-picture'

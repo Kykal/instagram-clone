@@ -276,6 +276,8 @@
 
 			flex
 			flex-col
+			items-center
+			justify-center
 		;
 	}
 
@@ -284,6 +286,11 @@
 			flex
 			items-center
 			justify-center
+			rounded-full
+			w-14
+			aspect-square
+			data-[has-stories=true]:bg-gradient-to-tr data-[has-stories=true]:from-yellow-500 data-[has-stories=true]:to-pink-500
+			p-0.5
 		;
 	}
 
@@ -292,6 +299,7 @@
 			rounded-full
 			w-14
 			aspect-square
+			border-2 border-neutral-100
 		;
 	}
 
