@@ -241,7 +241,7 @@
 		@apply
 			w-full h-24
 			bg-neutral-100 dark:bg-neutral-900
-			border-b border-neutral-200
+			border-b border-neutral-200 dark:border-neutral-700
 		;
 	}
 
