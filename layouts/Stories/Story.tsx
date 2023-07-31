@@ -3,6 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 
+//MATERIAL DESIGN
+//Icons
+import {
+	BsPlusCircleFill,
+} from 'react-icons/bs';
+
+
 //Typings
 export type Story = {
 	username: string;
@@ -34,8 +41,7 @@ const Story = (props: Story): JSX.Element => {
 				className='stories-story'
 			>
 				<StoryImage
-					profilePictureUrl={props.profilePictureUrl}
-					hasStories={props.hasStories}
+					{...props}
 				/>
 				<StoryProfileName
 					username={props.username}
@@ -50,13 +56,16 @@ export default Story; //Export main component
 
 
 
-const StoryImage = (props: StoryImage) => {
+const StoryImage = (props: Story) => {
 
 	const size = 460;
+	const authUsername = 'kykal';
+
 
 	return(
 		<div
 			className='stories-story__profile-picture__container'
+			title={`${props.username} picture`}
 		>
 			{props.hasStories && (
 				<>
@@ -65,6 +74,17 @@ const StoryImage = (props: StoryImage) => {
 					/>
 					<div
 						className="stories-story__profile-picture__story-border"
+					/>
+				</>
+			)}
+			{props.username === authUsername && (
+				<>
+					<BsPlusCircleFill
+						className='stories-story__profile-picture__badge'
+						title='Add story badge'
+					/>
+					<div
+						className='stories-story__profile-picture__badge-background'
 					/>
 				</>
 			)}

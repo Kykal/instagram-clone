@@ -294,6 +294,33 @@
 		;
 	}
 
+	.stories-story__profile-picture__badge {
+		@apply
+			absolute
+			z-[60]
+			fill-sky-500
+			bottom-0
+			rounded-full
+			right-0
+			border border-neutral-900
+		;
+	}
+
+	.stories-story__profile-picture__badge-background {
+		@apply
+			absolute
+			z-50
+			aspect-square
+			bottom-0.5
+			right-0.5
+			w-3
+			h-3
+			bg-white
+			rounded-full
+			overflow-hidden
+		;
+	}
+
 	.stories-story__profile-picture__story-border__background {
 		@apply
 			absolute
@@ -325,6 +352,7 @@
 			aspect-square
 		;
 	}
+	
 
 	.stories-story__profile-label__container {
 		@apply
@@ -342,4 +370,5 @@
 			overflow-hidden
 		;
 	}
+
 }
