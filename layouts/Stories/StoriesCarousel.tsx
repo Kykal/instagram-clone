@@ -1,3 +1,7 @@
+//Components
+import Story from "./Story";
+
+
 //Main component content
 const StoriesCarousel = (): JSX.Element => {
 	//Main component render
@@ -6,12 +10,9 @@ const StoriesCarousel = (): JSX.Element => {
 			className='stories__carousel'
 		>
 			{[...Array(10)].map( (_, index) => (
-				<div
+				<Story
 					key={index}
-					className='center w-20 shrink-0'
-				>
-					a
-				</div>
+				/>
 			) )}
 		</div>
 	);

@@ -250,7 +250,63 @@
 			w-full
 			h-full
 			flex
-			overflow-auto
+			overflow-x-auto
+			px-3
 		;
-	}	
+	}
+
+
+	.stories-story__container {
+		@apply
+			w-20
+			h-full
+			shrink-0
+
+			py-2
+			flex
+			items-center
+			justify-center
+		;
+	}
+
+	.stories-story {
+		@apply
+			w-16
+			h-full
+
+			flex
+			flex-col
+		;
+	}
+
+	.stories-story__profile-picture__container {
+		@apply
+			flex
+			items-center
+			justify-center
+		;
+	}
+
+	.stories-story__profile-picture {
+		@apply
+			rounded-full
+			w-14
+			aspect-square
+		;
+	}
+
+	.stories-story__profile-label__container {
+		@apply
+			grow
+			flex
+			items-center
+			justify-center
+		;
+	}
+
+	.stories-story__profile-label {
+		@apply
+			text-xs
+		;
+	}
 }
