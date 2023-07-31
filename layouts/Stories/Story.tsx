@@ -1,5 +1,6 @@
 //NextJS
 import Image from "next/image";
+import Link from "next/link";
 
 
 //Typings
@@ -19,12 +20,17 @@ type StoryProfileName = {
 
 //Main component content
 const Story = (props: Story): JSX.Element => {
+
+	const href = `/stories/${props.username}`;
+
+
 	//Main component render
 	return (
 		<div
 			className='stories-story__container'
 		>
-			<button
+			<Link
+				href={href}
 				className='stories-story'
 			>
 				<StoryImage
@@ -34,7 +40,7 @@ const Story = (props: Story): JSX.Element => {
 				<StoryProfileName
 					username={props.username}
 				/>
-			</button>
+			</Link>
 		</div>
 	);
 };
@@ -68,6 +74,12 @@ const StoryImage = (props: StoryImage) => {
 
 
 const StoryProfileName = (props: StoryProfileName) => {
+
+	const label = props.username === 'kykal'
+		? 'Your story'
+		: props.username;
+
+
 	return(
 		<div
 			className='stories-story__profile-label__container'
@@ -75,7 +87,7 @@ const StoryProfileName = (props: StoryProfileName) => {
 			<span
 				className='stories-story__profile-label'
 			>
-				{props.username}
+				{label}
 			</span>
 		</div>
 	);

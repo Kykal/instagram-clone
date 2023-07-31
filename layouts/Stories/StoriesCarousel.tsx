@@ -11,7 +11,7 @@ const StoriesCarousel = (): JSX.Element => {
 			className='stories__carousel'
 		>
 			<Story
-				username='Your story'
+				username='kykal'
 				hasStories={false}
 				profilePictureUrl='https://avatars.githubusercontent.com/u/54295964'
 			/>
