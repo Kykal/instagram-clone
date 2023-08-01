@@ -22,7 +22,7 @@ const Tooltip = (props: Tooltip): JSX.Element => {
 		>
 			{children}
 			<span
-				className='tooltip group-hover:block group-hover:scale-100'
+				className='tooltip group-hover:scale-100'
 			>
 				{label}
 			</span>

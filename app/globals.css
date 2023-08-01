@@ -394,7 +394,7 @@
 			transition-all
 			duration-100
 			text-sm
-
+			hidden md:block xl:hidden
 		;
 	}
 }
