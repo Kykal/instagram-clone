@@ -16,6 +16,7 @@ import Routes from "@/configuration/routes";
 import InstagramLogo from "./InstagramLogo";
 import NavList from "./NavList";
 import MoreOptionsButton from "@/components/MoreButton";
+import Tooltip from "@/components/UI/Tooltip";
 
 
 //Main component content
@@ -66,9 +67,13 @@ const NavBar = (): JSX.Element => {
 					activeSectionHandler={activeSectionHandler}
 				/>
 			</div>
-			<MoreOptionsButton
-				activeSection={activeSection}
-			/>
+			<Tooltip
+				label='More'
+			>
+				<MoreOptionsButton
+					activeSection={activeSection}
+				/>
+			</Tooltip>
 		</nav>
 	);
 };
