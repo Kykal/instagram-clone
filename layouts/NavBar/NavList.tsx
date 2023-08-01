@@ -14,6 +14,7 @@ import ReelsNavLink from "@/components/NavBar/ReelsNavLink";
 import SearchSection from "@/components/SearchSection";
 import SearchButton from "@/components/NavBar/SearchButton";
 import SearchNavLink from "@/components/NavBar/SearchNavLink";
+import Tooltip from "@/components/UI/Tooltip";
 
 
 //Typings
@@ -34,9 +35,13 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 				<li
 					className='navigation-list__item'
 				>
-					<HomeNavLink
-						isSectionActive={Boolean(activeSection)}
-					/>
+					<Tooltip
+						label='Home'
+					>
+						<HomeNavLink
+							isSectionActive={Boolean(activeSection)}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='hidden md:block navigation-list__item'
