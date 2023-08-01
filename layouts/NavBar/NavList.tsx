@@ -14,6 +14,7 @@ import ReelsNavLink from "@/components/NavBar/ReelsNavLink";
 import SearchSection from "@/components/SearchSection";
 import SearchButton from "@/components/NavBar/SearchButton";
 import SearchNavLink from "@/components/NavBar/SearchNavLink";
+import Tooltip from "@/components/UI/Tooltip";
 
 
 //Typings
@@ -34,17 +35,25 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 				<li
 					className='navigation-list__item'
 				>
-					<HomeNavLink
-						isSectionActive={Boolean(activeSection)}
-					/>
+					<Tooltip
+						label='Home'
+					>
+						<HomeNavLink
+							isSectionActive={Boolean(activeSection)}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='hidden md:block navigation-list__item'
 				>
-					<SearchButton
-						activeSection={activeSection}
-						onClick={activeSectionHandler}
-					/>
+					<Tooltip
+						label='Search'
+					>
+						<SearchButton
+							activeSection={activeSection}
+							onClick={activeSectionHandler}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='navigation-list__item md:hidden'
@@ -54,45 +63,69 @@ const NavList = ({activeSection, activeSectionHandler}: NavList): JSX.Element =>
 				<li
 					className='hidden md:block navigation-list__item'
 				>
-					<ExploreNavLink
-						isSectionActive={Boolean(activeSection)}
-					/>
+					<Tooltip
+						label='Explore'
+					>
+						<ExploreNavLink
+							isSectionActive={Boolean(activeSection)}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='navigation-list__item'
 				>
-					<ReelsNavLink
-						isSectionActive={Boolean(activeSection)}
-					/>
+					<Tooltip
+						label='Reels'
+					>
+						<ReelsNavLink
+							isSectionActive={Boolean(activeSection)}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='navigation-list__item'
 				>
-					<MessagesNavLink
-						isSectionActive={Boolean(activeSection)}
-					/>
+					<Tooltip
+						label='Messages'
+					>
+						<MessagesNavLink
+							isSectionActive={Boolean(activeSection)}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='hidden md:block navigation-list__item'
 				>
-					<NotificationNavButton
-						activeSection={activeSection}
-						onClick={activeSectionHandler}
-					/>
+					<Tooltip
+						label='Notifications'
+					>
+						<NotificationNavButton
+							activeSection={activeSection}
+							onClick={activeSectionHandler}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='hidden md:block navigation-list__item'
 				>
-					<CreateNavButton
-						activeSection={activeSection}
-					/>
+					<Tooltip
+						label='Create'
+					>
+						<CreateNavButton
+							activeSection={activeSection}
+						/>
+					</Tooltip>
 				</li>
 				<li
 					className='navigation-list__item'
 				>
-					<ProfileNavLink
-						isSectionActive={Boolean(activeSection)}
-					/>
+					<Tooltip
+						label='Profile &bull; kykal'
+					>
+						<ProfileNavLink
+							isSectionActive={Boolean(activeSection)}
+						/>
+					</Tooltip>
 				</li>
 			</ul>
 			{activeSection === NavBarSections.SEARCH && (

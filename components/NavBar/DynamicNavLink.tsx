@@ -22,28 +22,28 @@ type DynamicNavLink = {
 
 
 //Main component content
-const DynamicNavLink = ({ url, label, isSectionActive, icon, activeIcon }: DynamicNavLink): JSX.Element => {
+const DynamicNavLink = (props: DynamicNavLink): JSX.Element => {
 
 	//NextJS
 	const pathname = usePathname();
 
-	const isActive = url === pathname;
+	const isActive = props.url === pathname;
 
-	const dynamicIcon = isActive ? activeIcon : icon;
+	const dynamicIcon = isActive ? props.activeIcon : props.icon;
 
 
 	//Main component render
 	return (
 		<NavLink
-			href={url}
+			href={props.url}
 
 			icon={dynamicIcon}
-			isSectionActive={isSectionActive}
+			isSectionActive={props.isSectionActive}
 
 			className={`nav-item`}
 			data-is-active={isActive}
 		>
-			{label}
+			{props.label}
 		</NavLink>
 	);
 };
