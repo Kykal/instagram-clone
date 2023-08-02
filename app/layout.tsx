@@ -23,7 +23,6 @@ const roboto = Roboto({
 
 
 //Layouts
-import AsideBar from '@/layouts/AsideBar';
 import NavBar from '@/layouts/NavBar';
 
 

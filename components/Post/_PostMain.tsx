@@ -70,6 +70,7 @@ const MultimediaCarousel = (props: Post) => {
 							alt={`post-multimedia-${index}`}
 							fill
 							className='w-full aspect-square'
+							sizes='100w'
 						/>
 					</li>
 				) )}

@@ -30,6 +30,7 @@ const UserAvatar = (props: User): JSX.Element => {
 				alt='Profile'
 				fill
 				className="avatar-image"
+				sizes='100h'
 			/>
 		</Link>
 	);
