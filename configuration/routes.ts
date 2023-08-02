@@ -10,6 +10,7 @@ enum Routes {
 	ACTIVITY = '/your-activity/interactions',
 	SAVED = '/kykal/saved',
 	POST = '/p',
+	STORIES = '/stories',
 }
 
 

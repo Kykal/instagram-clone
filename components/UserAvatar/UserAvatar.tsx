@@ -1,17 +1,23 @@
 //NextJS
 import Image from "next/image";
+import Link from "next/link";
 
 
 //Typings
 import User from "@/typings/User";
+import Routes from "@/configuration/routes";
 
 
 //Main component content
 const UserAvatar = (props: User): JSX.Element => {
+
+	const href = `${Routes.STORIES}/${props.name}`;
+
 	//Main component render
 	return (
-		<div
+		<Link
 			className='avatar-container'
+			href={href}
 		>
 			{props.hasStories && (
 				<>
@@ -25,7 +31,7 @@ const UserAvatar = (props: User): JSX.Element => {
 				fill
 				className="avatar-image"
 			/>
-		</div>
+		</Link>
 	);
 };
 
