@@ -419,6 +419,128 @@
 	.feed {
 		@apply
 			w-full
+			flex
+			flex-col
+			items-center
+		;
+	}
+
+	.post-container {
+		@apply
+			w-full md:w-[470px]
+		;
+	}
+
+	.post__header {
+		@apply
+			flex
+			items-center
+			justify-between
+			px-4 py-3 md:px-0
+		;
+	}
+
+	.post__body {
+		@apply
+			flex
+			flex-col
+		;
+	}
+
+	.post__body-carousel-container {
+		@apply
+			w-full
+			relative
+			aspect-square
+			flex
+			items-center
+		;
+	}
+	
+	.post__body-carousel {
+		@apply
+			relative
+			overflow-hidden
+			w-full
+			aspect-square
+		;
+	}
+
+	.post__body-carousel-item {
+		@apply
+			w-full
+			aspect-square
+			absolute
+			transition-all
+		;
+	}
+	
+	.post__body-carousel-button-container {
+		@apply
+			absolute
+			px-3
+			py-2
+		;
+	}
+
+	.post_body-carousel-button {
+		@apply
+			bg-white/75
+			rounded-full
+			p-1
+		;
+	}
+
+	.post__options {
+		@apply
+			flex
+			items-center
+			justify-center
+		;
+	}
+
+	.avatar-container {
+		@apply
+			aspect-square
+			relative
+			h-full
+			flex
+			items-center
+			justify-center
+		;
+	}
+
+	.avatar-gradient {
+		@apply
+			absolute
+			z-30
+			h-[125%]
+			w-[125%]
+			rounded-full
+			bg-gradient-to-tr
+			from-yellow-500 from-20%
+			via-pink-500 to-90%
+			to-fuchsia-600
+		;
+	}
+
+	.avatar-gradient--transparency {
+    @apply absolute
+      z-40
+      h-[115%]
+      w-[115%]
+      rounded-full
+      bg-white dark:bg-black
+		;
+  }
+
+	.avatar-image {
+		@apply
+			z-50
+			aspect-square
+			rounded-full
+			max-w-full
+			max-h-full
 		;
 	}
 }
