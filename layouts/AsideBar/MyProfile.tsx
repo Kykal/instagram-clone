@@ -44,7 +44,7 @@ const MyProfile = (): JSX.Element => {
 				</span>
 			</div>
 			<button
-				className='text-sm text-sky-500 cursor-not-allowed disabled:text-sky-500/75'
+				className='text-xs text-sky-500 font-semibold cursor-not-allowed disabled:text-sky-500/75'
 				disabled
 			>
 				Switch
