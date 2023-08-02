@@ -411,8 +411,7 @@
 			pt-[53px] md:pt-10
 			md:pl-[73px] xl:pl-[345px]
 			flex
-			flex-col
-			items-center
+			justify-center
 		;
 	}
 
