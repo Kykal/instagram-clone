@@ -165,7 +165,7 @@
 	.create-menu__container {
 		@apply
 			md:hidden
-			absolute top-14 right-4
+			fixed top-14 right-4
 			z-50
 			w-28
 		;
