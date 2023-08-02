@@ -542,4 +542,34 @@
 			max-h-full
 		;
 	}
+
+	.home-aside-container {
+		@apply
+			hidden
+			xl:flex
+			w-80
+			pt-2
+			pr-10
+			flex-col
+			gap-4
+		;
+	}
+
+	.suggested-for-you {
+		@apply
+			flex
+			flex-col
+			
+		;
+	}
+
+	.legal-container {
+		@apply
+			flex
+			flex-col
+			gap-4
+			text-xs
+			text-neutral-300
+		;
+	}
 }
