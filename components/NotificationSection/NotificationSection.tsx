@@ -30,14 +30,14 @@ const NotificationSection = (): JSX.Element => {
 				className='flex flex-col gap-4'
 			>
 				<span
-					className='px-6 text-md font-semibold'
+					className='px-6 text-md font-medium'
 				>
 					Today
 				</span>
 				<TodayHistory />
 				<Divider />
 				<span
-					className='px-6 text-md font-semibold'
+					className='px-6 text-md font-medium'
 				>
 					This week
 				</span>

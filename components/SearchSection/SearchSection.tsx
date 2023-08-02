@@ -35,7 +35,7 @@ const SearchSection = (): JSX.Element => {
 							className='flex justify-between items-center px-6 pt-6'
 						>
 							<span
-								className='text-md font-semibold'
+								className='text-md font-medium'
 							>
 								Recent
 							</span>
