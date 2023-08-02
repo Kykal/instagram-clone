@@ -7,16 +7,12 @@ import PostsList from "./PostsList";
 const Feed = (): JSX.Element => {
 	//Main component render
 	return (
-		<div
-			className='feed__container'
+		<main
+			className='flex flex-col items-center w-full md:max-w-2xl md:gap-14'
 		>
-			<main
-				className='flex flex-col items-center w-full md:max-w-2xl md:gap-14'
-			>
-				<Stories />
-				<PostsList />
-			</main>
-		</div>
+			<Stories />
+			<PostsList />
+		</main>
 	);
 };
 
