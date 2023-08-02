@@ -2,10 +2,6 @@
 'use client';
 
 
-//React
-import useDisclosure from '@/hooks/useDisclosure';
-
-
 //Components
 import NotificationAnchorIconButton from '@/components/NavBar/NotificationAnchorIconButton';
 import Link from 'next/link';
@@ -17,7 +13,7 @@ const MobileHomeHeader = (): JSX.Element => {
 	//Main component render
 	return (
 		<header
-			className='md:hidden absolute top-0 left-0 w-full border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-black p-2'
+			className='md:hidden fixed top-0 left-0 w-full border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-black p-2 z-50'
 		>
 			<div
 				className='h-9 flex items-center justify-between gap-2'

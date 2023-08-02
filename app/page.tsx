@@ -1,7 +1,6 @@
 //Layouts
 import Stories from "@/layouts/Stories/Stories";
 import MobileHomeHeader from "@/layouts/MobileHomeHeader";
-import HeaderToolbar from "@/layouts/HeaderToolbar";
 
 
 //Main component content
@@ -10,13 +9,23 @@ const Page = (): JSX.Element => {
 	return (
 		<>
 			<MobileHomeHeader />
-			<HeaderToolbar />
-			<Stories />
-			<main
-				className='grow'
+			<div
+				className='feed__container'
 			>
-				Home page
-			</main>
+				<Stories />
+				<main>
+					{[...Array(10)].map( (_, index) => (
+						<div
+							key={index}
+							className='h-96'
+						>
+							<span>
+								#: {index}
+							</span>
+						</div>
+					) )}
+				</main>
+			</div>
 		</>
 	);
 };
