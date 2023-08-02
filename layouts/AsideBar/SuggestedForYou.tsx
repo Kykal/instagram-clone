@@ -25,13 +25,13 @@ const SuggestedForYou = (): JSX.Element => {
 				className='flex justify-between text-sm items-center'
 			>
 				<span
-					className='font-semibold text-neutral-600 '
+					className='font-medium text-neutral-600 '
 				>
 					Suggested for you
 				</span>
 				<Link
 					href={Routes.EXPLORE_PEOPLE}
-					className='hover:text-neutral-500 text-xs font-semibold'
+					className='hover:text-neutral-500 text-xs font-medium'
 				>
 					See All
 				</Link>

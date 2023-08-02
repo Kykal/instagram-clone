@@ -48,7 +48,7 @@ const PostHeader = (props: Post): JSX.Element => {
 				>
 					<Link
 						href={usernameHref}
-						className='font-semibold'
+						className='font-medium'
 					>
 						{props.user.name}
 					</Link>

@@ -103,7 +103,7 @@ const ProfileData = (props: ProfileData) => {
 			className='flex flex-col gap text-sm grow'
 		>
 			<span
-				className='font-semibold'
+				className='font-medium'
 			>
 				{props.username}
 			</span>

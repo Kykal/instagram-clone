@@ -72,7 +72,7 @@
 			xl:px-3
 			xl:py-2.5
 			md:gap-3.5
-			data-[is-active=true]:font-semibold
+			data-[is-active=true]:font-medium
 		;
 	}
 

@@ -33,7 +33,7 @@ const MyProfile = (): JSX.Element => {
 			>
 				<Link
 					href={`/${user.name}`}
-					className='font-semibold'
+					className='font-medium'
 				>
 					{user.name}
 				</Link>
@@ -44,7 +44,7 @@ const MyProfile = (): JSX.Element => {
 				</span>
 			</div>
 			<button
-				className='text-xs text-sky-500 font-semibold cursor-not-allowed disabled:text-sky-500/75'
+				className='text-xs text-sky-500 font-medium cursor-not-allowed disabled:text-sky-500/75'
 				disabled
 			>
 				Switch

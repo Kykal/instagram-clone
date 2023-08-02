@@ -31,7 +31,7 @@ const SuggestedProfile = (props: SuggestedProfile): JSX.Element => {
 			>
 				<Link
 					href={`/${props.user.name}`}
-					className='font-semibold text-sm'
+					className='font-medium text-sm'
 				>
 					{props.user.name}
 				</Link>
@@ -42,7 +42,7 @@ const SuggestedProfile = (props: SuggestedProfile): JSX.Element => {
 				</span>
 			</div>
 			<button
-				className='text-xs font-semibold text-sky-500 hover:text-sky-700'
+				className='text-xs font-medium text-sky-500 hover:text-sky-700'
 			>
 				Follow
 			</button>
