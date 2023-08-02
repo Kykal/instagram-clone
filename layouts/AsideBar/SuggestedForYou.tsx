@@ -52,7 +52,7 @@ const SuggestedProfiles = (): JSX.Element => {
 		{
 			followedBy: 'its_my_other_me',
 			user: {
-				hasStories: false,
+				hasStories: true,
 				name: 'its_me',
 				imgUrl: 'https://dummyimage.com/500x500/000/fff.png',
 			}
@@ -60,7 +60,7 @@ const SuggestedProfiles = (): JSX.Element => {
 		{
 			followedBy: 'ligo_leyen',
 			user: {
-				hasStories: true,
+				hasStories: false,
 				name: 'rito_games',
 				imgUrl: 'https://dummyimage.com/500x500/000/fff.png',
 			}
