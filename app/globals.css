@@ -551,15 +551,15 @@
 			pt-2
 			pr-10
 			flex-col
-			gap-4
+			gap-6
 		;
 	}
 
-	.suggested-for-you {
+	.suggested-for-you-container {
 		@apply
 			flex
 			flex-col
-			
+			gap-4
 		;
 	}
 
