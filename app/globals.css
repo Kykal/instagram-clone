@@ -515,6 +515,7 @@
 			z-30
 			h-[125%]
 			w-[125%]
+			aspect-square
 			rounded-full
 			bg-gradient-to-tr
 			from-yellow-500 from-20%
@@ -530,6 +531,7 @@
       w-[115%]
       rounded-full
       bg-white dark:bg-black
+			aspect-square
 		;
   }
 
