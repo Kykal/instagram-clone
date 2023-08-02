@@ -245,7 +245,8 @@
 
 	.stories__container {
 		@apply
-			w-full h-24
+			w-full
+			h-24
 			bg-neutral-100 dark:bg-neutral-900 md:bg-white md:dark:bg-black
 			border-b border-neutral-200 dark:border-neutral-700 md:border-0
 		;
@@ -407,10 +408,17 @@
 	.feed__container {
 		@apply
 			grow
+			pt-[53px] md:pt-10
+			md:pl-[73px] xl:pl-[345px]
 			flex
 			flex-col
-			pt-[53px] md:pt-0
-			md:pl-[73px] xl:pl-[345px]
+			items-center
+		;
+	}
+
+	.feed {
+		@apply
+			w-full
 		;
 	}
 }

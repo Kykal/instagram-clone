@@ -12,18 +12,25 @@ const Page = (): JSX.Element => {
 			<div
 				className='feed__container'
 			>
-				<Stories />
-				<main>
-					{[...Array(10)].map( (_, index) => (
-						<div
-							key={index}
-							className='h-96'
-						>
-							<span>
-								#: {index}
-							</span>
-						</div>
-					) )}
+				<main
+					className='flex flex-col items-center w-full md:max-w-2xl md:gap-14'
+				>
+					<Stories />
+					<article
+						role="feed"
+						className='feed'
+					>
+						{[...Array(10)].map( (_, index) => (
+							<section
+								key={index}
+								className='h-96'
+							>
+								<span>
+									#: {index}
+								</span>
+							</section>
+						) )}
+					</article>
 				</main>
 			</div>
 		</>
