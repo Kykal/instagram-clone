@@ -46,7 +46,6 @@ const RootLayout = ({ children }: Layout): JSX.Element => {
 			>
 				<NavBar />
 				{children}
-				<AsideBar />
 			</body>
 		</html>
 	);

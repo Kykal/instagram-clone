@@ -10,13 +10,13 @@ const Page = (): JSX.Element => {
 	return (
 		<>
 			<MobileHomeHeader />
-			<HeaderToolbar />
-			<Stories />
-			<main
-				className='grow'
+			<div
+				className='grow flex flex-col'
 			>
+				<HeaderToolbar />
+				<Stories />
 				Home page
-			</main>
+			</div>
 		</>
 	);
 };
