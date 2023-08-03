@@ -498,51 +498,6 @@
 		;
 	}
 
-	.avatar-container {
-		@apply
-			aspect-square
-			relative
-			h-full
-			flex
-			items-center
-			justify-center
-		;
-	}
-
-	.avatar-gradient {
-		@apply
-			absolute
-			z-30
-			h-[125%]
-			aspect-square
-			rounded-full
-			bg-gradient-to-tr
-			from-yellow-500 from-20%
-			via-pink-500 to-90%
-			to-fuchsia-600
-		;
-	}
-
-	.avatar-gradient--transparency {
-    @apply absolute
-      z-40
-      h-[115%]
-      rounded-full
-      bg-white dark:bg-black
-			aspect-square
-		;
-  }
-
-	.avatar-image {
-		@apply
-			z-50
-			aspect-square
-			rounded-full
-			max-w-full
-			max-h-full
-		;
-	}
-
 	.home-aside-container {
 		@apply
 			hidden
@@ -570,6 +525,49 @@
 			gap-4
 			text-xs
 			text-neutral-300
+		;
+	}
+
+
+	.avatar-container {
+		@apply
+			relative
+			h-full
+			aspect-square
+			flex
+			items-center
+			justify-center
+		;
+	}
+
+	.avatar-gradient {
+		@apply
+			absolute
+			bg-gradient-to-tr
+			from-yellow-500 from-20%
+			via-pink-500
+			to-fuchsia-600 to-90%
+			aspect-square
+			h-[120%]
+			rounded-full
+		;
+	}
+
+	.avatar-gradient--transparency {
+		@apply
+			absolute
+			bg-white dark:bg-neutral-900 md:dark:bg-black
+			rounded-full
+			h-[110%]
+			aspect-square
+		;
+  }
+
+	.avatar-image {
+		@apply
+			rounded-full
+			h-full
+			aspect-square
 		;
 	}
 }
