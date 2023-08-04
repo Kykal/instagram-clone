@@ -22,13 +22,13 @@ const PostsList = (): JSX.Element => {
 			comments: 16,
 			multimedia: [
 				{
-					url: 'https://dummyimage.com/468x468/000/fff.png',
+					url: 'https://dummyimage.com/500x200/000/fff.png',
 				},
 				{
-					url: 'https://dummyimage.com/468x468/555/fff.png',
+					url: 'https://dummyimage.com/200x500/555/fff.png',
 				},
 				{
-					url: 'https://dummyimage.com/468x468/255255255/fff.png',
+					url: 'https://dummyimage.com/500x500/255255255/fff.png',
 				}
 			],
 		},

@@ -15,7 +15,18 @@ import {
 
 
 //Typings
-import Post from "@/typings/Post";
+import Post, { Multimedia } from "@/typings/Post";
+type MultimediaList = Post & {
+	activeItem: number;
+}
+type MultimediaItem = {
+	multimediaItem: Multimedia;
+	activeItem: number;
+	index: number;
+}
+type Indicators = Post & {
+	activeItem: number;
+}
 
 
 //Main component content
@@ -38,15 +49,15 @@ export default PostMain; //Export main component
 const MultimediaCarousel = (props: Post) => {
 
 	//React
-	const [ activeImage, setActiveImage ] = useState<number>(0);
+	const [ activeItem, setActiveItem ] = useState<number>(0);
 
 
 	const swipeLeftHandler = () => {
-		setActiveImage( (prevState) => prevState - 1 );
+		setActiveItem( (prevState) => prevState - 1 );
 	};
 
 	const swipeRightHandler = () => {
-		setActiveImage( (prevState) => prevState + 1 );
+		setActiveItem( (prevState) => prevState + 1 );
 	};
 
 
@@ -54,27 +65,11 @@ const MultimediaCarousel = (props: Post) => {
 		<div
 			className='post__body-carousel-container'
 		>
-			<ul
-				className='post__body-carousel'
-			>
-				{props.multimedia.map( (item, index) => (
-					<li
-						key={`post-multimedia-item-${index}`}
-						className='post__body-carousel-item'
-						style={{
-							transform: `translateX(${(index * 100) - (activeImage * 100)}%)`
-						}}
-					>
-						<Image
-							src={item.url}
-							alt={`post-multimedia-${index}`}
-							fill
-							className='w-full aspect-square'
-						/>
-					</li>
-				) )}
-			</ul>
-			{activeImage !== 0 && (
+			<MultimediaList
+				{...props}
+				activeItem={activeItem}
+			/>
+			{activeItem !== 0 && (
 				<div
 					className='post__body-carousel-button-container left-0'
 				>
@@ -86,7 +81,7 @@ const MultimediaCarousel = (props: Post) => {
 					</button>
 				</div>
 			)}
-			{activeImage !== (props.multimedia.length - 1) && (
+			{activeItem !== (props.multimedia.length - 1) && (
 				<div
 					className='post__body-carousel-button-container right-0'
 				>
@@ -98,6 +93,69 @@ const MultimediaCarousel = (props: Post) => {
 					</button>
 				</div>
 			)}
+			<Indicators
+				{...props}
+				activeItem={activeItem}
+			/>
+		</div>
+	);
+}
+
+
+
+const MultimediaList = (props: MultimediaList) => {
+	return(
+		<ul
+			className='post__body-carousel'
+		>
+			{props.multimedia.map( (item, index) => (
+				<MultimediaItem
+					key={`post-multimedia-item-${index}`}
+					activeItem={props.activeItem}
+					multimediaItem={item}
+					index={index}
+				/>
+			) )}
+		</ul>
+	);
+}
+
+
+const MultimediaItem = (props: MultimediaItem) => {
+	return(
+		<li
+			className='post__body-carousel-item'
+			style={{
+				transform: `translateX(${(props.index * 100) - (props.activeItem * 100)}%)`
+			}}
+		>
+			<Image
+				src={props.multimediaItem.url}
+				alt={`post-multimedia-${props.index}`}
+				fill
+				className='object-contain'
+				sizes='100vw'
+			/>
+		</li>
+	);
+}
+
+
+const Indicators = (props: Indicators) => {
+	return(
+		<div
+			className='absolute bottom-0 pb-2 w-full flex items-center justify-center'
+		>
+			<div
+				className='h-2 flex items-center justify-center gap-1'
+			>
+				{props.multimedia.map( (_, index) => (
+					<div
+						key={`${props.user.name}-post-item-${index}`}
+						className={`rounded-full h-full aspect-square transition-all ${props.activeItem === index ? 'bg-white' : 'bg-neutral-100/50'}`}
+					/>
+				) )}
+			</div>
 		</div>
 	);
 }

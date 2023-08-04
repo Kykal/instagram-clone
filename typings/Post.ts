@@ -2,7 +2,7 @@
 import User from "./User";
 
 
-type Multimedia = {
+export type Multimedia = {
 	url: string;
 }
 

@@ -1,35 +1,67 @@
 //React
 import { HTMLAttributes } from 'react';
+import { createPortal } from 'react-dom';
+import BackgroundOnClick from '../BackgroundOnClick';
 
 
 //Typings
 type Menu = HTMLAttributes<HTMLMenuElement> & {
+	opened: boolean;
+	onClose: () => void;
+	top?: string;
+	bottom?: string;
+	left?: string;
+	right?: string;
+
 	children?: any;
 }
 
 
 //Main component content
-const Menu = (props: Menu): JSX.Element => {
-
-	let _className = 'popper';
-
-	const { className: propsClassName, ...propsAttributes } = props;
+const MenuPortal = (props: Menu): JSX.Element => {
 	
-	if( propsClassName ){
-		_className = `popper ${propsClassName}`;
-	}
-	
+	//React
+	const isClient = typeof window !== 'undefined'; //Due the server does not know what 'window' is, we must assure that we are running this script client-side
+	const target = document.body;
+
+
 	//Main component render
 	return (
-		<menu
-			className={_className}
-			{...propsAttributes}
-
-		>
-			{props.children}
-		</menu>
+		<>
+			{ (isClient && props.opened) && createPortal(
+				<>
+					<RealMenu
+						{...props}
+					/>
+					<BackgroundOnClick
+						onClick={props.onClose}
+					/>
+				</>,
+				target
+			)}
+		</>
 	);
 };
 
 
-export default Menu; //Export main component
+export default MenuPortal; //Export main component
+
+
+
+const RealMenu = (props: Menu) => {
+
+	const containerClassName = `ui-menu-container ${props.top} ${props.bottom} ${props.left} ${props.right}`.trim();
+
+	
+	return(
+		<div
+			className={containerClassName}
+		>
+			<menu
+				{...props}
+			>
+				{props.children}
+			</menu>
+		</div>
+	);
+}
