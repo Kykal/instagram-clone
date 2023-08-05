@@ -25,13 +25,13 @@ import { Theme } from '@/utils/theme/typings';
 
 
 //Typings
-type MoreButton = {
+type MoreOptionsButton = {
 	activeSection: string;
 }
 
 
 //Main component content
-const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
+const MoreOptionsButton = ({activeSection}: MoreOptionsButton): JSX.Element => {
 
 	//NextJS
 	const pathname = usePathname();
@@ -113,4 +113,4 @@ const MoreButton = ({activeSection}: MoreButton): JSX.Element => {
 };
 
 
-export default MoreButton; //Export main component
+export default MoreOptionsButton; //Export main component
