@@ -7,7 +7,7 @@ import UserAvatar from "@/components/UserAvatar";
 
 
 //Typings
-import User from "@/typings/User";
+import User from "@/models/User";
 export type SuggestedProfile = {
 	user: User;
 	followedBy: string;
