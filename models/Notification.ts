@@ -32,6 +32,8 @@ class Notification {
 		this.users = users.map( (user) => new User(
 			user.username,
 			user.avatar_url,
+			user.has_stories,
+			
 			user.name
 		) );
 		this.timestamp = new Date(timestamp);
