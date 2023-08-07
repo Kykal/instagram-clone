@@ -1,6 +1,6 @@
 type User = {
-	name: string;
-	imgUrl: string;
+	username: string;
+	avatarUrl: string;
 	hasStories: boolean;
 }
 

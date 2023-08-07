@@ -11,8 +11,8 @@ import Routes from "@/configuration/routes";
 //Main component content
 const UserAvatar = (props: User): JSX.Element => {
 
-	const storiesHref = `${Routes.STORIES}/${props.name}`;
-	const profileHref = `/${props.name}`;
+	const storiesHref = `${Routes.STORIES}/${props.username}`;
+	const profileHref = `/${props.username}`;
 
 
 	const storiesBorder = (
@@ -31,7 +31,7 @@ const UserAvatar = (props: User): JSX.Element => {
 		>
 			{props.hasStories && storiesBorder}
 			<Image
-				src={props.imgUrl}
+				src={props.avatarUrl}
 				alt='Profile'
 				fill
 				className="avatar-image"

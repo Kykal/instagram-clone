@@ -6,9 +6,8 @@ export type Multimedia = {
 	url: string;
 }
 
-type Post = {
+type Post = User & {
 	id: string;
-	user: User;
 	timestamp: string;
 	multimedia: Multimedia[];
 	likes: number;

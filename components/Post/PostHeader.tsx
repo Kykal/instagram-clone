@@ -20,17 +20,19 @@ import UserAvatar from "../UserAvatar";
 
 
 //Typings
-import Post from "@/typings/Post";
+import PostModel from "@/models/Post";
+import Routes from "@/configuration/routes";
+import { getImgProps } from "next/dist/shared/lib/get-img-props";
 
 
 //Main component content
-const PostHeader = (props: Post): JSX.Element => {
+const PostHeader = (props: PostModel): JSX.Element => {
 	
 	//React
 	const [opened, { open, close }] = useDisclosure();
 
 
-	const usernameHref = `/${props.user.name}`;
+	const usernameHref = `/${props.username}`;
 	const timestampHref = `/p/${props.id}`;
 
 
@@ -42,7 +44,7 @@ const PostHeader = (props: Post): JSX.Element => {
 			<div
 				className='flex h-8 gap-3 items-center'
 			>
-				<UserAvatar {...props.user} />
+				<UserAvatar {...props} />
 				<div
 					className='flex items-center gap-1 text-sm'
 				>
@@ -50,15 +52,12 @@ const PostHeader = (props: Post): JSX.Element => {
 						href={usernameHref}
 						className='font-medium'
 					>
-						{props.user.name}
+						{props.username}
 					</Link>
 					<span>&bull;</span>
-					<Link
-						href={timestampHref}
-						className='text-neutral-500'
-					>
-						{props.timestamp}
-					</Link>
+					<Timestamp
+						{...props}
+					/>
 				</div>
 			</div>
 			<IconButton
@@ -73,3 +72,25 @@ const PostHeader = (props: Post): JSX.Element => {
 
 
 export default PostHeader; //Export main component
+
+
+
+const Timestamp = (props: PostModel) => {
+
+	const href = `${Routes.POST}/p/${props.id}`;
+
+	const timestamp = props.timestamp.toLocaleDateString('en', {
+		day: 'numeric',
+		month: 'short',
+		year: 'numeric',
+	});
+
+	return(
+		<Link
+			href={href}
+			className='text-neutral-500'
+		>
+			{timestamp}
+		</Link>
+	);
+}

@@ -475,6 +475,7 @@
 			overflow-hidden
 			w-full
 			aspect-square
+			bg-neutral-200
 		;
 	}
 
@@ -484,7 +485,6 @@
 			aspect-square
 			absolute
 			transition-all
-			bg-neutral-200
 		;
 	}
 	
