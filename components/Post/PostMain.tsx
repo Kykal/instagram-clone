@@ -92,7 +92,7 @@ const MultimediaCarousel = (props: PostModel) => {
 
 const Controls = (props: Controls) => {
 
-	if( props.multimedia.length === 0 ){
+	if( props.multimedia.length === 1 ){
 		return;
 	}
 	
@@ -168,7 +168,7 @@ const MultimediaItem = (props: MultimediaItem) => {
 
 const Indicators = (props: Indicators) => {
 
-	if( props.multimedia.length === 0 ){
+	if( props.multimedia.length === 1 ){
 		return;
 	}
 
