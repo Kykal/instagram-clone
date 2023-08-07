@@ -434,6 +434,7 @@
 			flex
 			flex-col
 			items-center
+			md:gap-4
 		;
 	}
 
@@ -475,6 +476,7 @@
 			overflow-hidden
 			w-full
 			aspect-square
+			bg-neutral-200
 		;
 	}
 
@@ -484,7 +486,6 @@
 			aspect-square
 			absolute
 			transition-all
-			bg-neutral-200
 		;
 	}
 	

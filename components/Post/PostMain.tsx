@@ -15,22 +15,28 @@ import {
 
 
 //Typings
-import Post, { Multimedia } from "@/typings/Post";
-type MultimediaList = Post & {
+import PostModel from "@/models/Post";
+type MultimediaList = PostModel & {
 	activeItem: number;
 }
 type MultimediaItem = {
-	multimediaItem: Multimedia;
+	multimediaItem: string;
 	activeItem: number;
 	index: number;
 }
-type Indicators = Post & {
+type Indicators = PostModel & {
 	activeItem: number;
+}
+type Controls = PostModel & {
+	activeItem: number;
+	swipeLeftHandler: () => void;
+	swipeRightHandler: () => void;
+
 }
 
 
 //Main component content
-const PostMain = (props: Post): JSX.Element => {
+const PostMain = (props: PostModel): JSX.Element => {
 	//Main component render
 	return (
 		<main
@@ -46,7 +52,7 @@ export default PostMain; //Export main component
 
 
 
-const MultimediaCarousel = (props: Post) => {
+const MultimediaCarousel = (props: PostModel) => {
 
 	//React
 	const [ activeItem, setActiveItem ] = useState<number>(0);
@@ -69,30 +75,12 @@ const MultimediaCarousel = (props: Post) => {
 				{...props}
 				activeItem={activeItem}
 			/>
-			{activeItem !== 0 && (
-				<div
-					className='post__body-carousel-button-container left-0'
-				>
-					<button
-						className='post_body-carousel-button'
-						onClick={swipeLeftHandler}
-					>
-						<BsChevronLeft />
-					</button>
-				</div>
-			)}
-			{activeItem !== (props.multimedia.length - 1) && (
-				<div
-					className='post__body-carousel-button-container right-0'
-				>
-					<button
-						className='post_body-carousel-button'
-						onClick={swipeRightHandler}
-					>
-						<BsChevronRight  />
-					</button>
-				</div>
-			)}
+			<Controls
+				{...props}
+				activeItem={activeItem}
+				swipeLeftHandler={swipeLeftHandler}
+				swipeRightHandler={swipeRightHandler}
+			/>
 			<Indicators
 				{...props}
 				activeItem={activeItem}
@@ -101,6 +89,43 @@ const MultimediaCarousel = (props: Post) => {
 	);
 }
 
+
+const Controls = (props: Controls) => {
+
+	if( props.multimedia.length === 0 ){
+		return;
+	}
+	
+
+	return(
+		<>
+			{props.activeItem !== 0 && (
+				<div
+					className='post__body-carousel-button-container left-0'
+				>
+					<button
+						className='post_body-carousel-button'
+						onClick={props.swipeLeftHandler}
+					>
+						<BsChevronLeft />
+					</button>
+				</div>
+			)}
+			{props.activeItem !== (props.multimedia.length - 1) && (
+				<div
+					className='post__body-carousel-button-container right-0'
+				>
+					<button
+						className='post_body-carousel-button'
+						onClick={props.swipeRightHandler}
+					>
+						<BsChevronRight  />
+					</button>
+				</div>
+			)}
+		</>
+	);
+}
 
 
 const MultimediaList = (props: MultimediaList) => {
@@ -130,7 +155,7 @@ const MultimediaItem = (props: MultimediaItem) => {
 			}}
 		>
 			<Image
-				src={props.multimediaItem.url}
+				src={props.multimediaItem}
 				alt={`post-multimedia-${props.index}`}
 				fill
 				className='object-contain'
@@ -142,6 +167,11 @@ const MultimediaItem = (props: MultimediaItem) => {
 
 
 const Indicators = (props: Indicators) => {
+
+	if( props.multimedia.length === 0 ){
+		return;
+	}
+
 	return(
 		<div
 			className='absolute bottom-0 pb-2 w-full flex items-center justify-center'
@@ -151,7 +181,7 @@ const Indicators = (props: Indicators) => {
 			>
 				{props.multimedia.map( (_, index) => (
 					<div
-						key={`${props.user.name}-post-item-${index}`}
+						key={`${props.username}-post-item-${index}`}
 						className={`rounded-full h-full aspect-square transition-all ${props.activeItem === index ? 'bg-white' : 'bg-neutral-100/50'}`}
 					/>
 				) )}

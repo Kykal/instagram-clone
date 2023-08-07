@@ -3,16 +3,16 @@
 
 
 //Components
-import PostHeader from "./_PostHeader";
-import PostMain from "./_PostMain";
+import PostHeader from "./PostHeader";
+import PostMain from "./PostMain";
 
 
 //Typings
-import Post from "@/typings/Post";
+import PostModel from "@/models/Post";
 
 
 //Main component content
-const Post = (props: Post): JSX.Element => {
+const Post = (props: PostModel): JSX.Element => {
 	//Main component render
 	return (
 		<section
@@ -20,9 +20,6 @@ const Post = (props: Post): JSX.Element => {
 		>
 			<PostHeader {...props} />
 			<PostMain {...props} />
-			<footer>
-
-			</footer>
 		</section>
 	);
 };

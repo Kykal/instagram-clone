@@ -15,7 +15,7 @@ import Routes from "@/configuration/routes";
 //Components
 import InstagramLogo from "./InstagramLogo";
 import NavList from "./NavList";
-import MoreOptionsButton from "@/components/MoreButton";
+import MoreOptionsButton from "@/components/MoreOptionsButton";
 import Tooltip from "@/components/UI/Tooltip";
 
 

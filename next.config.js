@@ -25,7 +25,19 @@ const nextConfig = {
 				hostname: 'dummyimage.com',
 				port: '',
 				pathname: '/**/**/**.png',
-			}
+			},
+			{
+				protocol: 'https',
+				hostname: 'cloudflare-ipfs.com',
+				port: '',
+				pathname: '/ipfs/**/avatar/**.jpg',
+			},
+			{
+				protocol: 'https',
+				hostname: 'loremflickr.com',
+				port: '',
+				pathname: '/**/**/**',
+			},
 		],
 	},
 }
