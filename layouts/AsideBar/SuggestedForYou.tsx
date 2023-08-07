@@ -51,35 +51,27 @@ const SuggestedProfiles = (): JSX.Element => {
 	const users: SuggestedProfileType[] = [
 		{
 			followedBy: 'its_my_other_me',
-			user: {
-				hasStories: true,
-				name: 'its_me',
-				imgUrl: 'https://dummyimage.com/500x500/000/fff.png',
-			}
+			hasStories: true,
+			username: 'its_me',
+			avatarUrl: 'https://dummyimage.com/500x500/000/fff.png',
 		},
 		{
 			followedBy: 'ligo_leyen',
-			user: {
-				hasStories: false,
-				name: 'rito_games',
-				imgUrl: 'https://dummyimage.com/500x500/000/fff.png',
-			}
+			hasStories: false,
+			username: 'rito_games',
+			avatarUrl: 'https://dummyimage.com/500x500/000/fff.png',
 		},
 		{
 			followedBy: 'vue',
-			user: {
-				hasStories: false,
-				name: 'angular',
-				imgUrl: 'https://dummyimage.com/500x500/000/fff.png',
-			}
+			hasStories: false,
+			username: 'angular',
+			avatarUrl: 'https://dummyimage.com/500x500/000/fff.png',
 		},
 		{
 			followedBy: 'vercel',
-			user: {
-				hasStories: false,
-				name: 'adjacentjs',
-				imgUrl: 'https://dummyimage.com/500x500/000/fff.png',
-			}
+			hasStories: false,
+			username: 'adjacentjs',
+			avatarUrl: 'https://dummyimage.com/500x500/000/fff.png',
 		}
 	];
 
