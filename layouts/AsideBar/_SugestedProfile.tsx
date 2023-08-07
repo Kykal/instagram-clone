@@ -8,8 +8,7 @@ import UserAvatar from "@/components/UserAvatar";
 
 //Typings
 import User from "@/models/User";
-export type SuggestedProfile = {
-	user: User;
+export type SuggestedProfile = User & {
 	followedBy: string;
 }
 
@@ -24,16 +23,16 @@ const SuggestedProfile = (props: SuggestedProfile): JSX.Element => {
 			<div
 				className='h-12'
 			>
-				<UserAvatar {...props.user} />
+				<UserAvatar {...props} />
 			</div>
 			<div
 				className='flex flex-col grow'
 			>
 				<Link
-					href={`/${props.user.name}`}
+					href={`/${props.username}`}
 					className='font-medium text-sm'
 				>
-					{props.user.name}
+					{props.username}
 				</Link>
 				<span
 					className='text-neutral-500 text-xs'
