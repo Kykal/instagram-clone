@@ -2,8 +2,11 @@
 import { Fragment } from 'react';
 
 
+
+//MATERIAL DESIGN
 //Components
 import Divider from "@/components/UI/Divider";
+
 
 //Main component content
 const PostsListSkeleton = (): JSX.Element => {
@@ -17,8 +20,7 @@ const PostsListSkeleton = (): JSX.Element => {
 				<Fragment
 					key={`feed-item-skeleton-${index}`}
 				>
-					<_Skeleton
-					/>
+					<_Skeleton />
 					<Divider
 						className='hidden md:block w-full md:w-[470px]'
 					/>

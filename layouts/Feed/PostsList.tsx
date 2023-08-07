@@ -1,8 +1,17 @@
 //NextJS
 'use client';
 
+//React
+import { Fragment } from 'react';
+
+
 //Fetch
 import useSWR from "swr";
+
+
+//MATERIAL DESIGN
+//Components
+import Divider from '@/components/UI/Divider';
 
 
 //Models
@@ -11,12 +20,11 @@ import PostModel from "@/models/Post";
 
 //Components
 import Post from "@/components/Post";
+import PostsListSkeleton from "./PostsListSkeleton";
 
 
 //Typings
 import { API_ENDPOINT } from "@/configuration/constants";
-import PostsListSkeleton from "./PostsListSkeleton";
-
 
 
 //Main component content
@@ -60,10 +68,16 @@ const PostsList = (): JSX.Element => {
 			className='feed'
 		>
 			{posts.map( (post: PostModel, index: number) => (
-				<Post
+				<Fragment
 					key={`feed-post-${index}`}
-					{...post}
-				/>
+				>
+					<Post
+						{...post}
+					/>
+					<Divider
+						className='hidden md:block w-full md:w-[470px]'
+					/>
+				</Fragment>
 			) )}
 		</article>
 	);

@@ -434,6 +434,7 @@
 			flex
 			flex-col
 			items-center
+			md:gap-4
 		;
 	}
 
