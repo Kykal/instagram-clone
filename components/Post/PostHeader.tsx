@@ -33,7 +33,6 @@ const PostHeader = (props: PostModel): JSX.Element => {
 
 
 	const usernameHref = `/${props.username}`;
-	const timestampHref = `/p/${props.id}`;
 
 
 	//Main component render
@@ -77,7 +76,7 @@ export default PostHeader; //Export main component
 
 const Timestamp = (props: PostModel) => {
 
-	const href = `${Routes.POST}/p/${props.id}`;
+	const href = `${Routes.POST}/${props.id}`;
 
 	const timestamp = props.timestamp.toLocaleDateString('en', {
 		day: 'numeric',
