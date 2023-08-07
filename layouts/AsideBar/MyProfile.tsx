@@ -1,20 +1,23 @@
 //NextJS
 import Link from "next/link";
 
+
 //Components
 import UserAvatar from "@/components/UserAvatar";
 
-//Typings
-import User from "@/typings/User";
+
+//Models
+import User from "@/models/User";
 
 
 //Main component content
 const MyProfile = (): JSX.Element => {
 
 	const user: User = {
-		name: 'kykal',
+		username: 'kykal',
+		name: 'Alan Benavides',
 		hasStories: false,
-		imgUrl: 'https://avatars.githubusercontent.com/u/54295964',
+		avatarUrl: 'https://avatars.githubusercontent.com/u/54295964',
 	}
 
 
@@ -40,7 +43,7 @@ const MyProfile = (): JSX.Element => {
 				<span
 					className='text-neutral-500'
 				>
-					Alan Benavides
+					{user.name}
 				</span>
 			</div>
 			<button

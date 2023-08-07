@@ -5,6 +5,10 @@
 import { Fragment } from 'react';
 
 
+//Configurations
+import { API_ENDPOINT } from "@/configuration/constants";
+
+
 //Fetch
 import useSWR from "swr";
 
@@ -24,8 +28,10 @@ import PostsListSkeleton from "./PostsListSkeleton";
 
 
 //Typings
-import { API_ENDPOINT } from "@/configuration/constants";
+import APIPost from '@/typings/APIPost';
+type SWR = {
 
+}
 
 //Main component content
 const PostsList = (): JSX.Element => {
@@ -37,11 +43,13 @@ const PostsList = (): JSX.Element => {
 	} );
 	const { data, error, isLoading } = useSWR(url, fetcher);
 	
+
 	if( isLoading ){
 		return(
 			<PostsListSkeleton />
 		);
 	}
+
 
 	if( error ){
 		return(
@@ -51,7 +59,8 @@ const PostsList = (): JSX.Element => {
 		);
 	}
 
-	const posts: PostModel[] = data.map( (item: any) => new PostModel(
+	
+	const posts: PostModel[] = data.map( (item: APIPost) => new PostModel(
 		item.id,
 		item.username,
 		item.timestamp,
@@ -61,6 +70,7 @@ const PostsList = (): JSX.Element => {
 		item.multimedia,
 	) );
 		
+
 	//Main component render
 	return (
 		<article

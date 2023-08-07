@@ -4,38 +4,11 @@ import Link from "next/link";
 
 
 //Typings
-import {
-	People,
-	Post
-} from "@/typings/Notification";
-type Notification = {
-	type: 'liked' | 'mention';
-	people: People[];
-	post: Post;
-	timestamp: string;
-	comment?: JSX.Element;
-	totalPeople?: number;
-}
-type LeftMedia = {
-	people: People[];
-}
-type Content = {
-	type: 'liked' | 'mention';
-	people: People[];
-	timestamp: string;
-	totalPeople?: number;
-	comment?: JSX.Element;
-}
-type RightMedia = {
-	post: Post;
-}
-type PersonProfileAnchor = {
-	person: People;
-}
+import NotificationModel from "@/models/Notification";
 
 
 //Main component content
-const Notification = (props: Notification): JSX.Element => {
+const Notification = (props: NotificationModel): JSX.Element => {
 	//Main component render
 	return (
 		<div
@@ -44,28 +17,13 @@ const Notification = (props: Notification): JSX.Element => {
 			<div
 				className='px-6 h-full flex items-center gap-2'
 			>
-				<LeftMedia
-					people={props.people}
-				/>
-				{props.type === 'liked' ? (
-					<LikedContent
-						type={props.type}
-						people={props.people}
-						timestamp={props.timestamp}
-						totalPeople={props.totalPeople}
-						comment={props.comment}
-					/>
+				<LeftMedia {...props} />
+				{props.type === 'like' ? (
+					<LikedContent {...props} />
 				) : (
-					<MentionContent
-						type={props.type}
-						people={props.people}
-						timestamp={props.timestamp}
-						comment={props.comment}
-					/>
+					<MentionContent {...props} />
 				)}
-				<RightMedia
-					post={props.post}
-				/>
+				<RightMedia {...props} />
 			</div>
 		</div>
 	);
@@ -76,14 +34,14 @@ export default Notification; //Export main component
 
 
 
-const LeftMedia = (props: LeftMedia) => {
+const LeftMedia = (props: NotificationModel) => {
 
 	const size = 50;
 	
 
-	if( props.people.length === 1 ){
+	if( props.users.length === 1 ){
 
-		const person = props.people[0];
+		const person = props.users[0];
 		
 		const href = `/${person.username}`;
 
@@ -93,7 +51,7 @@ const LeftMedia = (props: LeftMedia) => {
 				className='block rounded-full overflow-hidden min-w-[50px] w-[50px] h-[50px]'
 			>
 				<Image
-					src={person.imgUrl}
+					src={person.avatarUrl}
 					alt='Profile picure'
 					width={size}
 					height={size}
@@ -107,14 +65,14 @@ const LeftMedia = (props: LeftMedia) => {
 			className='relative min-w-[50px] w-[50px] h-[50px]'
 		>
 			<Image
-				src={props.people[0].imgUrl}
+				src={props.users[0].avatarUrl}
 				alt='Profile picture'
 				width={size/1.5}
 				height={size/1.5}
 				className='absolute top-0 left-0 rounded-full border-2 border-white'
 			/>
 			<Image
-				src={props.people[1].imgUrl}
+				src={props.users[1].avatarUrl}
 				alt='Profile picture'
 				width={size/1.5}
 				height={size/1.5}
@@ -125,35 +83,49 @@ const LeftMedia = (props: LeftMedia) => {
 }
 
 
-const LikedContent = (props: Content) => {
+const LikedContent = (props: NotificationModel) => {
+
+	const timestamp = props.timestamp.toLocaleDateString('en', {
+		day: 'numeric',
+		month: 'short',
+		year: 'numeric',
+	});
+
 	return(
 		<div
 			className='grow flex h-full items-start text-sm'
 		>
 			<p>
-				<PersonProfileAnchor person={props.people[0]} />, <PersonProfileAnchor person={props.people[1]} /> {props.totalPeople && <>and {props.totalPeople} others</>} liked your comment: {props.comment} <span className='text-neutral-400' >{props.timestamp}</span>
+				<PersonProfileAnchor {...props} />, <PersonProfileAnchor {...props} /> {props.likes && <>and {props.likes} others</>} liked your comment: {props.comment} <span className='text-neutral-400' >{timestamp}</span>
 			</p>
 		</div>
 	);
 }
 
 
-const MentionContent = (props: Content) => {
+const MentionContent = (props: NotificationModel) => {
+	
+	const timestamp = props.timestamp.toLocaleDateString('en', {
+		day: 'numeric',
+		month: 'short',
+		year: 'numeric',
+	});
+	
 	return(
 		<div
 			className='grow flex h-full items-start'
 		>
 			<p>
-				<PersonProfileAnchor person={props.people[0]} /> mentioned you in a comment: {props.comment} <span className='text-neutral-400' >{props.timestamp}</span>
+				<PersonProfileAnchor {...props} /> mentioned you in a comment: {props.comment} <span className='text-neutral-400' >{timestamp}</span>
 			</p>
 		</div>
 	);
 }
 
 
-const RightMedia = (props: RightMedia) => {
+const RightMedia = (props: NotificationModel) => {
 
-	const href = `/p/${props.post.postId}`;
+	const href = `/p/${props.id}`;
 	const size = 100;
 
 	return(
@@ -165,7 +137,7 @@ const RightMedia = (props: RightMedia) => {
 				className='overflow-hidden h-[50px] w-[50px] flex items-center justify-center object-cover'
 			>
 				<Image
-					src={props.post.imgUrl}
+					src={props.multimedia[0]}
 					alt='Post'
 					width={size}
 					height={size}
@@ -178,13 +150,13 @@ const RightMedia = (props: RightMedia) => {
 
 
 
-const PersonProfileAnchor = (props: PersonProfileAnchor) => {
+const PersonProfileAnchor = (props: NotificationModel) => {
 	
-	const href = `/${props.person.username}`;
+	const href = `/${props.users[0].username}`;
 	
 	return(
 		<Link className='font-medium' href={href} >
-			{props.person.username}
+			{props.users[0].username}
 		</Link>
 	);
 }
