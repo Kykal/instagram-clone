@@ -3,8 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 
+//Models
+import User from "@/models/User";
+
+
 //Typings
-import User from "@/typings/User";
 import Routes from "@/configuration/routes";
 
 
