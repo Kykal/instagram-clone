@@ -9,6 +9,12 @@
 		@apply box-border;
 	}
 
+	button {
+		@apply
+			disabled:cursor-not-allowed
+		;
+	}
+
 	.center {
 		@apply
 			flex items-center justify-center

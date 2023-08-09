@@ -18,7 +18,9 @@ const Post = (props: PostModel): JSX.Element => {
 		<section
 			className='post-container'
 		>
-			<PostHeader {...props} />
+			<PostHeader
+				post={props}
+			/>
 			<PostMain {...props} />
 		</section>
 	);
