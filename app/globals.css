@@ -61,6 +61,7 @@
 			w-full md:max-w-min
 			md:border-0 md:border-r md:h-screen
 			flex flex-col
+			z-50
 		;
 	}
 
@@ -444,6 +445,7 @@
 	.post-container {
 		@apply
 			w-full md:w-[470px]
+			z-50
 		;
 	}
 

@@ -24,7 +24,7 @@ const MyProfile = (): JSX.Element => {
 	//Main component render
 	return (
 		<div
-			className='flex gap-2 items-center'
+			className='flex gap-2 items-center z-50'
 		>
 			<div
 				className='h-12'
