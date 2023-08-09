@@ -22,9 +22,7 @@ import {
 	TbHistoryToggle,
 } from 'react-icons/tb';
 import {
-	PiFlagBanner,
-} from 'react-icons/pi';
-import {
+	BsBookmark,
 	BsChevronLeft,
 	BsMoon,
 	BsSun,
@@ -133,7 +131,7 @@ const MenuList = (props: MenuList) => {
 					className='more-menu-item'
 					title='Saved'
 				>
-					<PiFlagBanner className='text-2xl' />
+					<BsBookmark className='text-2xl' />
 					<span>
 						Saved
 					</span>
