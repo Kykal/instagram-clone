@@ -1,3 +1,7 @@
+//React
+import { createPortal } from 'react-dom';
+
+
 import Dialog from 'native-react-dialog';
 
 
@@ -11,8 +15,30 @@ type MoreOptionsDialog = {
 //Main component content
 const MoreOptionsDialog = (props: MoreOptionsDialog): JSX.Element => {
 
+	const isClient = typeof window !== "undefined";
+	const target = document.body;
 
+	
 	//Main component render
+	return (
+		<>
+			{(isClient) && createPortal(
+				<_Dialog
+					{...props}
+				/>,
+				target
+			)}
+		</>
+	);
+};
+
+
+export default MoreOptionsDialog; //Export main component
+
+
+
+
+const _Dialog = (props: MoreOptionsDialog) => {
 	return (
 		<Dialog
 			open={props.opened}
@@ -21,7 +47,4 @@ const MoreOptionsDialog = (props: MoreOptionsDialog): JSX.Element => {
 			a
 		</Dialog>
 	);
-};
-
-
-export default MoreOptionsDialog; //Export main component
+}
