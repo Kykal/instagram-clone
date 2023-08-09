@@ -1,6 +1,5 @@
 //MATERIAL DESIGN
 //Icons
-import { Theme } from '@/utils/theme/typings';
 import {
 	BsSun,
 	BsMoon,
@@ -8,6 +7,7 @@ import {
 
 
 //Typings
+import Theme from '@/typings/theme';
 type ChangeTheme = {
 	onClick: () => void;
 	theme: Theme;
