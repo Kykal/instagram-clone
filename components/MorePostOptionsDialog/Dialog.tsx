@@ -28,14 +28,14 @@ const Dialog = (props: Dialog): JSX.Element => {
 		<NativeDialog
 			open={props.opened}
 			onClose={props.onClose}
-			className='rounded-md w-72 md:w-full max-w-md p-0'
+			className='rounded-md w-72 md:w-full max-w-md p-0 bg-white dark:bg-neutral-800'
 		>
 			<menu
-				className='w-full flex flex-col text-sm font-light'
+				className='w-full flex flex-col text-sm font-light text-black dark:text-white'
 			>
 				<li>
 					<button
-						className='active:bg-neutral-200 w-full p-3 font-medium text-red-500 disabled:text-red-500/50 disabled:active:bg-transparent'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 font-medium text-red-500 disabled:text-red-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 						disabled
 					>
 						Report
@@ -44,7 +44,7 @@ const Dialog = (props: Dialog): JSX.Element => {
 				<Divider />
 				<li>
 					<button
-						className='active:bg-neutral-200 w-full p-3 font-medium text-red-500 disabled:text-red-500/50 disabled:active:bg-transparent'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 font-medium text-red-500 disabled:text-red-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 						disabled
 					>
 						Unfollow
@@ -53,7 +53,7 @@ const Dialog = (props: Dialog): JSX.Element => {
 				<Divider />
 				<li>
 					<button
-						className='active:bg-neutral-200 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 						disabled
 					>
 						Add to favorites
@@ -63,7 +63,7 @@ const Dialog = (props: Dialog): JSX.Element => {
 				<li>
 					<Link
 						href={`${Routes.POST}/${props.post.id}`}
-						className='block text-center active:bg-neutral-200 w-full p-3'
+						className='block text-center active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 					>
 						Go to post
 					</Link>
@@ -71,7 +71,7 @@ const Dialog = (props: Dialog): JSX.Element => {
 				<Divider />
 				<li>
 					<button
-						className='active:bg-neutral-200 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 						disabled
 					>
 						Share to...
@@ -87,26 +87,30 @@ const Dialog = (props: Dialog): JSX.Element => {
 				<Divider />
 				<li>
 					<button
-						className='active:bg-neutral-200 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 						disabled
 					>
 						Embed
 					</button>
 				</li>
 				<Divider />
-				<li>
+				<li
+					className='md:hidden'
+				>
 					<button
-						className='active:bg-neutral-200 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 						disabled
 					>
 						About this account
 					</button>
 				</li>
-				<Divider />
+				<Divider
+					className='md:hidden'
+				/>
 				<li>
 					<button
 						onClick={props.onClose}
-						className='active:bg-neutral-200 w-full p-3'
+						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 					>
 						Cancel
 					</button>
