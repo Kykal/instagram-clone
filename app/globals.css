@@ -327,7 +327,8 @@
 			fill-sky-500
 			rounded-full
 			box-content
-			border-2 border-neutral-100 dark:border-neutral-900
+			border-2
+			border-neutral-100 dark:border-neutral-900 md:border-white md:dark:border-black
 		;
 	}
 
