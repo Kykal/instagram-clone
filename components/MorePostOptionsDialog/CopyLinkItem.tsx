@@ -25,7 +25,7 @@ const CopyLinkItem = (props: CopyLinkItem): JSX.Element => {
 	//Main component render
 	return (
 		<button
-			className='active:bg-neutral-200 w-full p-3'
+			className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
 			onClick={onClickHandler}
 		>
 			Copy link
