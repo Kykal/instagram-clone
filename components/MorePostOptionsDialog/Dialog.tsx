@@ -11,6 +11,9 @@ import Post from '@/models/Post';
 import Link from 'next/link';
 import Routes from '@/configuration/routes';
 import CopyLinkItem from './CopyLinkItem';
+import DisabledItem from './DisabledItem';
+import DisabledDangerItem from './DisabledDangerItem';
+import GoToPostItem from './GoToPostItem';
 
 
 //Typings
@@ -34,48 +37,33 @@ const Dialog = (props: Dialog): JSX.Element => {
 				className='w-full flex flex-col text-sm font-light text-black dark:text-white'
 			>
 				<li>
-					<button
-						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 font-medium text-red-500 disabled:text-red-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
-						disabled
-					>
+					<DisabledDangerItem>
 						Report
-					</button>
+					</DisabledDangerItem>
 				</li>
 				<Divider />
 				<li>
-					<button
-						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 font-medium text-red-500 disabled:text-red-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
-						disabled
-					>
-						Unfollow
-					</button>
+					<DisabledDangerItem>
+					Unfollow
+					</DisabledDangerItem>
 				</li>
 				<Divider />
 				<li>
-					<button
-						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
-						disabled
-					>
+					<DisabledItem>
 						Add to favorites
-					</button>
+					</DisabledItem>
 				</li>
 				<Divider />
 				<li>
-					<Link
-						href={`${Routes.POST}/${props.post.id}`}
-						className='block text-center active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
-					>
-						Go to post
-					</Link>
+					<GoToPostItem
+						post={props.post}
+					/>
 				</li>
 				<Divider />
 				<li>
-					<button
-						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
-						disabled
-					>
+					<DisabledItem>
 						Share to...
-					</button>
+					</DisabledItem>
 				</li>
 				<Divider />
 				<li>
@@ -86,12 +74,9 @@ const Dialog = (props: Dialog): JSX.Element => {
 				</li>
 				<Divider />
 				<li>
-					<button
-						className='active:bg-neutral-200 dark:active:bg-neutral-900/25 w-full p-3 disabled:text-neutral-500/50 disabled:active:bg-transparent dark:disabled:bg-transparent'
-						disabled
-					>
+					<DisabledItem>
 						Embed
-					</button>
+					</DisabledItem>
 				</li>
 				<Divider />
 				<li
