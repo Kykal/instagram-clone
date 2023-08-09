@@ -78,15 +78,17 @@ const StoryImage = (props: Story) => {
 				</>
 			)}
 			{props.username === authUsername && (
-				<>
+				<div
+					className='absolute bottom-0 right-0 w-4 aspect-square flex items-center justify-center'
+				>
 					<BsPlusCircleFill
 						className='stories-story__profile-picture__badge'
-						title='Add story badge'
+						title='Add story'
 					/>
 					<div
 						className='stories-story__profile-picture__badge-background'
 					/>
-				</>
+				</div>
 			)}
 			<Image
 				className='stories-story__profile-picture'
