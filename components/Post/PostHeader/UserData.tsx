@@ -37,7 +37,7 @@ const UserData = (props: UserData): JSX.Element => {
 			>
 				<Link
 					href={usernameHref}
-					className='font-medium'
+					className='font-medium text-neutral-800 hover:text-neutral-400 md:text-black md:hover:text-black'
 				>
 					{props.username}
 				</Link>
