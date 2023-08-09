@@ -21,10 +21,10 @@ import {
 
 //Components
 import MenuPortal from './_MorePortal';
-import { Theme } from '@/utils/theme/typings';
 
 
 //Typings
+import Theme from '@/typings/theme';
 type MoreOptionsButton = {
 	activeSection: string;
 }
