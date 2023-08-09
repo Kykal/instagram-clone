@@ -470,6 +470,9 @@
 			aspect-square
 			flex
 			items-center
+			md:dark:border md:dark:border-neutral-800
+			overflow-hidden
+			md:rounded-md
 		;
 	}
 	

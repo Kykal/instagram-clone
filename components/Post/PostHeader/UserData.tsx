@@ -37,11 +37,15 @@ const UserData = (props: UserData): JSX.Element => {
 			>
 				<Link
 					href={usernameHref}
-					className='font-medium text-neutral-800 hover:text-neutral-400 md:text-black md:hover:text-black'
+					className='font-medium text-neutral-800 hover:text-neutral-400 md:text-black dark:text-neutral-100'
 				>
 					{props.username}
 				</Link>
-				<span>&bull;</span>
+				<span
+					className='text-neutral-400'
+				>
+					&bull;
+				</span>
 				<Timestamp
 					{...props}
 				/>
