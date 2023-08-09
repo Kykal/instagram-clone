@@ -38,7 +38,7 @@ const PostsList = (): JSX.Element => {
 
 	//Fetch
 	const url = `${API_ENDPOINT}/posts`;
-	const fetcher = async (url: string) => await fetch(url).then( response => {
+	const fetcher = (url: string) => fetch(url).then( response => {
 		return response.json();
 	} );
 	const { data, error, isLoading } = useSWR(url, fetcher);
