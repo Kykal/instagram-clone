@@ -37,7 +37,7 @@ import ChangeTheme from './_ChangeTheme';
 
 
 //Typings
-import { Theme } from '@/utils/theme/typings';
+import Theme from '@/typings/theme';
 type Menu = {
 	theme: Theme;
 	toggleTheme: () => void;
