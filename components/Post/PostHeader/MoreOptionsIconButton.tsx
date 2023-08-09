@@ -9,11 +9,24 @@ import IconButton from "../../UI/IconButton";
 import {
 	FiMoreHorizontal,
 } from 'react-icons/fi';
-import MoreOptionsDialog from "./MoreOptionsDialog";
+
+
+//Models
+import Post from "@/models/Post";
+
+
+//Components
+import MorePostOptionsDialog from "../../MorePostOptionsDialog";
+
+
+//Typings
+type MoreOptionsIconButton = {
+	post: Post;
+};
 
 
 //Main component content
-const MoreOptionsIconButton = (): JSX.Element => {
+const MoreOptionsIconButton = (props: MoreOptionsIconButton): JSX.Element => {
 
 	//React
 	const [opened, { open, close }] = useDisclosure();
@@ -28,7 +41,8 @@ const MoreOptionsIconButton = (): JSX.Element => {
 			>
 				<FiMoreHorizontal className='text-lg' />
 			</IconButton>
-			<MoreOptionsDialog
+			<MorePostOptionsDialog
+				post={props.post}
 				opened={opened}
 				onClose={close}
 			/>

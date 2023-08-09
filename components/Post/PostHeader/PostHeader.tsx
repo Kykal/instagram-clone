@@ -4,23 +4,27 @@ import Post from "@/models/Post";
 
 //Components
 import MoreOptionsIconButton from "./MoreOptionsIconButton";
-
-
-//Typings
 import UserData from "./UserData";
 
 
+//Typings
+type PostHeader = {
+	post: Post;
+}
+
 //Main component content
-const PostHeader = (props: Post): JSX.Element => {
+const PostHeader = (props: PostHeader): JSX.Element => {
 	//Main component render
 	return (
 		<header
 			className='post__header'
 		>
 			<UserData
-				{...props}
+				{...props.post}
 			/>
-			<MoreOptionsIconButton />
+			<MoreOptionsIconButton
+				post={props.post}
+			/>
 		</header>
 	);
 };
