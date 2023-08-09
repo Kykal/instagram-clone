@@ -8,7 +8,7 @@ import useDisclosure from "@/hooks/useDisclosure";
 
 //MATERIAL DESIGN
 //Components
-import IconButton from "../UI/IconButton";
+import IconButton from "../../UI/IconButton";
 //Icons
 import {
 	FiMoreHorizontal,
@@ -16,13 +16,12 @@ import {
 
 
 //Components
-import UserAvatar from "../UserAvatar";
+import UserAvatar from "../../UserAvatar";
 
 
 //Typings
 import PostModel from "@/models/Post";
 import Routes from "@/configuration/routes";
-import { getImgProps } from "next/dist/shared/lib/get-img-props";
 
 
 //Main component content
