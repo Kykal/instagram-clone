@@ -9,6 +9,7 @@ import IconButton from "../../UI/IconButton";
 import {
 	FiMoreHorizontal,
 } from 'react-icons/fi';
+import MoreOptionsDialog from "./MoreOptionsDialog";
 
 
 //Main component content
@@ -27,6 +28,10 @@ const MoreOptionsIconButton = (): JSX.Element => {
 			>
 				<FiMoreHorizontal className='text-lg' />
 			</IconButton>
+			<MoreOptionsDialog
+				opened={opened}
+				onClose={close}
+			/>
 		</>
 	);
 };
