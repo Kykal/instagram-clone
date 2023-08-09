@@ -4,7 +4,7 @@ import setTheme from "./setTheme";
 
 
 //Typings
-import { Theme } from "./typings";
+import Theme from "@/typings/theme";
 
 
 const initTheme = (): Theme => {

@@ -22,9 +22,7 @@ import {
 	TbHistoryToggle,
 } from 'react-icons/tb';
 import {
-	PiFlagBanner,
-} from 'react-icons/pi';
-import {
+	BsBookmark,
 	BsChevronLeft,
 	BsMoon,
 	BsSun,
@@ -37,7 +35,7 @@ import ChangeTheme from './_ChangeTheme';
 
 
 //Typings
-import { Theme } from '@/utils/theme/typings';
+import Theme from '@/typings/theme';
 type Menu = {
 	theme: Theme;
 	toggleTheme: () => void;
@@ -133,7 +131,7 @@ const MenuList = (props: MenuList) => {
 					className='more-menu-item'
 					title='Saved'
 				>
-					<PiFlagBanner className='text-2xl' />
+					<BsBookmark className='text-2xl' />
 					<span>
 						Saved
 					</span>

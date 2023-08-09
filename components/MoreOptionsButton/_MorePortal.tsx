@@ -8,7 +8,7 @@ import BackgroundOnClick from "../BackgroundOnClick";
 
 
 //Typings
-import { Theme } from "@/utils/theme/typings";
+import Theme from "@/typings/theme";
 type MorePortal = {
 	opened: boolean;
 	closeMenu: () => void;
