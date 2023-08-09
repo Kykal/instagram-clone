@@ -1,5 +1,5 @@
 //Typings
-import { Theme } from "./typings";
+import Theme from "@/typings/theme";
 
 
 const getTheme = (): Theme => {
