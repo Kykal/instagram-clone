@@ -8,8 +8,8 @@ import Divider from '../UI/Divider';
 
 //Models
 import Post from '@/models/Post';
-import Link from 'next/link';
-import Routes from '@/configuration/routes';
+
+//Components
 import CopyLinkItem from './CopyLinkItem';
 import DisabledItem from './DisabledItem';
 import DisabledDangerItem from './DisabledDangerItem';
