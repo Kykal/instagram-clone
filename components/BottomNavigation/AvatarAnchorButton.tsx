@@ -22,7 +22,7 @@ const AvatarAnchorButton = (): JSX.Element => {
 			className='px-3 py-3 block group'
 		>
 			<figure
-				className='transition-all relative center'
+				className='transition-all relative center group-hover:scale-110'
 			>
 				<Image
 					src='https://avatars.githubusercontent.com/u/54295964'
