@@ -31,7 +31,7 @@ const IconAnchorButton = (props: IconAnchorButton): JSX.Element => {
 			href={props.href}
 
 		data-active={isActive}
-			className='px-3 py-3 bg-neutral-300 block group'
+			className='px-3 py-3 block group'
 		>
 			{icon}
 		</Link>
