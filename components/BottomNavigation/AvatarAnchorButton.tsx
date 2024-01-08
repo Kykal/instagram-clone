@@ -19,7 +19,7 @@ const AvatarAnchorButton = (): JSX.Element => {
 			href={'/kykal'}
 
 			data-active={isActive}
-			className='px-3 py-3 block group'
+			className='px-3 py-3 block group z-40'
 		>
 			<figure
 				className='transition-all relative center group-hover:scale-110'

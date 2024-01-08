@@ -29,7 +29,9 @@ const CreateMenuButton = (): JSX.Element => {
 				<FaRegSquarePlus className='transiton-all aspect-square text-2xl group-hover:scale-110' />
 			</button>
 			{opened && (
-				<Menu>
+				<Menu
+					onClose={close}
+				>
 					a
 				</Menu>
 			)}
