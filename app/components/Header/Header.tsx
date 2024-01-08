@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
 					Fakegram
 				</h1>
 				<ul
-					className='flex items-center gap-1'
+					className='flex items-center gap-4'
 				>
 					<li>
 						<CreateMenuButton />
