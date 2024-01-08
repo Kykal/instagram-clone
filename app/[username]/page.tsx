@@ -10,7 +10,7 @@ const Page = (): JSX.Element => {
 	return (
 		<>
 			<div>
-				Explore
+				Username
 			</div>
 			<BottomNavigation />
 		</>

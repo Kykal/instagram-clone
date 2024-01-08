@@ -1,38 +1,45 @@
-//React
-import { useState } from 'react';
+//NextJS
+'use client';
 
 
-const useDisclosure = () => {
-	//React
-	const [ isOpen, setIsOpen ] = useState<boolean>(false);
+//ReactJS
+import { useState } from "react";
 
-	//Handlers
-	const close = () => {
-		setIsOpen(false);
-	}
+/**
+ * To manage open/close states
+ * @param initialValue 
+ * @returns 
+ */
+const useDisclosure = (initialValue?: boolean) => {
+	const [ opened, setOpened ] = useState<boolean>(initialValue || false);
+
 
 	const open = () => {
-		setIsOpen(true);
-	}
+		setOpened(true);
+	};
+
+
+	const close = () => {
+		setOpened(false);
+	};
+
 
 	const toggle = () => {
-		if( isOpen ){
-			setIsOpen(false);
-			return;
+		if(opened){
+			close();
 		}
 
-		setIsOpen(true);
-	}
+		open();
+	};
 
 
-	return [
-		isOpen,
-		{
-			open,
-			close,
-			toggle,
-		}
-	] as const;
-}
+	return {
+		opened,
+		open,
+		close,
+		toggle,
+	};
+};
+
 
 export default useDisclosure;

@@ -1,9 +1,18 @@
+//Components
+import BottomNavigation from "@/components/BottomNavigation";
+
+
 //Main component content
 const Page = (): JSX.Element => {
+
+
 	//Main component render
 	return (
 		<>
-			Reels
+			<div>
+				Reels
+			</div>
+			<BottomNavigation />
 		</>
 	);
 };

@@ -1,50 +1,46 @@
-//Configurations
-import sharedMetadata from '@/configuration/sharedMetadata';
-
-
 //NextJS
-import type { Metadata } from 'next';
-export const metadata: Metadata = sharedMetadata;
+import type { Metadata } from 'next'
+import { Roboto } from 'next/font/google'
+
+
+//ReactJS
+import { HTMLAttributes } from 'react'
+
+
+//Configurations
+import sharedMetadata from '../configuration/sharedMetadata'
 
 
 //Styles
 import './globals.css'
-import { Roboto } from 'next/font/google'
 const roboto = Roboto({
 	subsets: [
 		'latin'
 	],
 	weight: [
-		'300',
 		'400',
 		'500',
+		'700',
 	],
 });
 
 
-//Layouts
-import NavBar from '@/layouts/NavBar';
-
-
-//Typings
-type Layout = {
-	children: JSX.Element;
+export const metadata: Metadata = {
+	...sharedMetadata,
 }
 
 
 //Main component content
-const RootLayout = ({ children }: Layout): JSX.Element => {
+const RootLayout = (props: HTMLAttributes<HTMLHtmlElement>): JSX.Element => {
 	//Main component render
 	return (
 		<html
 			lang='en'
-			data-theme='light'
 		>
 			<body
-				className={`${roboto.className} sm:flex bg-white dark:bg-black dark:text-neutral-100`}
+				className={roboto.className}
 			>
-				<NavBar />
-				{children}
+					{props.children}
 			</body>
 		</html>
 	);
