@@ -23,7 +23,20 @@
 			h-14
 			z-20
 			relative
-	;
+		;
+	}
+
+	.avatar-background-container {
+		@apply
+			absolute
+			top-0
+			left-0
+			h-14
+			w-14
+			flex
+			items-center
+			justify-center
+		;
 	}
 
 	.avatar-gradient-background {

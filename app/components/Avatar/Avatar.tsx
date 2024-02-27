@@ -56,7 +56,7 @@ export default Avatar; //Export main component
 const StoryBackground = () => {
 	return (
 		<div
-			className='absolute top-0 left-0 h-14 w-14 flex items-center justify-center'
+			className='avatar-background-container'
 		>
 			<div
 				className='avatar-gradient-background'
