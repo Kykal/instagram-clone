@@ -21,12 +21,12 @@
 			aspect-square
 			w-14
 			h-14
-			z-10
+			z-20
 			relative
-		;
+	;
 	}
 
-	.avatar-story-background {
+	.avatar-gradient-background {
 		@apply
 			absolute
 			aspect-square
@@ -37,6 +37,17 @@
 			from-yellow-500
 			via-orange-500
 			to-fuchsia-500
+		;
+	}
+
+	.avatar-white-background {
+		@apply
+			absolute
+			aspect-square
+			rounded-full
+			bg-white
+			w-[60px]
+			h-[60px]
 		;
 	}
 

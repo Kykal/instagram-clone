@@ -59,7 +59,10 @@ const StoryBackground = () => {
 			className='absolute top-0 left-0 h-14 w-14 flex items-center justify-center'
 		>
 			<div
-				className='avatar-story-background'
+				className='avatar-gradient-background'
+			/>
+			<div
+				className='avatar-white-background'
 			/>
 		</div>
 	);
