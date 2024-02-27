@@ -15,6 +15,7 @@
 
 	#stories {
 		@apply
+			select-none
 			flex
 			gap-2
 			h-full
@@ -28,8 +29,8 @@
 			min-w-16
 			h-full
 			py-3
-			first:ml-3
-			last:mr-3
+			first:ml-4
+			last:mr-4
 		;
 	}
 }

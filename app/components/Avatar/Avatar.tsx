@@ -18,6 +18,14 @@ export type AvatarProps = {
 
 //Main component content
 const Avatar = (props: AvatarProps): JSX.Element => {
+
+	const MAX_LENGTH = 9;
+
+	const displayName = props.displayName.length > MAX_LENGTH
+		?	`${props.displayName.substring(0, MAX_LENGTH)}...`
+		: props.displayName;
+
+
 	//Main component render
 	return (
 		<Link
@@ -32,7 +40,7 @@ const Avatar = (props: AvatarProps): JSX.Element => {
 				height={200}
 			/>
 			<span className='avatar-display-name' >
-				{props.displayName}
+				{displayName}
 			</span>
 		</Link>
 	);

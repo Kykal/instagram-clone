@@ -15,46 +15,46 @@ const Stories = (): JSX.Element => {
 
 	const stories: AvatarProps[] = [
 		{
-			userUrl: '/USER',
+			userUrl: '/cool_cat',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'cool_cat',
 		},
 		{
-			userUrl: '/USER',
+			userUrl: '/stargazer',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'stargazer',
 		},
 		{
-			userUrl: '/USER',
+			userUrl: '/supernova',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'supernova',
 		},
 		{
-			userUrl: '/USER',
+			userUrl: '/techgeek',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'techgeek',
 		},
 		{
-			userUrl: '/USER',
+			userUrl: '/book_worm',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'book_worm',
 		},
 		{
-			userUrl: '/USER',
+			userUrl: '/adventure_seeker',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'adventure_seeker',
 		},
 		{
-			userUrl: '/USER',
+			userUrl: '/soccer_fan',
 			imgUrl: 'https://dummyimage.com/200x200/000/fff',
 			hasStory: true,
-			displayName: '{USER}',
+			displayName: 'soccer_fan',
 		},
 	];
 
