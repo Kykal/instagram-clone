@@ -2,6 +2,7 @@
 import Appbar from "@/components/Appbar";
 import CreateMenuButton from "./CreateMenuButton";
 import NotificationsAnchor from "./NotificationsAnchor";
+import Stories from "../Stories/Stories";
 
 
 //Main component content
@@ -28,6 +29,7 @@ const Header = (): JSX.Element => {
 					</li>
 				</ul>
 			</div>
+			<Stories />
 		</Appbar>
 	);
 };

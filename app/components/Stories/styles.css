@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+	#stories-container {
+		@apply
+			h-[103px]
+			bg-neutral-100
+			border-b
+			border-b-neutral-300
+		;
+	}
+
+	#stories {
+		@apply
+			flex
+			gap-2
+			h-full
+			overflow-x-scroll
+		;
+	}
+
+	.story-container {
+		@apply
+			w-16
+			min-w-16
+			h-full
+			py-3
+			first:ml-3
+			last:mr-3
+		;
+	}
+}

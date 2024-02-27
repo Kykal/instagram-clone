@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+	.avatar-container {
+		@apply
+			flex
+			flex-col
+			h-full
+			items-center
+			justify-between
+		;
+	}
+
+	.avatar-profile {
+		@apply
+			rounded-full
+			bg-black
+			aspect-square
+			w-14
+			h-14
+		;
+	}
+
+	.avatar-display-name {
+		@apply
+			text-xs
+		;
+	}
+}

@@ -1,6 +1,10 @@
+//React
+import { ReactNode } from "react";
+
+
 //Typings
 type Appbar = {
-	children: JSX.Element;
+	children: ReactNode;
 };
 
 
