@@ -43,6 +43,7 @@ const NavBar = (): JSX.Element => {
 
 	useEffect( () => {
 		if( pathname === Routes.MESSAGES ){
+			// eslint-disable-next-line react-hooks/set-state-in-effect
 			setActiveSection(NavBarSections.MESSAGES);
 			return;
 		}

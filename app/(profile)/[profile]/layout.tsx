@@ -2,22 +2,28 @@
 import MobileProfileHeader from "@/layouts/MobileProfileHeader";
 
 
+//React
+import type { ReactNode } from "react";
+
+
 //Typings
 type Layout = {
-	children: JSX.Element;
-	params: {
+	children: ReactNode;
+	params: Promise<{
 		profile: string;
-	}
+	}>
 }
 
 
 //Main component content
-const Layout = ({children, params}: Layout): JSX.Element => {
+const Layout = async ({children, params}: Layout): Promise<JSX.Element> => {
+	const { profile } = await params;
+
 	//Main component render
 	return (
 		<>
 			<MobileProfileHeader
-				username={params.profile}
+				username={profile}
 			/>
 			{children}
 		</>

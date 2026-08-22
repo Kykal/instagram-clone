@@ -4,6 +4,7 @@ import sharedMetadata from '@/configuration/sharedMetadata';
 
 //NextJS
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 export const metadata: Metadata = sharedMetadata;
 
 
@@ -28,7 +29,7 @@ import NavBar from '@/layouts/NavBar';
 
 //Typings
 type Layout = {
-	children: JSX.Element;
+	children: ReactNode;
 }
 
 
