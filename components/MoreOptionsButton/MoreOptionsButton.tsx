@@ -49,6 +49,7 @@ const MoreOptionsButton = ({activeSection}: MoreOptionsButton): JSX.Element => {
 		const _theme = initTheme();
 		
 		html.setAttribute(data, _theme);
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setTheme(_theme);
 	}, [] );
 
